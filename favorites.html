@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="조민체">
+  <meta name="team" content="팀번호_팀명">
+  <title>Favorites - Showroom</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="common.css">
+  <style>
+    .site-header {
+      background: var(--bg-sub);
+      border-bottom: 1px solid var(--line);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--point);
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .header-nav a:hover,
+    .header-nav a.active {
+      color: var(--point);
+    }
+
+    .mypage-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: var(--bg-sub);
+      border: 1px solid var(--line);
+      margin-top: 24px;
+      margin-bottom: 40px;
+    }
+
+    .summary-box {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .summary-count {
+      font-family: "Oswald", sans-serif;
+      font-size: 2.4rem;
+      color: var(--point);
+    }
+
+    .top-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .car-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .car-card {
+      width: calc(33.333% - 16px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .car-thumb {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .car-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .car-category {
+      font-size: 0.8rem;
+      color: var(--point);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .car-slogan {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+    }
+
+    .car-stats {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 16px;
+    }
+
+    .car-stat-item {
+      text-align: center;
+    }
+
+    .car-stat-value {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.3rem;
+      color: var(--text);
+    }
+
+    .car-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+    }
+
+    .car-price {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .car-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .car-actions .btn,
+    .car-actions .btn-outline {
+      flex: 1;
+      justify-content: center;
+      padding: 12px 14px;
+      font-size: 0.9rem;
+    }
+
+    .btn-remove:hover {
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .empty-box {
+      width: 100%;
+      padding: 60px 24px;
+      text-align: center;
+      border: 1px solid var(--line);
+      background: var(--bg-sub);
+    }
+
+    .empty-box p {
+      color: var(--text-sub);
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .car-card {
+        width: calc(50% - 12px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .top-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .car-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo title-en">SHOWROOM</a>
+      <nav class="header-nav">
+        <a href="index.html">About</a>
+        <a href="models.html">Models</a>
+        <a href="compare.html">Compare</a>
+        <a href="favorites.html" class="active">Favorites</a>
+        <a href="request.html">Request</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>FAVORITES</h1>
+        <p>관심차량으로 등록한 모델 목록을 확인하고 관리할 수 있습니다.</p>
+
+        <div class="mypage-top">
+          <div class="summary-box">
+            <span>찜한 관심차량</span>
+            <strong class="summary-count" id="wishCount">0</strong>
+            <span>대</span>
+          </div>
+          <div class="top-actions">
+            <a href="models.html" class="btn-outline">차량 더 둘러보기</a>
+            <button type="button" id="clearAllBtn" class="btn-outline btn-remove">전체 삭제</button>
+          </div>
+        </div>
+
+        <h2>관심차량 목록</h2>
+        <div id="wishListContainer" class="car-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h2 class="footer-slogan">We're<br>driving<br>the <span>DREAM.</span></h2>
+        <div class="footer-brand">
+          <strong>ShowroomName</strong>
+          서울 서초구 서초동 0000-00 (도로명 주소) 0층
+        </div>
+      </div>
+
+      <nav class="footer-menu" aria-label="푸터 메뉴">
+        <a href="index.html">About</a>
+        <a href="models.html">Models</a>
+        <a href="compare.html">Compare</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="request.html">Request</a>
+      </nav>
+
+      <dl class="footer-contact">
+        <div><dt>Contact</dt><dd>02-0000-0000</dd></div>
+        <div><dt>시승 문의</dt><dd>drive@showroom.co.kr</dd></div>
+        <div><dt>제휴 문의</dt><dd>info@showroom.co.kr</dd></div>
+      </dl>
+    </div>
+    <p class="footer-copy">Copyright 2026 ShowroomName. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let allCars = [];
+
+    const wishListContainer = document.getElementById("wishListContainer");
+    const wishCountEl = document.getElementById("wishCount");
+    const clearAllBtn = document.getElementById("clearAllBtn");
+
+    fetch("cars.json")
+      .then(response => response.json())
+      .then(data => {
+        allCars = data;
+        renderWishList();
+      })
+      .catch(error => {
+        console.error("데이터 불러오기 실패:", error);
+      });
+
+    function getWishIds() {
+      return JSON.parse(localStorage.getItem("wishCars")) || [];
+    }
+
+    function removeWish(carId) {
+      let wishIds = getWishIds();
+      const idx = wishIds.indexOf(carId);
+
+      if (idx !== -1) {
+        wishIds.splice(idx, 1);
+        localStorage.setItem("wishCars", JSON.stringify(wishIds));
+        alert("관심차량에서 삭제되었습니다.");
+        renderWishList();
+      }
+    }
+
+    clearAllBtn.addEventListener("click", () => {
+      const wishIds = getWishIds();
+      if (wishIds.length === 0) {
+        alert("삭제할 관심차량이 없습니다.");
+        return;
+      }
+
+      if (confirm("관심차량 목록을 모두 삭제하시겠습니까?")) {
+        localStorage.removeItem("wishCars");
+        renderWishList();
+      }
+    });
+
+    function renderWishList() {
+      const wishIds = getWishIds();
+
+      const wishedCars = allCars.filter(car => {
+        return wishIds.indexOf(car.id) !== -1;
+      });
+
+      wishCountEl.innerText = wishedCars.length;
+
+      if (wishedCars.length === 0) {
+        wishListContainer.innerHTML = `
+          <div class="empty-box">
+            <p>저장된 관심차량이 없습니다.</p>
+            <a href="models.html" class="btn">차량 탐색하러 가기</a>
+          </div>
+        `;
+        return;
+      }
+
+      wishListContainer.innerHTML = wishedCars.map(car => {
+        const priceText = car.price === 0 ? "가격 문의" : car.price + "만원";
+
+        let statsHtml = "";
+        for (let i = 0; i < car.stats.length; i++) {
+          statsHtml += `
+            <div class="car-stat-item">
+              <div class="car-stat-value">${car.stats[i].value} <small>${car.stats[i].unit}</small></div>
+              <div class="car-stat-label">${car.stats[i].label}</div>
+            </div>
+          `;
+        }
+
+        return `
+          <article class="card car-card">
+            <img class="car-thumb" src="${car.heroImage}" alt="${car.name}">
+            <div class="car-body">
+              <span class="car-category">${car.category}</span>
+              <h3>${car.name}</h3>
+              <p class="car-slogan">${car.slogan}</p>
+              <div class="car-stats">${statsHtml}</div>
+              <p class="car-price">${priceText}</p>
+              <div class="car-actions">
+                <a href="detail.html?id=${car.id}" class="btn">상세보기</a>
+                <button type="button" class="btn-outline btn-remove" onclick="removeWish('${car.id}')">삭제</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+  </script>
+</body>
+</html>
