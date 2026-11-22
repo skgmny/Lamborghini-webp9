@@ -1,0 +1,50 @@
+[
+  {
+    "id": "temerario",
+    "name": "Temerario",
+    "series": "temerario",
+    "category": "슈퍼카",
+    "price": 0,
+    "slogan": "YOU CAN'T HIDE WHO YOU ARE",
+    "intro": "Lamborghini의 Temerario는 V8 트윈 터보 엔진과 세 개의 전기 모터를 장착한 브랜드 최초 슈퍼 스포츠카로서 920CV의 출력을 발휘합니다. HPEV 라인업의 두 번째 차량으로서 뛰어난 성능과 편안함을 동시에 자랑하며 새로운 디자인 컨셉과 독창적인 커스터마이제이션 옵션을 선보였습니다.",
+    "heroImage": "images/temerario/hero.jpg",
+
+    "stats": [
+      { "label": "최대 출력", "value": "677", "unit": "kW" },
+      { "label": "최고 속도", "value": "343", "unit": "km/h" },
+      { "label": "0-100km/h", "value": "2.7", "unit": "초" }
+    ],
+
+    "design": [
+      {
+        "tab": "성능",
+        "images": [
+            "images/temerario/9_performance.jpg"
+        ],
+        "desc": "성능 설명"
+      },
+      {
+        "tab": "외관",
+        "images": [
+            "images/temerario/9_exterior.jpg"
+        ],
+        "desc": "외관 설명"
+      },
+      {
+        "tab": "실내",
+        "images": [
+            "images/temerario/9_interior.jpg"
+        ],    
+        "desc": "실내 설명"
+      }
+    ],
+
+    "specs": [
+      { "label": "엔진", "value": "V8 트윈 터보 + 전기 모터 3개" },
+      { "label": "배기량", "value": "3995.2 CM3 (243.8 CU IN)" },
+      { "label": "최대 출력", "value": "920 CV (677 kW)" },
+      { "label": "최고 속도", "value": "343 km/h" },
+      { "label": "가속도 0-100km/h", "value": "2.7초" }
+    ]
+  }
+]
