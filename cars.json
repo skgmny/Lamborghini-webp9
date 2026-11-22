@@ -7,7 +7,7 @@
     "price": 0,
     "slogan": "YOU CAN'T HIDE WHO YOU ARE",
     "intro": "Lamborghini의 Temerario는 V8 트윈 터보 엔진과 세 개의 전기 모터를 장착한 브랜드 최초 슈퍼 스포츠카로서 920CV의 출력을 발휘합니다. HPEV 라인업의 두 번째 차량으로서 뛰어난 성능과 편안함을 동시에 자랑하며 새로운 디자인 컨셉과 독창적인 커스터마이제이션 옵션을 선보였습니다.",
-    "heroImage": "images/temerario/hero.jpg",
+    "heroImage": "images/temerario/9_hero.png",
 
     "stats": [
       { "label": "최대 출력", "value": "677", "unit": "kW" },
@@ -19,32 +19,80 @@
       {
         "tab": "성능",
         "images": [
-            "images/temerario/9_performance.jpg"
-        ],
-        "desc": "성능 설명"
+            {"src": "images/temerario/9_performance_1.png", "title": "POWERTRAIN", "desc": "신형 4.0리터 V8 트윈 터보 엔진과 세 개의 전기 모터가 결합해 최고 출력 920 CV를 발휘합니다. 정지 상태에서 100km/h까지 2.7초 만에 도달하며 최고 속도는 343km/h입니다."},
+            {"src": "images/temerario/9_performance_2.png", "title": "LDVI 2.0", "desc": "노면의 그립 수준을 예측하고 토크와 제동을 실시간으로 조절하여 주행 안정성과 정밀성을 높입니다. 통합 트랙션 컨트롤과 조절 가능한 드리프트 모드도 지원합니다."}
+        ]
       },
       {
         "tab": "외관",
         "images": [
-            "images/temerario/9_exterior.jpg"
-        ],
-        "desc": "외관 설명"
+            {"src": "images/temerario/9_exterior_1.png", "title": "전방", "desc": "날카로운 차체 라인과 미래지향적인 육각형 주간주행등이 Lamborghini 특유의 강렬한 전면 디자인을 완성합니다."},
+            {"src": "images/temerario/9_exterior_2.png", "title": "센터", "desc": "공기 흐름을 고려한 차체 설계와 기능적인 공기역학적 요소가 역동적인 디자인과 주행 효율성을 동시에 강조합니다." }
+        ]
       },
       {
         "tab": "실내",
         "images": [
-            "images/temerario/9_interior.jpg"
-        ],    
-        "desc": "실내 설명"
+            {"src": "images/temerario/9_interior_1.png", "title": "실내 공간", "desc": "'Feel like a pilot' 콘셉트를 바탕으로 넓어진 실내 공간과 향상된 편안함, 직관적인 HMI 및 커넥티드 서비스를 제공합니다."},
+            {"src": "images/temerario/9_interior_2.png", "title": "주행 모드", "desc": "시티, 스트라다, 스포츠, 코르사 모드와 전기 구동 시스템을 조합해 최대 13가지 주행 설정을 제공합니다."}
+        ]
       }
     ],
 
     "specs": [
       { "label": "엔진", "value": "V8 트윈 터보 + 전기 모터 3개" },
       { "label": "배기량", "value": "3995.2 CM3 (243.8 CU IN)" },
-      { "label": "최대 출력", "value": "920 CV (677 kW)" },
+      { "label": "최대 출력", "value": "677 kW / 920 CV" },
       { "label": "최고 속도", "value": "343 km/h" },
       { "label": "가속도 0-100km/h", "value": "2.7초" }
+    ]
+  },
+  {
+    "id": "temerario-spyder",
+    "name": "Temerario Spyder",
+    "series": "temerario",
+    "category": "슈퍼카",
+    "price": 0,
+    "slogan": "Unfiltered performance",
+    "intro": "Temerario Spyder는 드라이버와 차량, 주변 환경 사이의 교감을 한층 깊게 하도록 설계되었습니다. 920 CV HPEV 아키텍처에 브랜드 역사상 최초의 리트랙터블 하드톱을 결합해 Lamborghini의 오픈 에어 경험을 새로운 차원으로 끌어올립니다.",
+    "heroImage": "images/temerario/9_hero_spyder.png",
+
+    "stats": [ 
+      { "label": "최대 출력", "value": "677", "unit": "kW" },
+      { "label": "최고 속도", "value": "343", "unit": "km/h" },
+      { "label": "0-100km/h", "value": "2.8", "unit": "초" }
+    ],
+
+    "design": [
+      {
+        "tab": "성능",
+        "images": [
+            {"src": "images/temerario/9_performance_1.png", "title": "POWERTRAIN", "desc": "신형 4.0리터 V8 트윈 터보 엔진과 세 개의 전기 모터가 결합해 최고 출력 920 CV를 발휘합니다. 정지 상태에서 100km/h까지 2.7초 만에 도달하며 최고 속도는 343km/h입니다."},
+            {"src": "images/temerario/9_performance_2.png", "title": "LDVI 2.0", "desc": "노면의 그립 수준을 예측하고 토크와 제동을 실시간으로 조절하여 주행 안정성과 정밀성을 높입니다. 통합 트랙션 컨트롤과 조절 가능한 드리프트 모드도 지원합니다."}
+        ]
+      },
+      {
+        "tab": "외관",
+        "images": [
+            {"src": "images/temerario/9_exterior_spyder.png", "title": "센터", "desc": "개방형 루프 디자인과 역동적인 차체 라인이 조화를 이루며, Temerario Spyder만의 자유로운 오픈 에어 주행 경험을 강조합니다."},
+            {"src": "images/temerario/9_exterior_1.png", "title": "전방", "desc": "날카로운 차체 라인과 미래지향적인 육각형 주간주행등이 Lamborghini 특유의 강렬한 전면 디자인을 완성합니다."}
+        ]
+      },
+      {
+        "tab": "실내",
+        "images": [
+            {"src": "images/temerario/9_interior_1.png", "title": "실내 공간", "desc": "Temerario Spyder는 개폐식 하드톱을 통해 오픈 에어 주행의 자유로움을 제공하며, 편안한 실내 공간과 직관적인 조작 환경을 결합합니다."},
+            {"src": "images/temerario/9_interior_2.png", "title": "주행 모드", "desc": "시티, 스트라다, 스포츠, 코르사 모드와 전기 구동 시스템을 조합해 최대 13가지 주행 설정을 제공합니다."}
+        ]
+      }
+    ],
+
+    "specs": [
+      { "label": "엔진", "value": "V8 트윈 터보 + 전기 모터 3개" },
+      { "label": "배기량", "value": "3995.2 CM3 (243.8 CU IN)" },
+      { "label": "최대 출력", "value": "677 kW / 920 CV" },
+      { "label": "최고 속도", "value": "343 km/h" },
+      { "label": "가속도 0-100km/h", "value": "2.8초" }
     ]
   }
 ]
