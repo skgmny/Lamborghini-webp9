@@ -227,6 +227,10 @@ function showCar(car) {
 
   // 지금 차를 기억하고, 첫 번째 탭·첫 번째 사진부터 시작
   currentCar = car;
+  for (const link of document.querySelectorAll('a[href^="configure.html"]')) {
+    link.href = "configure.html?id=" + encodeURIComponent(car.id);
+    link.style.display = car.customization ? "" : "none";
+  }
   currentTab = 0;
   currentSlide = 0;
 
@@ -372,7 +376,7 @@ nextButton.addEventListener("click", () => {
 // ===== JSON 불러와서 화면 채우기 =====
 
 // 탐색 페이지에서 저장해 둔 차 id 꺼내기
-const carId = localStorage.getItem("selectedCar");
+const carId = new URLSearchParams(location.search).get("id") || localStorage.getItem("selectedCar");
 
 fetch("cars.json")
   .then(response => response.json())

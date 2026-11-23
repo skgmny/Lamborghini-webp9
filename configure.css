@@ -1,0 +1,244 @@
+.config-page {
+background: var(--bg, #000);
+color: var(--text, #fff);
+--config-line: var(--line, #333);
+--config-accent: var(--point, #ffc000);
+}
+
+.config-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem clamp(1rem, 5vw, 4rem);
+border-bottom: 1px solid var(--config-line);
+}
+
+.config-brand {
+font-weight: 800;
+letter-spacing: .16em;
+}
+
+.config-main {
+max-width: 1440px;
+margin-inline: auto;
+padding: clamp(1.25rem, 5vw, 4rem);
+}
+
+.config-title {
+margin-bottom: 1.5rem;
+}
+
+.config-title p {
+color: var(--config-accent);
+}
+
+.config-title h1 {
+font-size: clamp(2.5rem, 7vw, 5rem);
+line-height: 1.04;
+letter-spacing: -.05em;
+}
+
+.config-layout {
+display: grid;
+grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
+gap: clamp(1rem, 3vw, 2.5rem);
+align-items: start;
+}
+
+.config-preview figure {
+position: relative;
+overflow: hidden;
+background: #151515;
+}
+
+.config-preview img {
+display: block;
+width: 100%;
+aspect-ratio: 16 / 10;
+object-fit: cover;
+}
+
+.config-preview figcaption {
+position: absolute;
+bottom: .75rem;
+left: .75rem;
+padding: .25rem .65rem;
+background: #000d;
+font-size: .85rem;
+}
+
+.config-views {
+display: flex;
+gap: .5rem;
+margin-top: .75rem;
+}
+
+.config-page button {
+font: inherit;
+color: inherit;
+background: transparent;
+border: 1px solid var(--config-line);
+padding: .45rem .85rem;
+cursor: pointer;
+}
+
+.config-views [aria-pressed="true"] {
+border-color: var(--config-accent);
+color: var(--config-accent);
+}
+
+.config-note {
+color: #b8b8b8;
+font-size: .85rem;
+margin-top: .75rem;
+}
+
+.config-controls {
+display: grid;
+gap: 1.35rem;
+padding: clamp(1rem, 2.5vw, 1.75rem);
+background: var(--bg-sub, #111);
+border: 1px solid var(--config-line);
+}
+
+.config-controls fieldset {
+border: 0;
+min-width: 0;
+}
+
+.config-controls legend,
+.config-summary h2 {
+font-size: 1rem;
+font-weight: 700;
+margin-bottom: .65rem;
+}
+
+.config-swatches {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: .45rem;
+}
+
+.config-swatch {
+position: relative;
+}
+
+.config-swatch input {
+position: absolute;
+opacity: 0;
+}
+
+.config-swatch span {
+display: grid;
+justify-items: center;
+gap: .35rem;
+border: 1px solid var(--config-line);
+padding: .6rem .25rem;
+font-size: .84rem;
+cursor: pointer;
+}
+
+.config-swatch span::before {
+content: "";
+width: 1.55rem;
+aspect-ratio: 1;
+border-radius: 50%;
+border: 1px solid #ffffff55;
+background: var(--swatch);
+}
+
+.config-swatch input:checked + span {
+border-color: var(--config-accent);
+color: var(--config-accent);
+}
+
+.config-swatch input:focus-visible + span,
+.config-page :is(button, a):focus-visible {
+outline: 2px solid var(--config-accent);
+outline-offset: 3px;
+}
+
+.config-summary {
+border-top: 1px solid var(--config-line);
+padding-top: 1rem;
+}
+
+.config-summary dl > div {
+display: flex;
+justify-content: space-between;
+gap: .5rem;
+}
+
+.config-summary dt {
+color: #b8b8b8;
+}
+
+.config-page button:disabled {
+opacity: .5;
+cursor: default;
+}
+
+#config-status {
+color: #ff9f9f;
+font-size: .9rem;
+}
+
+#config-status:empty {
+display: none;
+}
+
+@media (max-width: 780px) {
+.config-layout {
+grid-template-columns: 1fr;
+}
+}
+
+.config-preview figure {
+  background: #000;
+  border: 1px solid var(--config-line);
+}
+
+.config-preview img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.config-swatch span {
+  min-height: 4.4rem;
+  align-content: center;
+}
+
+.config-swatch:hover span {
+  background: var(--bg-card, #1a1a1a);
+}
+
+.config-swatch input:checked + span {
+  background: #ffc00012;
+}
+
+.config-summary dd {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.config-summary dd::before {
+  content: "";
+  width: .75rem;
+  aspect-ratio: 1;
+  border: 1px solid #ffffff55;
+  border-radius: 50%;
+  background: var(--swatch, transparent);
+}
+.config-views a { padding: .45rem .85rem; border: 1px solid var(--config-line); }
+.config-views [aria-current="page"] { border-color: var(--config-accent); color: var(--config-accent); }
+
+.config-views a {
+  padding: .45rem .85rem;
+  border: 1px solid var(--config-line);
+}
+
+.config-views [aria-current="page"] {
+  border-color: var(--config-accent);
+  color: var(--config-accent);
+}
