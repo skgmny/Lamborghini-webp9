@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="팀원 이름들">
+    <meta name="team" content="팀번호_팀명">
+
+    <title>SHOWROOM | DRIVE YOUR DREAM</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="main.css">
+
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="main-header">
+
+        <a href="main.html" class="header-logo">SHOWROOM.</a>
+
+        <nav class="header-nav">
+            <a href="main.html">HOME</a>
+            <a href="models.html">MODELS</a>
+            <a href="customize.html">CUSTOMIZE</a>
+            <a href="request.html">CONTACT</a>
+        </nav>
+
+        <a href="favorites.html" class="header-favorite">
+            MY GARAGE +
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             01. BRAND INTRO
+        ========================== -->
+        <section class="intro-section" id="intro">
+
+            <div class="intro-sticky">
+
+                <div class="intro-top">
+                    <span>THE ART OF DRIVING</span>
+                    <span>EST. 2026</span>
+                </div>
+
+                <!-- 메인 타이틀 -->
+                <h1 class="intro-title">
+                    <span class="title-left">DRIVE</span>
+                    <span class="title-right">BRAND</span>
+                </h1>
+
+                <!-- 인트로 자동차 이미지 -->
+                <div class="intro-car-wrap">
+
+                    <!-- 인트로용 자동차 이미지 -->
+                    <img src="car1.png"
+                         alt="노란색 슈퍼카"
+                         class="intro-car">
+
+                </div>
+
+
+                <!-- 좌측 설명 -->
+                <div class="intro-copy intro-copy-left">
+
+                    <span class="copy-number">01 / EXPERIENCE</span>
+
+                    <h2>
+                        DRIVE<br>
+                        YOUR DREAM.
+                    </h2>
+
+                    <p>
+                        단순한 이동을 넘어<br>
+                        당신만의 드라이빙을 경험하세요.
+                    </p>
+
+                </div>
+
+
+                <!-- 우측 설명 -->
+                <div class="intro-copy intro-copy-right">
+
+                    <span class="copy-number">INTRODUCTION</span>
+
+                    <p>
+                        최고의 디자인과 기술,<br>
+                        그리고 타협하지 않는 퍼포먼스.<br>
+                        당신의 새로운 드라이빙이 시작됩니다.
+                    </p>
+
+                </div>
+
+
+                <!-- 스크롤 안내 -->
+                <div class="scroll-guide">
+
+                    <span>SCROLL TO EXPLORE</span>
+                    <span class="scroll-arrow">↓</span>
+
+                </div>
+
+
+                <!-- 하단 장식 라인 -->
+                <div class="intro-line"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             02. FEATURED MODELS
+        ========================== -->
+        <section class="models-section" id="models">
+
+            <div class="models-container">
+
+                <!-- 섹션 제목 -->
+                <div class="models-heading">
+
+                    <div>
+                        <span class="section-label">
+                            DISCOVER THE COLLECTION
+                        </span>
+
+                        <h2>FEATURED MODELS</h2>
+                    </div>
+
+                    <a href="models.html" class="models-more">
+                        모든 모델 알아보기 <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <!-- 모델 소개 영역 -->
+                <div class="model-display">
+
+                    <!-- 이전 버튼 -->
+                    <button type="button"
+                            class="model-arrow prev-arrow"
+                            id="prevModel"
+                            aria-label="이전 모델">
+                        &#8249;
+                    </button>
+
+
+                    <!-- 중앙 차량 -->
+                    <div class="model-main">
+
+                        <div class="model-logo">
+
+                            <span class="model-logo-text" id="modelName">
+                                TEMERARIO
+                            </span>
+
+                        </div>
+
+                        <h3 class="model-slogan" id="modelSlogan">
+                            UNFILTERED PERFORMANCE
+                        </h3>
+
+
+                        <!-- 차량 이미지 -->
+                        <div class="model-image-wrap">
+
+                            <img src="car2.png"
+                                 alt="대표 차량"
+                                 class="model-image"
+                                 id="modelImage">
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 다음 버튼 -->
+                    <button type="button"
+                            class="model-arrow next-arrow"
+                            id="nextModel"
+                            aria-label="다음 모델">
+                        &#8250;
+                    </button>
+
+                </div>
+
+
+                <!-- 모델 선택 탭 -->
+                <div class="model-tabs" id="modelTabs">
+
+                    <button class="model-tab active"
+                            data-index="0">
+                        TEMERARIO
+                    </button>
+
+                    <button class="model-tab"
+                            data-index="1">
+                        REVUELTO
+                    </button>
+
+                    <button class="model-tab"
+                            data-index="2">
+                        URUS SE
+                    </button>
+
+                </div>
+
+
+                <!-- 모델 하단 버튼 -->
+                <div class="model-actions">
+
+                    <a href="models.html"
+                       class="model-btn model-btn-yellow">
+                        모델 알아보기 <span>→</span>
+                    </a>
+
+                    <a href="customize.html"
+                       class="model-btn model-btn-outline">
+                        설정 시작하기 <span>◇</span>
+                    </a>
+
+                    <a href="request.html"
+                       class="model-btn model-btn-text">
+                        문의하기 <span>✉</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             03. VEHICLE CURATION
+        ========================== -->
+        <section class="curation-section">
+
+            <div class="curation-container">
+
+                <div class="curation-heading">
+
+                    <span class="section-label">
+                        FIND YOUR STYLE
+                    </span>
+
+                    <h2>CHOOSE YOUR DRIVE.</h2>
+
+                    <p>
+                        당신의 취향과 라이프스타일에 맞는<br>
+                        특별한 차량을 만나보세요.
+                    </p>
+
+                </div>
+
+
+                <div class="curation-grid">
+
+                    <!-- 큐레이션 카드 1 -->
+                    <article class="curation-card">
+
+                        <div class="curation-image">
+
+                            <img src="car2.png"
+                                 alt="슈퍼 스포츠카">
+
+                        </div>
+
+                        <div class="curation-info">
+
+                            <span>01 / PERFORMANCE</span>
+
+                            <h3>SUPER SPORTS</h3>
+
+                            <p>
+                                한계를 넘어서는 압도적인 성능을
+                                경험하고 싶다면.
+                            </p>
+
+                            <a href="models.html" class="curation-link">
+                                EXPLORE MORE →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 큐레이션 카드 2 -->
+                    <article class="curation-card">
+
+                        <div class="curation-image">
+
+                            <img src="car2.png"
+                                 alt="럭셔리 SUV">
+
+                        </div>
+
+                        <div class="curation-info">
+
+                            <span>02 / LIFESTYLE</span>
+
+                            <h3>SUPER SUV</h3>
+
+                            <p>
+                                일상과 특별한 순간을 모두 만족시키는
+                                드라이빙.
+                            </p>
+
+                            <a href="models.html" class="curation-link">
+                                EXPLORE MORE →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 큐레이션 카드 3 -->
+                    <article class="curation-card">
+
+                        <div class="curation-image">
+
+                            <img src="car2.png"
+                                 alt="하이브리드 슈퍼카">
+
+                        </div>
+
+                        <div class="curation-info">
+
+                            <span>03 / INNOVATION</span>
+
+                            <h3>FUTURE DRIVE</h3>
+
+                            <p>
+                                새로운 기술과 미래지향적인
+                                퍼포먼스를 경험하세요.
+                            </p>
+
+                            <a href="models.html" class="curation-link">
+                                EXPLORE MORE →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             04. SERVICE SHORTCUT
+        ========================== -->
+        <section class="service-section">
+
+            <div class="service-container">
+
+                <div class="service-heading">
+
+                    <span class="section-label">
+                        MAKE IT YOURS
+                    </span>
+
+                    <h2>YOUR NEXT MOVE.</h2>
+
+                    <p>
+                        이제 당신만의 차량을 완성할 차례입니다.
+                    </p>
+
+                </div>
+
+
+                <div class="service-grid">
+
+                    <a href="customize.html" class="service-card">
+
+                        <span class="service-number">01</span>
+
+                        <div>
+                            <h3>CREATE YOUR CAR</h3>
+                            <p>나만의 차량을 직접 구성해 보세요.</p>
+                        </div>
+
+                        <span class="service-arrow">↗</span>
+
+                    </a>
+
+
+                    <a href="request.html" class="service-card">
+
+                        <span class="service-number">02</span>
+
+                        <div>
+                            <h3>CONTACT US</h3>
+                            <p>구매 및 시승 상담을 신청하세요.</p>
+                        </div>
+
+                        <span class="service-arrow">↗</span>
+
+                    </a>
+
+
+                    <a href="models.html" class="service-card">
+
+                        <span class="service-number">03</span>
+
+                        <div>
+                            <h3>EXPLORE MODELS</h3>
+                            <p>다양한 차량을 만나보세요.</p>
+                        </div>
+
+                        <span class="service-arrow">↗</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <h2 class="footer-slogan">
+                    We're<br>
+                    driving<br>
+                    the <span>DREAM.</span>
+                </h2>
+
+                <div class="footer-brand">
+
+                    <strong>SHOWROOM.</strong>
+
+                    YOUR DREAM, YOUR DRIVE.
+
+                </div>
+
+            </div>
+
+
+            <nav class="footer-menu" aria-label="푸터 메뉴">
+
+                <a href="main.html">Home</a>
+                <a href="models.html">Models</a>
+                <a href="customize.html">Customize</a>
+                <a href="favorites.html">My Garage</a>
+                <a href="request.html">Contact</a>
+
+            </nav>
+
+
+            <dl class="footer-contact">
+
+                <div>
+                    <dt>Contact</dt>
+                    <dd>02-0000-0000</dd>
+                </div>
+
+                <div>
+                    <dt>시승 문의</dt>
+                    <dd>drive@showroom.co.kr</dd>
+                </div>
+
+                <div>
+                    <dt>제휴 문의</dt>
+                    <dd>info@showroom.co.kr</dd>
+                </div>
+
+            </dl>
+
+        </div>
+
+        <p class="footer-copy">
+            Copyright 2026 SHOWROOM. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
