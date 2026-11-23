@@ -1,0 +1,166 @@
+.site-header {
+  background: var(--bg-sub);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--point);
+}
+
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  color: var(--point);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.category-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-sort-group {
+  display: flex;
+  gap: 12px;
+}
+
+.result-info {
+  margin: 24px 0;
+  color: var(--text-sub);
+}
+
+.car-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.car-card {
+  width: calc(33.333% - 16px);
+  display: flex;
+  flex-direction: column;
+}
+
+.car-thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.car-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.car-category {
+  font-size: 0.8rem;
+  color: var(--point);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.car-slogan {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+}
+
+.car-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.car-stat-item {
+  text-align: center;
+}
+
+.car-stat-value {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.car-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+}
+
+.car-price {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.car-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.car-actions .btn,
+.car-actions .btn-outline {
+  flex: 1;
+  justify-content: center;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+}
+
+.btn-outline.wished {
+  border-color: var(--point);
+  color: var(--point);
+}
+
+@media (max-width: 900px) {
+  .car-card {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-sort-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .car-card {
+    width: 100%;
+  }
+}
