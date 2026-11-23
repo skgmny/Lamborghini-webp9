@@ -90,7 +90,7 @@
     "series": "temerario",
     "category": "슈퍼카",
     "price": 0,
-    "slogan": "Unfiltered performance",
+    "slogan": "UNFILTERED PERFORMANCE",
     "intro": "Temerario Spyder는 드라이버와 차량, 주변 환경 사이의 교감을 한층 깊게 하도록 설계되었습니다. 920 CV HPEV 아키텍처에 브랜드 역사상 최초의 리트랙터블 하드톱을 결합해 Lamborghini의 오픈 에어 경험을 새로운 차원으로 끌어올립니다.",
     "heroImage": "images/temerario/9_hero_spyder.png",
     "previewImages": {
@@ -167,6 +167,198 @@
       { "label": "최대 출력", "value": "677 kW / 920 CV" },
       { "label": "최고 속도", "value": "343 km/h" },
       { "label": "가속도 0-100km/h", "value": "2.8초" }
+    ]
+  },
+  {
+    "id": "revuelto",
+    "name": "Revuelto",
+    "series": "revuelto",
+    "category": "슈퍼카",
+    "price": 0,
+    "slogan": "FROM NOW ON",
+    "intro": "Lamborghini 60주년을 앞두고 공개된 Revuelto는 최초의 HPEV 하이브리드 슈퍼 스포츠카입니다. 1,015CV을 발휘하는 파워트레인은 새로운 V12 엔진과 세 개의 전기 모터, 그리고 듀얼 클러치 e-기어박스를 결합해 이전에 보지 못했던 새로운 수준의 성능, 기술, 그리고 주행 감성을 완성했습니다.",
+    "heroImage": "images/revuelto/9_hero.png",
+
+    "stats": [
+      { "label": "최대 출력", "value": "747", "unit": "kW" },
+      { "label": "최고 속도", "value": ">350", "unit": "km/h" },
+      { "label": "0-100km/h", "value": "2.5", "unit": "초" }
+    ],
+
+    "design": [
+      {
+        "tab": "성능",
+        "images": [
+          { "src": "images/revuelto/9_performance_1.png", "title": "V12", "desc": "새로운 6.5리터 V12 엔진과 세 개의 전기 모터가 결합해 최고 출력 1,015 CV를 발휘합니다. 정지 상태에서 100km/h까지 2.5초 만에 도달하며 최고 속도는 350km/h 이상입니다." },
+          { "src": "images/revuelto/9_performance_2.png", "title": "LDVI 2.0", "desc": "LDVI 2.0 설명" }
+        ]
+      },
+      {
+        "tab": "외관",
+        "images": [
+          { "src": "images/revuelto/9_exterior_1.png", "title": "전면 라이트", "desc": "Revuelto는 Lamborghini의 유산을 대담한 새로운 디자인 언어로 재해석했습니다." },
+          { "src": "images/revuelto/9_exterior_2.png", "title": "개방형 엔진 베이", "desc": "정교한 디자인 라인, 날카로운 표면, 아이코닉한 중앙 라인이 미래지향적인 실루엣을 정의하며, 노출형 V12 엔진은 고유한 레이싱 DNA를 실현합니다." }
+        ]
+      },
+      {
+        "tab": "실내",
+        "images": [
+          { "src": "images/revuelto/9_interior_1.png", "title": "가상 콕핏", "desc": "가상 콕핏 설명" },
+          { "src": "images/revuelto/9_interior_2.png", "title": "주행 모드", "desc": "주행 모드 설명" }
+        ]
+      }
+    ],
+
+    "specs": [
+      { "label": "엔진", "value": "V12 + 전기 모터 3개" },
+      { "label": "배기량", "value": "6498.5 CM3 (396.6 CU IN)" },
+      { "label": "최대 출력", "value": "747 kW / 1015 CV" },
+      { "label": "최고 속도", "value": ">350 km/h" },
+      { "label": "가속도 0-100km/h", "value": "2.5초" }
+    ]
+  },
+  {
+    "id": "revuelto-sv",
+    "name": "Revuelto SV",
+    "series": "revuelto",
+    "category": "슈퍼카",
+    "price": 0,
+    "slogan": "THE QUANTUM OF DRIVING",
+    "intro": "Revuelto SV는 Lamborghini의 'Super Veloce' 철학을 새로운 차원으로 끌어올립니다. 자연 흡기 V12 엔진, 하이브리드 성능 그리고 모터스포츠에서 파생된 기술을 결합하여, 한정된 운전자들에게 1,065 CV에 달하는 순수한 주행의 감동을 선사합니다.",
+    "heroImage": "images/revuelto/9_hero_sv.png",
+
+    "stats": [
+      { "label": "최대 출력", "value": "783", "unit": "kW" },
+      { "label": "최고 속도", "value": "348", "unit": "km/h" },
+      { "label": "0-100km/h", "value": "2.4", "unit": "초" }
+    ],
+
+    "design": [
+      {
+        "tab": "성능",
+        "images": [
+          { "src": "images/revuelto/9_performance_1.png", "title": "V12", "desc": "성능 설명" },
+          { "src": "images/revuelto/9_performance_2.png", "title": "LDVI 2.0", "desc": "LDVI 2.0 설명" }
+        ]
+      },
+      {
+        "tab": "외관",
+        "images": [
+          { "src": "images/revuelto/9_exterior_1.png", "title": "전면 라이트", "desc": "외관 설명" },
+          { "src": "images/revuelto/9_exterior_2.png", "title": "개방형 엔진 베이", "desc": "외관 설명" }
+        ]
+      },
+      {
+        "tab": "실내",
+        "images": [
+          { "src": "images/revuelto/9_interior_1.png", "title": "가상 콕핏", "desc": "실내 설명" },
+          { "src": "images/revuelto/9_interior_2.png", "title": "주행 모드", "desc": "실내 설명" }
+        ]
+      }
+    ],
+
+    "specs": [
+      { "label": "엔진", "value": "V12 + 전기 모터 3개" },
+      { "label": "배기량", "value": "6498.5 CM3 (396.6 CU IN)" },
+      { "label": "최대 출력", "value": "783 kW / 1065 CV" },
+      { "label": "최고 속도", "value": "348 km/h" },
+      { "label": "가속도 0-100km/h", "value": "2.4초" }
+    ]
+  },
+  {
+    "id": "urus-se",
+    "name": "Urus SE",
+    "series": "urus",
+    "category": "SUV",
+    "price": 0,
+    "slogan": "DARE TO LIVE MORE",
+    "intro": "Urus SE는 Lamborghini의 완전 하이브리드화를 향한 새로운 발걸음입니다. 브랜드 최초의 PHEV 슈퍼 SUV로서, 800CV을 발휘하며 뛰어난 안락함과 성능, 효율성을 제공합니다. 또한 배출가스를 최대 80%까지 줄이며 럭셔리 SSUV의 주행 경험을 선사합니다.",
+    "heroImage": "images/urus/9_hero.png",
+
+    "stats": [
+      { "label": "최대 출력", "value": "588", "unit": "kW" },
+      { "label": "최고 속도", "value": "312", "unit": "km/h" },
+      { "label": "0-100km/h", "value": "3.4", "unit": "초" }
+    ],
+
+    "design": [
+      {
+        "tab": "성능",
+        "images": [
+          { "src": "images/urus/9_performance_1.png", "title": "성능 1", "desc": "성능 설명" },
+          { "src": "images/urus/9_performance_2.png", "title": "성능 2", "desc": "성능 설명" }
+        ]
+      },
+      {
+        "tab": "외관",
+        "images": [
+          { "src": "images/urus/9_exterior_1.png", "title": "외관 1", "desc": "외관 설명" },
+          { "src": "images/urus/9_exterior_2.png", "title": "외관 2", "desc": "외관 설명" }
+        ]
+      },
+      {
+        "tab": "실내",
+        "images": [
+          { "src": "images/urus/9_interior_1.png", "title": "실내 1", "desc": "실내 설명" },
+          { "src": "images/urus/9_interior_2.png", "title": "실내 2", "desc": "실내 설명" }
+        ]
+      }
+    ],
+
+    "specs": [
+      { "label": "엔진", "value": "V8 트윈 터보 + 전기 모터" },
+      { "label": "배기량", "value": "3996 CM3" },
+      { "label": "최대 출력", "value": "588 kW / 800 CV" },
+      { "label": "최고 속도", "value": "312 km/h" },
+      { "label": "가속도 0-100km/h", "value": "3.4초" }
+    ]
+  },
+  {
+    "id": "urus-se-performante",
+    "name": "Urus SE Performante",
+    "series": "urus",
+    "category": "SUV",
+    "price": 0,
+    "slogan": "URUS AT ITS PEAK",
+    "intro": "Urus SE Performante는 812 CV를 가진 플러그인 하이브리드 슈퍼 SUV의 새로운 기준을 제시합니다. 첨단 공기역학 성능과 주행 다이내믹스가 혁신적인 서스펜션과 결합되어, 절대적인 정밀성과 뛰어난 주행 성능을 제공합니다.",
+    "heroImage": "images/urus/9_hero_performante.png",
+
+    "stats": [
+      { "label": "최대 출력", "value": "597", "unit": "kW" },
+      { "label": "최고 속도", "value": "312", "unit": "km/h" },
+      { "label": "0-100km/h", "value": "3.3", "unit": "초" }
+    ],
+
+    "design": [
+      {
+        "tab": "성능",
+        "images": [
+          { "src": "images/urus/9_performance_1.png", "title": "성능 1", "desc": "성능 설명" },
+          { "src": "images/urus/9_performance_2.png", "title": "성능 2", "desc": "성능 설명" }
+        ]
+      },
+      {
+        "tab": "외관",
+        "images": [
+          { "src": "images/urus/9_exterior_1.png", "title": "외관 1", "desc": "외관 설명" },
+          { "src": "images/urus/9_exterior_2.png", "title": "외관 2", "desc": "외관 설명" }
+        ]
+      },
+      {
+        "tab": "실내",
+        "images": [
+          { "src": "images/urus/9_interior_1.png", "title": "실내 1", "desc": "실내 설명" },
+          { "src": "images/urus/9_interior_2.png", "title": "실내 2", "desc": "실내 설명" }
+        ]
+      }
+    ],
+
+    "specs": [
+      { "label": "엔진", "value": "V8 트윈 터보 + 전기 모터" },
+      { "label": "배기량", "value": "3996 CM3" },
+      { "label": "최대 출력", "value": "597 kW / 812 CV" },
+      { "label": "최고 속도", "value": "312 km/h" },
+      { "label": "가속도 0-100km/h", "value": "3.3초" }
     ]
   }
 ]
