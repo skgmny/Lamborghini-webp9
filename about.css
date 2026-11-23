@@ -1,0 +1,214 @@
+.site-header {
+  background: #111111;
+  border-bottom: 1px solid #333333;
+  padding: 20px 0;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffc000;
+}
+
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  color: #ffc000;
+}
+
+.about-hero {
+  background: #111111;
+  border-bottom: 1px solid #333333;
+  padding: 140px 0;
+}
+
+.about-lead {
+  max-width: 640px;
+  color: #9a9a9a;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+
+/* 왼쪽 제목 + 오른쪽 본문 2단 스토리 레이아웃 */
+.story-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 64px;
+  margin: 180px 0 380px;
+}
+
+.story-row.last {
+  margin: 200px 0 140px;
+}
+
+.story-title-box {
+  width: 34%;
+}
+
+.story-text-box {
+  width: 62%;
+  max-width: 640px;
+}
+
+.story-text-box p {
+  color: #9a9a9a;
+  font-size: 1.05rem;
+  line-height: 1.95;
+  margin-bottom: 24px;
+}
+
+.story-text-box p.story-lead {
+  color: #ffffff;
+  font-size: 1.2rem;
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.vision-btn-box {
+  text-align: center;
+  margin: 120px 0 180px;
+}
+
+/* 로고 소개 배치 */
+.split-row {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  margin-bottom: 220px;
+}
+
+.split-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.split-img-box {
+  width: 48%;
+}
+
+.split-img-box img.logo-img {
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+  background: #000000;
+  padding: 24px;
+  border: none;
+  transition: transform 0.3s;
+}
+
+.split-img-box img.logo-img:hover {
+  transform: scale(1.06);
+}
+
+.split-text-box {
+  width: 52%;
+}
+
+.split-text-box h2 {
+  margin-bottom: 24px;
+}
+
+.split-text-box p {
+  color: #9a9a9a;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+/* 주요 모델 연대기 */
+.masterpieces-section {
+  background: transparent;
+  padding: 260px 0;
+}
+
+.masterpieces-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.scroll-guide {
+  font-size: 0.85rem;
+  color: #ffc000;
+}
+
+.timeline-scroll {
+  overflow-x: auto;
+  background: transparent;
+  border: none;
+}
+
+.timeline-full-img {
+  height: 460px;
+  max-width: none;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .about-hero {
+    padding: 90px 0;
+  }
+
+  .story-row {
+    flex-direction: column;
+    gap: 28px;
+    margin: 100px 0 220px;
+  }
+
+  .story-row.last {
+    margin: 120px 0 80px;
+  }
+
+  .vision-btn-box {
+    margin: 80px 0 120px;
+  }
+
+  .story-title-box,
+  .story-text-box {
+    width: 100%;
+  }
+
+  .split-row,
+  .split-row.reverse {
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 120px;
+  }
+
+  .split-img-box,
+  .split-text-box {
+    width: 100%;
+  }
+
+  .masterpieces-section {
+    padding: 150px 0;
+  }
+
+  .timeline-full-img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .masterpieces-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
