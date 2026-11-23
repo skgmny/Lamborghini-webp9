@@ -1,0 +1,242 @@
+.site-header {
+  background: var(--bg-sub);
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--point);
+}
+
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  color: var(--point);
+}
+
+.mypage-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: var(--bg-sub);
+  border: 1px solid var(--line);
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+.summary-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.summary-box {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.summary-count {
+  font-family: "Oswald", sans-serif;
+  font-size: 2.4rem;
+  color: var(--point);
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.section-block {
+  margin-bottom: 60px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.car-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.car-card {
+  width: calc(33.333% - 16px);
+  display: flex;
+  flex-direction: column;
+}
+
+.car-thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.car-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.car-category {
+  font-size: 0.8rem;
+  color: var(--point);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.car-slogan {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+}
+
+.car-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 16px;
+}
+
+.car-stat-item {
+  text-align: center;
+}
+
+.car-stat-value {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.car-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-sub);
+}
+
+.car-price {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.car-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.car-actions .btn,
+.car-actions .btn-outline {
+  flex: 1;
+  justify-content: center;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+}
+
+.btn-remove:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.request-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.request-card {
+  padding: 24px;
+  background: var(--bg-sub);
+  border: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.request-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: var(--point);
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.request-meta {
+  color: var(--text-sub);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.request-memo {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.empty-box {
+  width: 100%;
+  padding: 50px 24px;
+  text-align: center;
+  border: 1px solid var(--line);
+  background: var(--bg-sub);
+}
+
+.empty-box p {
+  color: var(--text-sub);
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .car-card {
+    width: calc(50% - 12px);
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .top-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .car-card {
+    width: 100%;
+  }
+
+  .request-card {
+    flex-direction: column;
+  }
+}
