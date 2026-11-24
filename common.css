@@ -27,11 +27,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
@@ -42,27 +38,20 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-
 main {
   flex: 1;
   width: 100%;
 }
-
 a {
   color: inherit;
   text-decoration: none;
   transition: color var(--speed);
 }
-
-ul {
-  list-style: none;
-}
-
+ul { list-style: none; }
 img {
   max-width: 100%;
   display: block;
 }
-
 hr {
   border: none;
   border-top: 1px solid var(--line);
@@ -77,16 +66,13 @@ h1, h2, h3 {
   line-height: 1.2;
   margin-bottom: 12px;
 }
-
 h1 { font-size: 3rem; }
-
 h2 {
   font-size: 2rem;
   position: relative;
   padding-bottom: 16px;
   margin-bottom: 24px;
 }
-
 h2::after {
   content: "";
   position: absolute;
@@ -96,33 +82,25 @@ h2::after {
   height: 3px;
   background: var(--point);
 }
-
 h3 {
   font-size: 1.3rem;
   color: var(--point);
 }
-
 p {
   margin-bottom: 12px;
   line-height: 1.8;
 }
-
 mark {
   background: none;
   color: var(--point);
   font-weight: 700;
 }
-
 strong, em {
   color: var(--point);
   font-style: normal;
   font-weight: 500;
 }
-
-figure {
-  margin: 0;
-}
-
+figure { margin: 0; }
 figcaption {
   margin-top: 10px;
   font-size: 0.85rem;
@@ -135,42 +113,12 @@ figcaption {
   margin: 0 auto;
   padding: 0 24px;
 }
-
 .title-en {
   font-family: "Oswald", "Impact", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
-.section {
-  padding: 80px 0;
-}
-
-.section-light {
-  padding: 80px 0;
-  background: var(--light-bg);
-  color: var(--light-text);
-}
-
-.section-light h3,
-.section-light strong,
-.section-light mark {
-  color: var(--light-text);
-}
-
-.link-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid currentColor;
-  transition: color var(--speed), border-color var(--speed);
-}
-
-.link-more:hover {
-  color: var(--point);
-}
-
+.section { padding: 80px 0; }
 .select-item {
   padding: 12px 20px;
   border: 1px solid var(--line);
@@ -179,18 +127,13 @@ figcaption {
   cursor: pointer;
   transition: background var(--speed), color var(--speed), border-color var(--speed);
 }
-
-.select-item:hover {
-  border-color: var(--point);
-}
-
+.select-item:hover { border-color: var(--point); }
 .select-item.active,
 .select-item[aria-selected="true"] {
   background: var(--point);
   color: var(--point-text);
   border-color: var(--point);
 }
-
 .card {
   background: var(--bg-card);
   border: 1px solid var(--line);
@@ -198,19 +141,16 @@ figcaption {
   overflow: hidden;
   transition: border-color var(--speed), transform var(--speed), box-shadow var(--speed);
 }
-
 .card:hover {
   border-color: var(--point);
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
 }
-
 .stat {
   font-family: "Oswald", sans-serif;
   font-size: 3.5rem;
   line-height: 1;
 }
-
 .stat small {
   display: block;
   margin-top: 8px;
@@ -218,7 +158,6 @@ figcaption {
   font-size: 0.9rem;
   color: var(--text-sub);
 }
-
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -240,24 +179,20 @@ input[type="reset"] {
   border: 1px solid var(--line);
   transition: background var(--speed), color var(--speed), border-color var(--speed);
 }
-
 button:hover,
 input[type="reset"]:hover {
   border-color: var(--point);
   color: var(--point);
 }
-
 input[type="submit"] {
   background: var(--point);
   color: var(--point-text);
   border-color: var(--point);
 }
-
 input[type="submit"]:hover {
   background: var(--point-light);
   color: var(--point-text);
 }
-
 fieldset {
   display: flex;
   flex-direction: column;
@@ -267,13 +202,11 @@ fieldset {
   border: 1px solid var(--line);
   background: var(--bg-sub);
 }
-
 legend {
   padding: 0 10px;
   font-weight: 700;
   color: var(--point);
 }
-
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -289,88 +222,90 @@ textarea {
   border: 1px solid var(--line);
   transition: border-color var(--speed);
 }
-
 input:focus,
 select:focus,
-textarea:focus {
-  border-color: var(--point);
-}
+textarea:focus { border-color: var(--point); }
+textarea { resize: vertical; }
 
-textarea {
-  resize: vertical;
-}
-
-/* ===== 주요 버튼 (폼 규칙보다 아래에 둬야 노랑이 적용됨) ===== */
-.btn,
-button.btn {
+/* ===== 주요 및 보조 버튼 ===== */
+.btn, button.btn,
+.btn-outline, button.btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   padding: 16px 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn,
+button.btn {
   background: var(--point);
   color: var(--point-text);
-  font-weight: 700;
   border: none;
-  cursor: pointer;
   transition: background var(--speed), transform var(--speed);
 }
-
 .btn:hover,
 button.btn:hover {
   background: var(--point-light);
   color: var(--point-text);
   transform: translateX(4px);
 }
-
-/* ===== 보조 버튼 ===== */
 .btn-outline,
 button.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 28px;
   background: transparent;
   color: var(--text);
-  font-weight: 700;
   border: 1px solid var(--line);
-  cursor: pointer;
   transition: border-color var(--speed), color var(--speed);
 }
-
 .btn-outline:hover,
 button.btn-outline:hover {
   border-color: var(--point);
   color: var(--point);
 }
 
-/* ===== 표 ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 18px 0;
+/* ===== 헤더 ===== */
+.header {
+  min-height: 85px;
+  padding: 12px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-caption {
-  margin-bottom: 10px;
-  text-align: left;
-  font-weight: 700;
-  color: var(--point);
+/* 메인에서만 헤더를 첫 화면 위에 겹친다. */
+.header:has(+ main #intro) {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 100;
 }
 
-th {
-  background: var(--point);
-  color: var(--point-text);
-  font-weight: 700;
+.brand img { height: 52px; width: auto; }
+
+.header-nav {
+  display: flex;
+  gap: clamp(12px, 3vw, 40px);
 }
 
-th, td {
-  padding: 12px;
-  border: 1px solid var(--line);
-  text-align: center;
+.header-nav a,
+.header-favorite {
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 
-tbody tr:nth-child(even) td {
-  background: var(--bg-sub);
+.header-nav a:hover,
+.header-favorite:hover { color: var(--point); }
+
+.header-favorite {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 7px;
+}
+
+@media (max-width: 600px) {
+  .header { flex-wrap: wrap; padding-inline: 20px; }
+  .brand img { height: 40px; }
+  .header-nav { order: 1; width: 100%; flex-wrap: wrap; }
+  .header-nav a, .header-favorite { font-size: 11px; }
 }
 
 /* ===== 푸터 ===== */
@@ -475,4 +410,3 @@ tbody tr:nth-child(even) td {
     text-align: left;
     padding: 0 24px;
   }
-}
