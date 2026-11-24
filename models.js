@@ -11,6 +11,27 @@ const categoryButtons = document.querySelectorAll("#categoryGroup .select-item")
 
 const popularOrder = ["revuelto", "temerario", "urus-se", "huracan-sterrato", "aventador", "countach"];
 
+function applyCategoryFromUrl() {
+  const query = location.search;
+  if (query === "?category=sports-car") {
+    selectedCategory = "SPORTS CAR";
+  } else if (query === "?category=suv") {
+    selectedCategory = "SUV";
+  } else if (query === "?category=limited") {
+    selectedCategory = "LIMITED";
+  }
+
+  for (let i = 0; i < categoryButtons.length; i++) {
+    if (categoryButtons[i].innerText === selectedCategory) {
+      categoryButtons[i].className = "select-item active";
+    } else {
+      categoryButtons[i].className = "select-item";
+    }
+  }
+}
+
+applyCategoryFromUrl();
+
 fetch("cars.json")
   .then(response => {
     return response.json();
