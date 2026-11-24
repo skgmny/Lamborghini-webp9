@@ -1,34 +1,3 @@
-.site-header {
-  background: #111111;
-  border-bottom: 1px solid #333333;
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #ffc000;
-}
-
-.header-nav {
-  display: flex;
-  gap: 28px;
-}
-
-.header-nav a:hover,
-.header-nav a.active {
-  color: #ffc000;
-}
-
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -146,11 +115,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 12px;
-  }
-
   .search-sort-group {
     width: 100%;
     flex-direction: column;
