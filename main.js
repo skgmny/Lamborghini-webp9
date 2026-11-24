@@ -167,17 +167,17 @@ const models = [
 
             {
                 name: "TEMERARIO SPYDER",
-                image: "car2.png"
+                image: "images/temerario/9_temerario1.png"
             },
 
             {
                 name: "TEMERARIO TETTONERO CAPSULE",
-                image: "car2.png"
+                image: "images/temerario/9_temerario2.png"
             },
 
             {
                 name: "TEMERARIO",
-                image: "car2.png"
+                image: "images/temerario/9_temerario3.png"
             }
 
         ]
@@ -193,17 +193,17 @@ const models = [
 
             {
                 name: "REVUELTO SV",
-                image: "car2.png"
+                image: "images/revuelto/9_revuelto2.png"
             },
 
             {
                 name: "REVUELTO MIURA 60° HOMAGE",
-                image: "car2.png"
+                image: "images/revuelto/9_revuelto3.png"
             },
 
             {
                 name: "REVUELTO",
-                image: "car2.png"
+                image: "images/revuelto/9_revuelto1.png"
             }
 
         ]
@@ -218,19 +218,14 @@ const models = [
         series: [
 
             {
+                name: "URUS SE PERFORMANTE",
+                image: "images/urus/9_urus1.png"
+            },
+
+            {
                 name: "URUS SE",
-                image: "car2.png"
+                image: "images/urus/9_urus2.png"
             },
-
-            {
-                name: "URUS SE AD PERSONAM",
-                image: "car2.png"
-            },
-
-            {
-                name: "URUS SE SPECIAL EDITION",
-                image: "car2.png"
-            }
 
         ]
 
@@ -580,6 +575,247 @@ if ("IntersectionObserver" in window) {
     curationCards.forEach((card) => {
 
         card.classList.add("show");
+
+    });
+
+}
+
+
+
+
+/* =====================================
+   05. MAIN PAGE REQUEST MODAL
+===================================== */
+
+const mainOpenRequest = document.getElementById("mainOpenRequest");
+
+const mainRequestModal = document.getElementById("mainRequestModal");
+
+const mainRequestClose = document.getElementById("mainRequestClose");
+
+const mainRequestForm = document.getElementById("mainRequestForm");
+
+const mainRequestCar = document.getElementById("mainRequestCar");
+
+const mainRequestMessage = document.getElementById("mainRequestMessage");
+
+
+// cars.json에 등록된 주요 차종 ID와 MY GARAGE 표시 이름
+const mainRequestCarInfo = [
+    { id: "temerario", name: "Temerario" },
+    { id: "revuelto", name: "Revuelto" },
+    { id: "urus-se", name: "Urus SE" }
+];
+
+
+// 문의 팝업 열기
+if (mainOpenRequest && mainRequestModal) {
+
+    mainOpenRequest.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        const selectedCar = mainRequestCarInfo[currentModel];
+
+        mainRequestCar.textContent = selectedCar.name;
+
+        mainRequestMessage.textContent = "";
+
+        mainRequestMessage.style.color = "#c43d3d";
+
+        mainRequestModal.classList.add("show");
+
+        mainRequestModal.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+    });
+
+}
+
+
+// 문의 팝업 닫기
+function closeMainRequestModal() {
+
+    if (!mainRequestModal) return;
+
+    mainRequestModal.classList.remove("show");
+
+    mainRequestModal.setAttribute("aria-hidden", "true");
+
+    document.body.style.overflow = "";
+
+}
+
+
+if (mainRequestClose) {
+
+    mainRequestClose.addEventListener("click", closeMainRequestModal);
+
+}
+
+
+if (mainRequestModal) {
+
+    mainRequestModal.addEventListener("click", (event) => {
+
+        if (event.target === mainRequestModal) {
+
+            closeMainRequestModal();
+
+        }
+
+    });
+
+}
+
+
+document.addEventListener("keydown", (event) => {
+
+    if (
+        event.key === "Escape" &&
+        mainRequestModal &&
+        mainRequestModal.classList.contains("show")
+    ) {
+
+        closeMainRequestModal();
+
+    }
+
+});
+
+
+// 문의 내역 저장: detail.js와 동일한 requests 키 및 데이터 구조 사용
+if (mainRequestForm) {
+
+    mainRequestForm.addEventListener("submit", (event) => {
+
+        event.preventDefault();
+
+        const name = document.getElementById("mainReqName").value.trim();
+
+        const phone = document.getElementById("mainReqPhone").value.trim();
+
+        const date = document.getElementById("mainReqDate").value;
+
+        const memo = document.getElementById("mainReqMemo").value.trim();
+
+        const agree = document.getElementById("mainReqAgree").checked;
+
+        const selectedType = mainRequestForm.querySelector(
+            'input[name="mainRequestType"]:checked'
+        );
+
+        const type = selectedType ? selectedType.value : "시승";
+
+
+        mainRequestMessage.style.color = "#c43d3d";
+
+
+        if (name === "") {
+
+            mainRequestMessage.textContent = "이름을 입력해 주세요.";
+
+            return;
+
+        }
+
+
+        if (phone === "") {
+
+            mainRequestMessage.textContent = "연락처를 입력해 주세요.";
+
+            return;
+
+        }
+
+
+        if (date === "") {
+
+            mainRequestMessage.textContent = "희망 날짜를 선택해 주세요.";
+
+            return;
+
+        }
+
+
+        if (!agree) {
+
+            mainRequestMessage.textContent = "개인정보 수집 및 이용에 동의해 주세요.";
+
+            return;
+
+        }
+
+
+        const selectedCar = mainRequestCarInfo[currentModel];
+
+        const now = new Date();
+
+        const createdAt =
+            now.getFullYear() + "-" +
+            (now.getMonth() + 1) + "-" +
+            now.getDate();
+
+
+        let requests = [];
+
+        const savedRequests = localStorage.getItem("requests");
+
+
+        if (savedRequests !== null) {
+
+            try {
+
+                requests = JSON.parse(savedRequests);
+
+                if (!Array.isArray(requests)) requests = [];
+
+            } catch (error) {
+
+                console.error("문의 내역을 읽지 못했습니다:", error);
+
+                mainRequestMessage.textContent =
+                    "기존 문의 내역을 읽지 못해 저장할 수 없습니다.";
+
+                return;
+
+            }
+
+        }
+
+
+        requests.push({
+
+            carId: selectedCar.id,
+
+            carName: selectedCar.name,
+
+            type: type,
+
+            name: name,
+
+            phone: phone,
+
+            date: date,
+
+            memo: memo,
+
+            createdAt: createdAt
+
+        });
+
+
+        localStorage.setItem("requests", JSON.stringify(requests));
+
+
+        mainRequestMessage.style.color = "#987000";
+
+        mainRequestMessage.textContent =
+            "신청이 완료되었습니다. MY GARAGE에서 확인할 수 있어요.";
+
+
+        mainRequestForm.reset();
 
     });
 
