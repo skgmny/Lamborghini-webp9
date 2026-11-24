@@ -22,15 +22,17 @@
     <!-- =========================
          HEADER
     ========================== -->
-    <header class="main-header">
+    <header class="header">
 
-        <a href="main.html" class="header-logo">LAMBORGUINEA</a>
+        <a class="brand" href="main.html">
+            <img src="images/guinea.png" alt="Lambor Guinea 홈">
+        </a>
 
         <nav class="header-nav">
             <a href="main.html">HOME</a>
+            <a href="about.html">ABOUT</a>
             <a href="models.html">MODELS</a>
             <a href="customize.html">CUSTOMIZE</a>
-            <a href="request.html">CONTACT</a>
         </nav>
 
         <a href="favorites.html" class="header-favorite">
@@ -49,25 +51,36 @@
 
             <div class="intro-sticky">
 
+                <!-- 메인 타이틀 -->
                 <h1 class="intro-title">
                     <span class="title-left">LAMBOR</span>
                     <span class="title-right">GUINEA</span>
                 </h1>
 
+                <!-- 인트로 자동차 이미지 -->
                 <div class="intro-car-wrap">
+
                     <img src="images/9_intro_car.png"
                          alt="노란색 슈퍼카"
                          class="intro-car">
+
                 </div>
 
+
+                <!-- 좌측 설명 -->
                 <div class="intro-copy intro-copy-left">
+
                     <h2>
                         DRIVE<br>
                         YOUR GUINEA.
                     </h2>
+
                 </div>
 
+
+                <!-- 우측 설명 -->
                 <div class="intro-copy intro-copy-right">
+
                     <span class="copy-number">INTRODUCTION</span>
 
                     <p>
@@ -75,18 +88,26 @@
                         그리고 타협하지 않는 퍼포먼스.<br>
                         당신의 새로운 드라이빙이 시작됩니다.
                     </p>
+
                 </div>
 
+
+                <!-- 스크롤 안내 -->
                 <div class="scroll-guide">
+
                     <span>SCROLL TO EXPLORE</span>
                     <span class="scroll-arrow">↓</span>
+
                 </div>
 
+
+                <!-- 하단 장식 라인 -->
                 <div class="intro-line"></div>
 
             </div>
 
         </section>
+
 
 
         <!-- =========================
@@ -96,7 +117,9 @@
 
             <div class="models-container">
 
+                <!-- 섹션 제목 -->
                 <div class="models-heading">
+
                     <div>
                         <h2>FEATURED MODELS</h2>
                     </div>
@@ -104,12 +127,14 @@
                     <a href="models.html" class="models-more">
                         모든 모델 알아보기 <span>→</span>
                     </a>
+
                 </div>
 
 
                 <!-- 모델 소개 영역 -->
                 <div class="model-display">
 
+                    <!-- 이전 버튼 -->
                     <button type="button"
                             class="model-arrow prev-arrow"
                             id="prevModel"
@@ -117,27 +142,37 @@
                         &#8249;
                     </button>
 
+
+                    <!-- 중앙 차량 -->
                     <div class="model-main">
 
                         <div class="model-logo">
+
                             <span class="model-logo-text" id="modelName">
                                 TEMERARIO
                             </span>
+
                         </div>
 
                         <h3 class="model-slogan" id="modelSlogan">
                             UNFILTERED PERFORMANCE
                         </h3>
 
+
+                        <!-- 차량 이미지 -->
                         <div class="model-image-wrap">
+
                             <img src="images/temerario/9_temerario1.png"
                                  alt="대표 차량"
                                  class="model-image"
                                  id="modelImage">
+
                         </div>
 
                     </div>
 
+
+                    <!-- 다음 버튼 -->
                     <button type="button"
                             class="model-arrow next-arrow"
                             id="nextModel"
@@ -151,15 +186,18 @@
                 <!-- 모델 선택 탭 -->
                 <div class="model-tabs" id="modelTabs">
 
-                    <button class="model-tab active" data-index="0">
+                    <button class="model-tab active"
+                            data-index="0">
                         TEMERARIO
                     </button>
 
-                    <button class="model-tab" data-index="1">
+                    <button class="model-tab"
+                            data-index="1">
                         REVUELTO
                     </button>
 
-                    <button class="model-tab" data-index="2">
+                    <button class="model-tab"
+                            data-index="2">
                         URUS SE
                     </button>
 
@@ -169,12 +207,12 @@
                 <!-- 모델 하단 버튼 -->
                 <div class="model-actions">
 
-                    <a href="models.html"
+                    <a href="detail.html?id=temerario"
                        class="model-btn model-btn-yellow">
                         모델 알아보기 <span>→</span>
                     </a>
 
-                    <a href="customize.html"
+                    <a href="configure.html?id=temerario"
                        class="model-btn model-btn-outline">
                         내 차량 만들기 <span>◇</span>
                     </a>
@@ -192,6 +230,7 @@
         </section>
 
 
+
         <!-- =========================
              03. VEHICLE CURATION
         ========================== -->
@@ -200,8 +239,11 @@
             <div class="curation-container">
 
                 <div class="curation-heading">
+
                     <h2>CHOOSE YOUR DRIVE.</h2>
+
                 </div>
+
 
                 <div class="curation-grid">
 
@@ -209,24 +251,23 @@
                     <article class="curation-card">
 
                         <div class="curation-image">
+
                             <img src="images/temerario/9_temerario3.png"
                                  alt="슈퍼 스포츠카">
+
                         </div>
 
                         <div class="curation-info">
+
                             <span>01</span>
 
                             <h3>SPORTS CAR</h3>
-
-                            <p>
-                                한계를 넘어서는 압도적인 성능을
-                                경험하고 싶다면.
-                            </p>
 
                             <a href="models.html?category=sports-car"
                                class="curation-link">
                                 EXPLORE MORE →
                             </a>
+
                         </div>
 
                     </article>
@@ -236,24 +277,23 @@
                     <article class="curation-card">
 
                         <div class="curation-image">
+
                             <img src="images/urus/9_urus2.png"
                                  alt="럭셔리 SUV">
+
                         </div>
 
                         <div class="curation-info">
+
                             <span>02</span>
 
                             <h3>SUV</h3>
-
-                            <p>
-                                일상과 특별한 순간을 모두 만족시키는
-                                드라이빙.
-                            </p>
 
                             <a href="models.html?category=suv"
                                class="curation-link">
                                 EXPLORE MORE →
                             </a>
+
                         </div>
 
                     </article>
@@ -263,24 +303,24 @@
                     <article class="curation-card">
 
                         <div class="curation-image">
-                            <img src="images/temerario/9_temerario1.png"
+
+                            <img src="images/limited/9_limited.png"
                                  alt="하이브리드 슈퍼카">
+
                         </div>
 
                         <div class="curation-info">
+
                             <span>03</span>
 
                             <h3>LIMITED</h3>
 
-                            <p>
-                                새로운 기술과 미래지향적인
-                                퍼포먼스를 경험하세요.
-                            </p>
-
+                            
                             <a href="models.html?category=limited"
                                class="curation-link">
                                 EXPLORE MORE →
                             </a>
+
                         </div>
 
                     </article>
@@ -290,6 +330,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =========================
@@ -300,18 +341,21 @@
             <div class="service-container">
 
                 <div class="service-heading">
+
                     <h2>YOUR NEXT MOVE.</h2>
+
                 </div>
+
 
                 <div class="service-grid">
 
-                    <a href="customize.html" class="service-card">
+                    <a href="models.html" class="service-card">
 
                         <span class="service-number">01</span>
 
                         <div>
-                            <h3>CREATE YOUR CAR</h3>
-                            <p>나만의 차량을 직접 구성해 보세요.</p>
+                            <h3>EXPLORE MODELS</h3>
+                            <p>다양한 차량을 만나보세요.</p>
                         </div>
 
                         <span class="service-arrow">↗</span>
@@ -319,13 +363,13 @@
                     </a>
 
 
-                    <a href="request.html" class="service-card">
+                    <a href="customize.html" class="service-card">
 
                         <span class="service-number">02</span>
 
                         <div>
-                            <h3>CONTACT US</h3>
-                            <p>구매 및 시승 상담을 신청하세요.</p>
+                            <h3>CREATE YOUR CAR</h3>
+                            <p>나만의 드림카를 완성하세요.</p>
                         </div>
 
                         <span class="service-arrow">↗</span>
@@ -333,13 +377,13 @@
                     </a>
 
 
-                    <a href="models.html" class="service-card">
+                    <a href="about.html" class="service-card">
 
                         <span class="service-number">03</span>
 
                         <div>
-                            <h3>EXPLORE MODELS</h3>
-                            <p>다양한 차량을 만나보세요.</p>
+                            <h3>ABOUT US</h3>
+                            <p>LAMBORGUINEA만의 이야기를 만나보세요.</p>
                         </div>
 
                         <span class="service-arrow">↗</span>
@@ -351,6 +395,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =========================
@@ -384,6 +429,7 @@
                 <form id="mainRequestForm">
 
                     <fieldset class="main-request-type">
+
                         <legend>신청 종류</legend>
 
                         <label>
@@ -400,48 +446,64 @@
                                    value="구매 상담">
                             구매 상담
                         </label>
+
                     </fieldset>
 
 
                     <fieldset class="main-request-fields">
+
                         <legend>신청자 정보</legend>
 
                         <label for="mainReqName">이름</label>
+
                         <input type="text"
                                id="mainReqName"
                                name="name"
                                placeholder="홍길동">
 
+
                         <label for="mainReqPhone">연락처</label>
+
                         <input type="tel"
                                id="mainReqPhone"
                                name="phone"
                                placeholder="010-0000-0000">
 
+
                         <label for="mainReqDate">희망 날짜</label>
+
                         <input type="date"
                                id="mainReqDate"
                                name="date">
 
+
                         <label for="mainReqMemo">문의 내용 (선택)</label>
+
                         <textarea id="mainReqMemo"
                                   name="memo"
                                   rows="4"></textarea>
+
                     </fieldset>
 
 
                     <label class="main-request-agree">
+
                         <input type="checkbox"
                                id="mainReqAgree"
                                name="agree">
+
                         개인정보 수집 및 이용에 동의합니다.
+
                     </label>
+
 
                     <p class="main-request-message"
                        id="mainRequestMessage"
                        aria-live="polite"></p>
 
-                    <button type="submit" class="main-request-submit">
+
+                    <button type="submit"
+                            class="main-request-submit">
                         신청하기
                     </button>
 
@@ -454,6 +516,7 @@
     </main>
 
 
+
     <!-- =========================
          FOOTER
     ========================== -->
@@ -462,20 +525,25 @@
         <div class="footer-inner">
 
             <div>
+
                 <h2 class="footer-slogan">
                     We're<br>
                     driving<br>
                     the <span>GUINEA.</span>
                 </h2>
+
             </div>
 
+
             <nav class="footer-menu" aria-label="푸터 메뉴">
+
                 <a href="main.html">Home</a>
-                <a href="models.html">Models</a>
-                <a href="customize.html">Customize</a>
-                <a href="brand.html">Brand</a>
-                <a href="contact.html">Contact</a>
+                <a href="about.html">ABOUT</a>
+                <a href="models.html">MODELS</a>
+                <a href="customize.html">CUSTOMIZE</a>
+                <a href="favorites.html">MY GARAGE +</a>
             </nav>
+
 
             <dl class="footer-contact">
 
@@ -486,17 +554,17 @@
 
                 <div>
                     <dt>시승 문의</dt>
-                    <dd>drive@showroom.co.kr</dd>
+                    <dd>drive@lamborguinea.co.kr</dd>
                 </div>
 
                 <div>
                     <dt>제휴 문의</dt>
-                    <dd>info@showroom.co.kr</dd>
+                    <dd>info@lamborguinea.co.kr</dd>
                 </div>
 
                 <div>
                     <dt>주소</dt>
-                    <dd>서울 서초구 서초동 1층</dd>
+                    <dd>서울 용산구 청파동 1층</dd>
                 </div>
 
             </dl>

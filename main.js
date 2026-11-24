@@ -1,3 +1,4 @@
+
 /* =====================================
    SHOWROOM MAIN PAGE JAVASCRIPT
 ===================================== */
@@ -166,16 +167,19 @@ const models = [
         series: [
 
             {
+                id: "temerario-spyder",
                 name: "TEMERARIO SPYDER",
                 image: "images/temerario/9_temerario1.png"
             },
 
             {
+                id: "temerario",
                 name: "TEMERARIO TETTONERO CAPSULE",
                 image: "images/temerario/9_temerario2.png"
             },
 
             {
+                id: "temerario",
                 name: "TEMERARIO",
                 image: "images/temerario/9_temerario3.png"
             }
@@ -192,16 +196,19 @@ const models = [
         series: [
 
             {
+                id: "revuelto-sv",
                 name: "REVUELTO SV",
                 image: "images/revuelto/9_revuelto2.png"
             },
 
             {
+                id: "revuelto",
                 name: "REVUELTO MIURA 60° HOMAGE",
                 image: "images/revuelto/9_revuelto3.png"
             },
 
             {
+                id: "revuelto",
                 name: "REVUELTO",
                 image: "images/revuelto/9_revuelto1.png"
             }
@@ -218,11 +225,13 @@ const models = [
         series: [
 
             {
+                id: "urus-se-performante",
                 name: "URUS SE PERFORMANTE",
                 image: "images/urus/9_urus1.png"
             },
 
             {
+                id: "urus-se",
                 name: "URUS SE",
                 image: "images/urus/9_urus2.png"
             },
@@ -253,6 +262,43 @@ const modelTabs = document.querySelectorAll(".model-tab");
 const prevButton = document.getElementById("prevModel");
 
 const nextButton = document.getElementById("nextModel");
+
+// 모델 상세 페이지 및 커스터마이징 버튼
+const modelDetailButton = document.querySelector(".model-btn-yellow");
+
+const modelConfigureButton = document.querySelector(".model-btn-outline");
+
+
+// 현재 선택된 세부 차량 정보 가져오기
+function getSelectedSeries() {
+
+    return models[currentModel].series[currentSeries];
+
+}
+
+
+// 상세 페이지 및 커스터마이징 링크 변경
+function updateModelActionLinks() {
+
+    const selectedSeries = getSelectedSeries();
+
+    if (!selectedSeries) return;
+
+    const carId = selectedSeries.id;
+
+    if (modelDetailButton) {
+
+        modelDetailButton.href = `detail.html?id=${carId}`;
+
+    }
+
+    if (modelConfigureButton) {
+
+        modelConfigureButton.href = `configure.html?id=${carId}`;
+
+    }
+
+}
 
 
 
@@ -327,6 +373,9 @@ function changeSeries(index) {
 
     // 선택된 시리즈 버튼 표시
     updateSeriesTabs();
+
+    // 상세 페이지 및 커스터마이징 링크 변경
+    updateModelActionLinks();
 
 
     // 마지막으로 선택한 시리즈 저장
@@ -600,12 +649,20 @@ const mainRequestCar = document.getElementById("mainRequestCar");
 const mainRequestMessage = document.getElementById("mainRequestMessage");
 
 
-// cars.json에 등록된 주요 차종 ID와 MY GARAGE 표시 이름
-const mainRequestCarInfo = [
-    { id: "temerario", name: "Temerario" },
-    { id: "revuelto", name: "Revuelto" },
-    { id: "urus-se", name: "Urus SE" }
-];
+// 현재 선택된 세부 차량 정보 가져오기
+function getMainRequestCarInfo() {
+
+    const selectedSeries = getSelectedSeries();
+
+    return {
+
+        id: selectedSeries.id,
+
+        name: selectedSeries.name
+
+    };
+
+}
 
 
 // 문의 팝업 열기
@@ -615,7 +672,7 @@ if (mainOpenRequest && mainRequestModal) {
 
         event.preventDefault();
 
-        const selectedCar = mainRequestCarInfo[currentModel];
+        const selectedCar = getMainRequestCarInfo();
 
         mainRequestCar.textContent = selectedCar.name;
 
@@ -748,7 +805,8 @@ if (mainRequestForm) {
         }
 
 
-        const selectedCar = mainRequestCarInfo[currentModel];
+        // 현재 선택된 세부 차량 정보 사용
+        const selectedCar = getMainRequestCarInfo();
 
         const now = new Date();
 
