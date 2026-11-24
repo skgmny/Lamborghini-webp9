@@ -2,31 +2,49 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="팀원 이름들">
-  <title>Models | Lamborghini</title>
+  <title>차량 상세 | Lamborguinea</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="common.css">
   <link rel="stylesheet" href="detail.css">
 </head>
 <body>
 
-  <header class="site-header"></header>
+<header class="header">
 
+        <a class="brand" href="main.html">
+        <img src="images/guinea.png" alt="Lambor Guinea 홈">
+        </a>
+
+        <nav class="header-nav">
+            <a href="main.html">HOME</a>
+            <a href="about.html">ABOUT</a>
+            <a href="models.html">MODELS</a>
+            <a href="customize.html">CUSTOMIZE</a>
+        </nav>
+
+        <a href="favorites.html" class="header-favorite">
+            MY GARAGE +
+        </a>
+
+    </header>
   <main>
 
     <section class="detail-hero">
       <img class="detail-hero-img" src="images/temerario/9_hero.png" alt="Temerario 모습">
+      <button type="button" class="detail-favorite" title="관심 등록">
+        <img src="images/9_bookmark.png" alt="관심 등록">
+      </button>
       <div class="detail-hero-text container">
         <div class="detail-hero-info">
           <p class="detail-slogan title-en"></p>
           <h1 class="detail-name"></h1>
-          <p class="detail-price"></p>
           <div class="detail-trims"></div>
         </div>
         <div class="detail-hero-buttons">
           <a href="configure.html" class="btn">내 차량 만들기</a>
           <button type="button" class="btn-outline detail-open-request">문의하기</button>
-          <button type="button" class="btn-outline detail-favorite">관심 등록</button>
         </div>
       </div>
     </section>

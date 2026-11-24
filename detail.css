@@ -27,19 +27,29 @@
   font-size: 4rem;
 }
 
-.detail-price {
-  font-size: 1.2rem;
-  color: var(--text-sub);
-}
-
 .detail-hero-buttons {
   display: flex;
   gap: 12px;
 }
 
-.detail-favorite.saved {
-  border-color: var(--point);
-  color: var(--point);
+.detail-favorite {
+  position: absolute;
+  top: 110px;
+  right: 6%;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  transition: transform var(--speed);
+}
+
+.detail-favorite:hover {
+  transform: scale(1.1);
+}
+
+.detail-favorite img {
+  width: 100%;
 }
 
 .detail-trims {
@@ -227,7 +237,7 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.8);
-  z-index: 100;
+  z-index: 200;
 }
 
 .detail-modal-box {
