@@ -1,14 +1,21 @@
 let allCars = [];
 let selectedCategory = "전체";
+let currentPage = 1;
+const perPage = 6;
 
 const carListEl = document.getElementById("carList");
 const carCountEl = document.getElementById("carCount");
+const paginationEl = document.getElementById("pagination");
 const searchInput = document.getElementById("searchInput");
 const sortSelect = document.getElementById("sortSelect");
 const categoryButtons = document.querySelectorAll("#categoryGroup .select-item");
 
+const popularOrder = ["revuelto", "temerario", "urus-se", "huracan-sterrato", "aventador", "countach"];
+
 fetch("cars.json")
-  .then(response => response.json())
+  .then(response => {
+    return response.json();
+  })
   .then(data => {
     allCars = data;
     renderCars();
@@ -24,15 +31,18 @@ for (let i = 0; i < categoryButtons.length; i++) {
     }
     this.className = "select-item active";
     selectedCategory = this.innerText;
+    currentPage = 1;
     renderCars();
   });
 }
 
 searchInput.addEventListener("keyup", () => {
+  currentPage = 1;
   renderCars();
 });
 
 sortSelect.addEventListener("change", () => {
+  currentPage = 1;
   renderCars();
 });
 
@@ -47,17 +57,25 @@ function goDetail(carId) {
 
 function toggleWish(carId) {
   let wishList = getWishList();
-  const idx = wishList.indexOf(carId);
+  let newWishList = [];
+  let found = false;
 
-  if (idx === -1) {
-    wishList.push(carId);
-    alert("관심차량에 추가되었습니다.");
-  } else {
-    wishList.splice(idx, 1);
-    alert("관심차량에서 해제되었습니다.");
+  for (let i = 0; i < wishList.length; i++) {
+    if (wishList[i] === carId) {
+      found = true;
+    } else {
+      newWishList.push(wishList[i]);
+    }
   }
 
-  localStorage.setItem("favorites", JSON.stringify(wishList));
+  if (found) {
+    alert("관심차량에서 해제되었습니다.");
+  } else {
+    newWishList.push(carId);
+    alert("관심차량에 추가되었습니다.");
+  }
+
+  localStorage.setItem("favorites", JSON.stringify(newWishList));
   renderCars();
 }
 
@@ -70,46 +88,100 @@ function getZeroToHundred(car) {
   return 999;
 }
 
+function getPopularRank(carId) {
+  for (let i = 0; i < popularOrder.length; i++) {
+    if (popularOrder[i] === carId) {
+      return i;
+    }
+  }
+  return 999;
+}
+
+function changePage(pageNum) {
+  currentPage = pageNum;
+  renderCars();
+}
+
+function hasKeyword(text, keyword) {
+  if (keyword === "") {
+    return true;
+  }
+  const smallText = text.toLowerCase();
+  const smallKey = keyword.toLowerCase();
+
+  for (let i = 0; i <= smallText.length - smallKey.length; i++) {
+    let same = true;
+    for (let j = 0; j < smallKey.length; j++) {
+      if (smallText[i + j] !== smallKey[j]) {
+        same = false;
+        break;
+      }
+    }
+    if (same) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function renderCars() {
-  const keyword = searchInput.value.toLowerCase();
+  const keyword = searchInput.value;
   const sortType = sortSelect.value;
   const wishList = getWishList();
 
   let filtered = allCars.filter(car => {
     const matchCategory = (selectedCategory === "전체") || (car.category === selectedCategory);
-    const matchKeyword = car.name.toLowerCase().indexOf(keyword) !== -1 ||
-                         car.slogan.toLowerCase().indexOf(keyword) !== -1;
+    const matchKeyword = hasKeyword(car.name, keyword) || hasKeyword(car.slogan, keyword);
     return matchCategory && matchKeyword;
   });
 
-  if (sortType === "priceAsc") {
-    filtered.sort((a, b) => a.price - b.price);
-  } else if (sortType === "priceDesc") {
-    filtered.sort((a, b) => b.price - a.price);
+  if (sortType === "popular") {
+    for (let i = 0; i < filtered.length - 1; i++) {
+      for (let j = i + 1; j < filtered.length; j++) {
+        if (getPopularRank(filtered[i].id) > getPopularRank(filtered[j].id)) {
+          let temp = filtered[i];
+          filtered[i] = filtered[j];
+          filtered[j] = temp;
+        }
+      }
+    }
   } else if (sortType === "speedAsc") {
-    filtered.sort((a, b) => getZeroToHundred(a) - getZeroToHundred(b));
+    for (let i = 0; i < filtered.length - 1; i++) {
+      for (let j = i + 1; j < filtered.length; j++) {
+        if (getZeroToHundred(filtered[i]) > getZeroToHundred(filtered[j])) {
+          let temp = filtered[i];
+          filtered[i] = filtered[j];
+          filtered[j] = temp;
+        }
+      }
+    }
   }
 
   carCountEl.innerText = filtered.length;
 
   if (filtered.length === 0) {
     carListEl.innerHTML = "<p>조건에 맞는 차량이 없습니다.</p>";
+    paginationEl.innerHTML = "";
     return;
   }
 
-  carListEl.innerHTML = filtered.map(car => {
-    const isWished = wishList.indexOf(car.id) !== -1;
-    const priceText = car.price === 0 ? "가격 문의" : (car.price / 100000000) + "억 원부터";
+  const totalPages = Math.ceil(filtered.length / perPage);
+  if (currentPage > totalPages) {
+    currentPage = 1;
+  }
+  const startIdx = (currentPage - 1) * perPage;
+  const pageCars = filtered.slice(startIdx, startIdx + perPage);
 
-    let statsHtml = "";
-    for (let i = 0; i < car.stats.length; i++) {
-      statsHtml += `
-        <div class="car-stat-item">
-          <div class="car-stat-value">${car.stats[i].value} <small>${car.stats[i].unit}</small></div>
-          <div class="car-stat-label">${car.stats[i].label}</div>
-        </div>
-      `;
+  carListEl.innerHTML = pageCars.map(car => {
+    let isWished = false;
+    for (let w = 0; w < wishList.length; w++) {
+      if (wishList[w] === car.id) {
+        isWished = true;
+      }
     }
+
+    const wishClass = isWished ? "wished" : "";
+    const wishText = isWished ? "♥ 찜완료" : "♡ 관심차량";
 
     return `
       <article class="card car-card">
@@ -118,16 +190,23 @@ function renderCars() {
           <span class="car-category">${car.category}</span>
           <h3>${car.name}</h3>
           <p class="car-slogan">${car.slogan}</p>
-          <div class="car-stats">${statsHtml}</div>
-          <p class="car-price">${priceText}</p>
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">상세보기</button>
-            <button type="button" class="btn-outline ${isWished ? "wished" : ""}" onclick="toggleWish('${car.id}')">
-              ${isWished ? "♥ 찜완료" : "♡ 관심차량"}
-            </button>
+            <button type="button" class="btn-outline ${wishClass}" onclick="toggleWish('${car.id}')">${wishText}</button>
           </div>
         </div>
       </article>
     `;
   }).join("");
+
+  if (totalPages > 1) {
+    let pageHtml = "";
+    for (let p = 1; p <= totalPages; p++) {
+      const activeClass = (p === currentPage) ? "active" : "";
+      pageHtml += `<button type="button" class="page-btn ${activeClass}" onclick="changePage(${p})">${p}</button>`;
+    }
+    paginationEl.innerHTML = pageHtml;
+  } else {
+    paginationEl.innerHTML = "";
+  }
 }

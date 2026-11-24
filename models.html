@@ -15,7 +15,7 @@
     <div class="container header-inner">
       <a href="main.html" class="logo title-en">SHOWROOM</a>
       <nav class="header-nav">
-        <a href="main.html">About</a>
+        <a href="about.html">About</a>
         <a href="models.html" class="active">Models</a>
         <a href="compare.html">Compare</a>
         <a href="favorites.html">Favorites</a>
@@ -28,7 +28,7 @@
     <section class="section">
       <div class="container">
         <h1>MODELS</h1>
-        <p>원하는 시리즈와 성능 조건을 선택하여 Showroom의 모든 라인업을 탐색해보세요.</p>
+        <p>원하는 시리즈와 성능 조건을 선택하여 LAMBORGUINEA의 모든 라인업을 탐색해보세요.</p>
 
         <div class="filter-bar">
           <div class="category-group" id="categoryGroup">
@@ -42,8 +42,7 @@
             <input type="search" id="searchInput" placeholder="모델명 검색...">
             <select id="sortSelect">
               <option value="default">기본순</option>
-              <option value="priceAsc">가격 낮은순</option>
-              <option value="priceDesc">가격 높은순</option>
+              <option value="popular">인기순</option>
               <option value="speedAsc">0-100km/h 빠른순</option>
             </select>
           </div>
@@ -52,6 +51,8 @@
         <p class="result-info">총 <strong id="carCount">0</strong>대의 모델</p>
 
         <div id="carList" class="car-grid"></div>
+
+        <div id="pagination" class="pagination"></div>
       </div>
     </section>
   </main>
@@ -67,7 +68,7 @@
       </div>
 
       <nav class="footer-menu" aria-label="푸터 메뉴">
-        <a href="main.html">About</a>
+        <a href="about.html">About</a>
         <a href="models.html">Models</a>
         <a href="compare.html">Compare</a>
         <a href="favorites.html">Favorites</a>

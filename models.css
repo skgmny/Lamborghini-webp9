@@ -1,6 +1,6 @@
 .site-header {
-  background: var(--bg-sub);
-  border-bottom: 1px solid var(--line);
+  background: #111111;
+  border-bottom: 1px solid #333333;
   padding: 20px 0;
   position: sticky;
   top: 0;
@@ -16,7 +16,7 @@
 .logo {
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--point);
+  color: #ffc000;
 }
 
 .header-nav {
@@ -26,7 +26,7 @@
 
 .header-nav a:hover,
 .header-nav a.active {
-  color: var(--point);
+  color: #ffc000;
 }
 
 .filter-bar {
@@ -37,7 +37,7 @@
   gap: 16px;
   margin-top: 32px;
   padding-bottom: 24px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid #333333;
 }
 
 .category-group {
@@ -53,7 +53,7 @@
 
 .result-info {
   margin: 24px 0;
-  color: var(--text-sub);
+  color: #9a9a9a;
 }
 
 .car-grid {
@@ -63,7 +63,7 @@
 }
 
 .car-card {
-  width: calc(33.333% - 16px);
+  width: 31%;
   display: flex;
   flex-direction: column;
 }
@@ -78,50 +78,20 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex-grow: 1;
 }
 
 .car-category {
   font-size: 0.8rem;
-  color: var(--point);
+  color: #ffc000;
   font-weight: 700;
   margin-bottom: 6px;
 }
 
 .car-slogan {
   font-size: 0.9rem;
-  color: var(--text-sub);
-  margin-bottom: 16px;
-}
-
-.car-stats {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 16px;
-}
-
-.car-stat-item {
-  text-align: center;
-}
-
-.car-stat-value {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.3rem;
-  color: var(--text);
-}
-
-.car-stat-label {
-  font-size: 0.75rem;
-  color: var(--text-sub);
-}
-
-.car-price {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 18px;
+  color: #9a9a9a;
+  margin-bottom: 20px;
 }
 
 .car-actions {
@@ -132,24 +102,50 @@
 
 .car-actions .btn,
 .car-actions .btn-outline {
-  flex: 1;
+  flex-grow: 1;
   justify-content: center;
   padding: 12px 14px;
   font-size: 0.9rem;
 }
 
 .btn-outline.wished {
-  border-color: var(--point);
-  color: var(--point);
+  border-color: #ffc000;
+  color: #ffc000;
 }
 
-@media (max-width: 900px) {
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 48px;
+}
+
+.page-btn {
+  padding: 10px 16px;
+  border: 1px solid #333333;
+  background-color: transparent;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.page-btn:hover {
+  border-color: #ffc000;
+  color: #ffc000;
+}
+
+.page-btn.active {
+  background-color: #ffc000;
+  color: #000000;
+  border-color: #ffc000;
+}
+
+@media screen and (max-width: 900px) {
   .car-card {
-    width: calc(50% - 12px);
+    width: 48%;
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .header-inner {
     flex-direction: column;
     gap: 12px;
