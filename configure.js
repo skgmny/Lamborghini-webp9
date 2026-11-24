@@ -4,10 +4,11 @@ const caption = document.querySelector("#config-caption");
 const statusMessage = document.querySelector("#config-status");
 const viewButtons = document.querySelectorAll("[data-view]");
 const resetButton = form.querySelector("[type=reset]");
+const selectedCarId = localStorage.getItem("selectedCar");
 
 let previewRequest = 0;
 
-function loadPreview(path, crop = [0, 0, 1, 1]) {
+function loadPreview(path, crop = [0, 0, 1, 1], paint) {
   const photo = new Image();
   photo.src = path;
 
@@ -33,16 +34,30 @@ function loadPreview(path, crop = [0, 0, 1, 1]) {
       canvas.height
     );
 
-    return {
-      canvas,
-      context,
-      original: context.getImageData(0, 0, canvas.width, canvas.height)
-    };
+    const original = context.getImageData(0, 0, canvas.width, canvas.height);
+    let mask;
+    if (paint) {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      // Outlines use coordinates from a 350px-wide copy of each photo.
+      const scale = canvas.width / 350;
+      context.save();
+      context.scale(scale, scale);
+      for (const [[left, top], ...points] of paint.paths) {
+        context.beginPath();
+        context.moveTo(left, top);
+        for (const [x, y] of points) context.lineTo(x, y);
+        context.closePath();
+        context.fill();
+      }
+      context.restore();
+      mask = context.getImageData(0, 0, canvas.width, canvas.height).data;
+    }
+    return { canvas, context, original, mask };
   });
 }
 
-function recolor(preview, view, color, spyderExterior) {
-  const { canvas, context, original } = preview;
+function recolor(preview, view, color, spyderExterior, paint) {
+  const { canvas, context, original, mask } = preview;
   const result = context.createImageData(canvas.width, canvas.height);
   const pixels = original.data;
   const output = result.data;
@@ -55,13 +70,19 @@ function recolor(preview, view, color, spyderExterior) {
     const green = pixels[i + 1];
     const blue = pixels[i + 2];
 
-    const chroma = view === "exterior"
+    let chroma = view === "exterior"
       ? Math.min((blue - green - 4) / 10, (green - red - 3) / 8)
       : Math.min((red - green - 10) / 18, (green - blue - 7) / 13);
 
-    const coverage = Math.max(0, Math.min(1, chroma));
+    if (paint) {
+      chroma = 1;
+      if (paint.channel === "red") chroma = (red - Math.max(green, blue) - 22) / 28;
+      if (paint.channel === "yellow") chroma = (Math.min(red, green) - blue - 20) / 32;
+    }
+
+    const coverage = Math.max(0, Math.min(1, chroma)) * (mask ? mask[i + 3] / 255 : 1);
     const light = (red * .2126 + green * .7152 + blue * .0722)
-      / (spyderExterior ? 152 : view === "exterior" ? 67 : 97);
+      / (paint?.light ?? (spyderExterior ? 152 : view === "exterior" ? 67 : 97));
 
     output[i] = red + (target[0] * light - red) * coverage;
     output[i + 1] = green + (target[1] * light - green) * coverage;
@@ -79,20 +100,41 @@ async function initialize() {
     if (!response.ok) throw new Error("차량 데이터 요청 실패");
 
     const cars = await response.json();
-    const modelId = new URLSearchParams(location.search).get("id") || "temerario";
+    const savedCar = cars.find(item =>
+      item.id === selectedCarId && (item.customization || item.exteriorPaint)
+    );
+    const modelId = new URLSearchParams(location.search).get("id") || savedCar?.id || "temerario";
     const car = cars.find(item => item.id === modelId);
-    const options = car?.customization;
+    if (!car) throw new Error("선택한 차량이 없음");
+
+    const paint = car.exteriorPaint;
+    const exteriorColors = cars.find(item => item.id === "temerario").customization.exterior;
+    const options = car.customization ?? (paint && {
+      exterior: [{ id: "original", name: "원본", color: "#999999" }, ...exteriorColors]
+    });
     const views = { exterior: "외장", interior: "실내" };
-
-    if (!options?.exterior?.length || !options?.interior?.length) {
-      throw new Error("선택한 차량의 색상 옵션 없음");
-    }
-
-    const photos = car.previewImages;
+    const photos = car.previewImages ?? { exterior: car.heroImage };
     document.title = "내 차량 만들기 | " + car.name;
     document.querySelector("#config-model-name").textContent = car.name;
     document.querySelector("#config-detail-link").href = "detail.html?id=" + encodeURIComponent(car.id);
-    document.querySelector('[data-model="' + car.id + '"]')?.setAttribute("aria-current", "page");
+
+    if (!options?.interior) {
+      document.querySelector("#interior-fieldset").hidden = true;
+      document.querySelector("#interior-summary").hidden = true;
+      document.querySelector(".config-preview .config-views").hidden = true;
+    }
+
+    if (!options) {
+      image.src = car.heroImage;
+      image.alt = car.name + " 외관";
+      caption.textContent = "외장 이미지";
+      form.querySelectorAll("fieldset, .config-summary, .config-reset").forEach(control => {
+        control.hidden = true;
+      });
+      document.querySelector(".config-note").hidden = true;
+      statusMessage.textContent = "이 모델은 커스터마이징을 지원하지 않아요.";
+      return;
+    }
 
     const previews = new Map();
     const cachedColors = new Map();
@@ -119,13 +161,20 @@ async function initialize() {
       const spyderExterior = car.id === "temerario-spyder" && view === "exterior";
 
       statusMessage.textContent = "";
+      if (option.id === "original") {
+        image.src = photos[view];
+        image.alt = car.name + " " + label;
+        caption.textContent = label;
+        image.removeAttribute("aria-busy");
+        return;
+      }
       image.setAttribute("aria-busy", "true");
 
       try {
         if (!previews.has(view)) {
           previews.set(
             view,
-            loadPreview(photos[view], spyderExterior ? [.32, .21, .61, .72] : undefined)
+            loadPreview(photos[view], spyderExterior ? [.32, .21, .61, .72] : undefined, paint)
           );
         }
 
@@ -135,7 +184,7 @@ async function initialize() {
         if (request !== previewRequest) return;
 
         if (!cachedColors.has(key)) {
-          cachedColors.set(key, recolor(preview, view, option.color, spyderExterior));
+          cachedColors.set(key, recolor(preview, view, option.color, spyderExterior, paint));
         }
 
         image.src = cachedColors.get(key);
@@ -181,6 +230,7 @@ async function initialize() {
     });
 
     for (const button of viewButtons) {
+      if (!options[button.dataset.view]) continue;
       button.disabled = false;
       button.addEventListener("click", () => updatePreview(button.dataset.view));
     }
