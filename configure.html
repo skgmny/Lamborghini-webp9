@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>내 차량 만들기 | Temerario</title>
-<link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="configure.css">
-<script src="configure.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>내 차량 만들기</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;display=swap">
+    <link rel="stylesheet" href="configure.css">
+    <script src="configure.js" defer></script>
 </head>
 
 <body class="config-page">
@@ -26,34 +27,24 @@
 </header>
 
 <main class="config-main">
-    <a id="config-detail-link" href="detail.html?id=temerario">← 차량 상세</a>
-<div class="config-title">
-    <p>내 차량 만들기</p>
-    <h1 id="config-model-name">Temerario</h1>
+    <a id="config-detail-link" href="customize.html">← 차량 상세</a>
+    
+    <div class="config-title">
+        <p>내 차량 만들기</p>
+        <h1 id="config-model-name"></h1>
+        <dl class="config-model-stats" id="config-model-stats" hidden></dl>
 
-    <nav class="config-views" aria-label="커스텀 차량 선택">
-    <a href="configure.html?id=temerario" data-model="temerario">
-        Temerario
-    </a>
-    <a href="configure.html?id=temerario-spyder" data-model="temerario-spyder">
-        Temerario Spyder
-    </a>
-    </nav>
-</div>
+    </div>
 
 <div class="config-layout">
     <section class="config-preview" aria-label="차량 미리보기">
         <figure>
-            <img id="config-image" src="images/temerario/9_exterior_2.png" alt="Temerario 외관">
-            <figcaption id="config-caption" aria-live="polite">외장 미리보기</figcaption>
+            <div class="config-image-frame">
+                <img id="config-image" alt="" hidden>
+            </div>
+            <figcaption id="config-caption" aria-live="polite"></figcaption>
         </figure>
 
-    <div class="config-views" aria-label="미리보기 전환">
-        <button type="button" disabled data-view="exterior" aria-pressed="true">외장</button>
-        <button type="button" disabled data-view="interior" aria-pressed="false">실내</button>
-    </div>
-
-    <p class="config-note">미리보기는 색상 예시이며 실제 차량과 다를 수 있어요.</p>
     </section>
 
     <form class="config-controls">
@@ -62,20 +53,6 @@
         <div class="config-swatches" id="exterior-options"></div>
     </fieldset>
 
-    <fieldset>
-        <legend>시트 색상</legend>
-        <div class="config-swatches" id="interior-options"></div>
-    </fieldset>
-
-    <section class="config-summary" aria-labelledby="config-summary-title">
-        <h2 id="config-summary-title">선택 내역</h2>
-        <dl>
-        <div><dt>외장</dt><dd id="exterior-value">—</dd></div>
-        <div><dt>시트</dt><dd id="interior-value">—</dd></div>
-        </dl>
-    </section>
-
-    <button type="reset" class="config-reset" disabled>기본 색상으로 초기화</button>
     <p id="config-status" role="status">차량 정보를 불러오는 중이에요.</p>
     </form>
 </div>
