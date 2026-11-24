@@ -1,10 +1,25 @@
+.detail-back {
+  position: absolute;
+  top: 120px;                  /* 북마크 아이콘과 같은 높이로 맞추기 */
+  left: 6%;                    /* 헤더 로고와 같은 줄 */
+  z-index: 10;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+.detail-back:hover {
+  color: var(--point);
+}
+
 .detail-hero {
   position: relative;
+  overflow: hidden;
 }
 
 .detail-hero-img {
   width: 100%;
   opacity: 0.8;
+  transition: transform 1.2s ease-out, opacity 1.2s ease-out; 
 }
 
 .detail-hero-text {

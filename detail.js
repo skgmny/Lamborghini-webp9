@@ -9,6 +9,15 @@ for (const button of openButtons) {
   });
 }
 
+// ===== 목록으로 돌아가기 =====
+document.querySelector(".detail-back").addEventListener("click", () => {
+  if (document.referrer.indexOf("models") !== -1) {
+    history.back();                  // 목록에서 왔으면 → 뒤로 가기 (스크롤 위치 유지)
+  } else {
+    location.href = "models.html";   // 다른 데서 왔으면 → 목록 페이지 새로 열기
+  }
+});
+
 closeButton.addEventListener("click", () => {
   modal.style.display = "none";
 });
@@ -163,8 +172,27 @@ form.addEventListener("submit", (event) => {
   document.querySelector(".detail-form input[name='agree']").checked = false;
 });
 
+// ===== 차가 오른쪽에서 들어오는 효과 =====
+function driveIn() {
+  const heroImg = document.querySelector(".detail-hero-img");
+
+  // 1) 효과 없이 순간적으로 오른쪽 밖에 갖다 놓기
+  heroImg.style.transition = "none";
+  heroImg.style.transform = "translateX(60%)";
+  heroImg.style.opacity = "0";
+
+  // 2) 아주 잠깐 뒤에 효과를 켜고 원래 자리로 돌려보내기
+  setTimeout(() => {
+    heroImg.style.transition = "";
+    heroImg.style.transform = "";
+    heroImg.style.opacity = "";
+  }, 50);
+}
+
 function showCar(car) {
   document.querySelector(".detail-hero-img").src = car.heroImage;
+  document.querySelector(".detail-hero-img").src = car.heroImage;
+  driveIn();
   document.querySelector(".detail-slogan").innerHTML = car.slogan;
   document.querySelector(".detail-name").innerHTML = car.name;
   document.querySelector(".detail-intro").innerHTML = car.intro;
