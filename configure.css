@@ -242,3 +242,4 @@ grid-template-columns: 1fr;
   border-color: var(--config-accent);
   color: var(--config-accent);
 }
+.config-page [hidden] { display: none; }
