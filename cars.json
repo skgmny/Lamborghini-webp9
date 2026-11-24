@@ -11,11 +11,17 @@
       "exterior": "images/temerario/9_exterior_2.png",
       "interior": "images/temerario/9_interior_1.png"
     },
+    "configureStats": [
+      { "label": "최고 출력", "value": "920", "unit": "CV" },
+      { "label": "최고 속도", "value": "343", "unit": "km/h" },
+      { "label": "0–100 km/h", "value": "2.7", "unit": "초" }
+    ],
     "customization": {
       "exterior": [
-        { "id": "silver", "name": "실버", "color": "#bcc2c9" },
-        { "id": "verde", "name": "라임 그린", "color": "#a8c641" },
-        { "id": "blu", "name": "블루", "color": "#447dc9" }
+        {"id":"yellow","name":"노랑","color":"#f5b91e","image":"images/temerario/configure-yellow.png"},
+        {"id":"red","name":"빨강","color":"#e84327","image":"images/temerario/configure-red.png"},
+        {"id":"green","name":"초록","color":"#66a234","image":"images/temerario/configure-green.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/temerario/configure-white.png"}
       ],
       "interior": [
         { "id": "black", "name": "블랙", "color": "#242528" },
@@ -97,9 +103,10 @@
     },
     "customization": {
       "exterior": [
-        { "id": "silver", "name": "실버", "color": "#bcc2c9" },
-        { "id": "verde", "name": "라임 그린", "color": "#a8c641" },
-        { "id": "blu", "name": "블루", "color": "#447dc9" }
+        {"id":"red","name":"빨강","color":"#e8503c","image":"images/temerario/configure-spyder-red.png"},
+        {"id":"blue","name":"파랑","color":"#57aedb","image":"images/temerario/configure-spyder-blue.png"},
+        {"id":"yellow","name":"노랑","color":"#f6bf32","image":"images/temerario/configure-spyder-yellow.png"},
+        {"id":"white","name":"하양","color":"#eee","image":"images/temerario/configure-spyder-white.png"}
       ],
       "interior": [
         { "id": "black", "name": "블랙", "color": "#242528" },
@@ -175,6 +182,12 @@
     "slogan": "FROM NOW ON",
     "intro": "Lamborghini 60주년을 앞두고 공개된 Revuelto는 최초의 HPEV 하이브리드 슈퍼 스포츠카입니다. 1,015CV을 발휘하는 파워트레인은 새로운 V12 엔진과 세 개의 전기 모터, 그리고 듀얼 클러치 e-기어박스를 결합해 이전에 보지 못했던 새로운 수준의 성능, 기술, 그리고 주행 감성을 완성했습니다.",
     "heroImage": "images/revuelto/9_hero.png",
+    "customization": {
+      "exterior": [
+        {"id":"orange","name":"주황","color":"#fc612e","image":"images/revuelto/configure-revuelto-orange.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/configure-revuelto-white.png"}
+      ]
+    },
     "exteriorPaint": {
       "channel": "red",
       "light": 133,
@@ -229,6 +242,13 @@
     "slogan": "THE QUANTUM OF DRIVING",
     "intro": "Revuelto SV는 Lamborghini의 'Super Veloce' 철학을 새로운 차원으로 끌어올립니다. 자연 흡기 V12 엔진, 하이브리드 성능 그리고 모터스포츠에서 파생된 기술을 결합하여, 한정된 운전자들에게 1,065 CV에 달하는 순수한 주행의 감동을 선사합니다.",
     "heroImage": "images/revuelto/9_hero_sv.png",
+    "customization": {
+      "exterior": [
+        {"id":"gray","name":"회색","color":"#aabdc8","image":"images/revuelto/configure-revuelto-sv-gray.png"},
+        {"id":"red","name":"빨강","color":"#b51f31","image":"images/revuelto/configure-revuelto-sv-red.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/configure-revuelto-sv-white.png"}
+      ]
+    },
     "exteriorPaint": {
       "light": 130,
       "paths": [
@@ -285,6 +305,12 @@
     "slogan": "DARE TO LIVE MORE",
     "intro": "Urus SE는 Lamborghini의 완전 하이브리드화를 향한 새로운 발걸음입니다. 브랜드 최초의 PHEV 슈퍼 SUV로서, 800CV을 발휘하며 뛰어난 안락함과 성능, 효율성을 제공합니다. 또한 배출가스를 최대 80%까지 줄이며 럭셔리 SSUV의 주행 경험을 선사합니다.",
     "heroImage": "images/urus/9_hero.png",
+    "customization": {
+      "exterior": [
+        {"id":"orange","name":"주황","color":"#ee593e","image":"images/urus/configure-urus-se-orange.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/configure-urus-se-white.png"}
+      ]
+    },
     "exteriorPaint": {
       "channel": "red",
       "light": 131,
@@ -339,6 +365,13 @@
     "slogan": "URUS AT ITS PEAK",
     "intro": "Urus SE Performante는 812 CV를 가진 플러그인 하이브리드 슈퍼 SUV의 새로운 기준을 제시합니다. 첨단 공기역학 성능과 주행 다이내믹스가 혁신적인 서스펜션과 결합되어, 절대적인 정밀성과 뛰어난 주행 성능을 제공합니다.",
     "heroImage": "images/urus/9_hero_performante.png",
+    "customization": {
+      "exterior": [
+        {"id":"yellow","name":"노랑","color":"#e2e645","image":"images/urus/configure-urus-se-performante-yellow.png"},
+        {"id":"green","name":"초록","color":"#254439","image":"images/urus/configure-urus-se-performante-green.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/configure-urus-se-performante-white.png"}
+      ]
+    },
     "exteriorPaint": {
       "channel": "yellow",
       "light": 154,
