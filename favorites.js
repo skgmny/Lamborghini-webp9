@@ -98,18 +98,6 @@ function renderWishList() {
   }
 
   wishListContainer.innerHTML = wishedCars.map(car => {
-    const priceText = car.price === 0 ? "가격 문의" : (car.price / 100000000) + "억 원부터";
-
-    let statsHtml = "";
-    for (let i = 0; i < car.stats.length; i++) {
-      statsHtml += `
-        <div class="car-stat-item">
-          <div class="car-stat-value">${car.stats[i].value} <small>${car.stats[i].unit}</small></div>
-          <div class="car-stat-label">${car.stats[i].label}</div>
-        </div>
-      `;
-    }
-
     return `
       <article class="card car-card">
         <img class="car-thumb" src="${car.heroImage}" alt="${car.name}">
@@ -117,8 +105,6 @@ function renderWishList() {
           <span class="car-category">${car.category}</span>
           <h3>${car.name}</h3>
           <p class="car-slogan">${car.slogan}</p>
-          <div class="car-stats">${statsHtml}</div>
-          <p class="car-price">${priceText}</p>
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">상세보기</button>
             <button type="button" class="btn-outline btn-remove" onclick="removeWish('${car.id}')">삭제</button>

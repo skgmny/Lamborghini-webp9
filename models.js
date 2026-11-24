@@ -6,7 +6,6 @@ const perPage = 6;
 const carListEl = document.getElementById("carList");
 const carCountEl = document.getElementById("carCount");
 const paginationEl = document.getElementById("pagination");
-const searchInput = document.getElementById("searchInput");
 const sortSelect = document.getElementById("sortSelect");
 const categoryButtons = document.querySelectorAll("#categoryGroup .select-item");
 
@@ -35,11 +34,6 @@ for (let i = 0; i < categoryButtons.length; i++) {
     renderCars();
   });
 }
-
-searchInput.addEventListener("keyup", () => {
-  currentPage = 1;
-  renderCars();
-});
 
 sortSelect.addEventListener("change", () => {
   currentPage = 1;
@@ -102,37 +96,12 @@ function changePage(pageNum) {
   renderCars();
 }
 
-function hasKeyword(text, keyword) {
-  if (keyword === "") {
-    return true;
-  }
-  const smallText = text.toLowerCase();
-  const smallKey = keyword.toLowerCase();
-
-  for (let i = 0; i <= smallText.length - smallKey.length; i++) {
-    let same = true;
-    for (let j = 0; j < smallKey.length; j++) {
-      if (smallText[i + j] !== smallKey[j]) {
-        same = false;
-        break;
-      }
-    }
-    if (same) {
-      return true;
-    }
-  }
-  return false;
-}
-
 function renderCars() {
-  const keyword = searchInput.value;
   const sortType = sortSelect.value;
   const wishList = getWishList();
 
   let filtered = allCars.filter(car => {
-    const matchCategory = (selectedCategory === "전체") || (car.category === selectedCategory);
-    const matchKeyword = hasKeyword(car.name, keyword) || hasKeyword(car.slogan, keyword);
-    return matchCategory && matchKeyword;
+    return (selectedCategory === "전체") || (car.category === selectedCategory);
   });
 
   if (sortType === "popular") {
@@ -180,19 +149,22 @@ function renderCars() {
       }
     }
 
-    const wishClass = isWished ? "wished" : "";
-    const wishText = isWished ? "♥ 찜완료" : "♡ 관심차량";
+    const bookmarkSrc = isWished ? "images/9_bookmark_filled.png" : "images/9_bookmark.png";
+    const bookmarkAlt = isWished ? "관심차량 해제" : "관심차량 추가";
 
     return `
       <article class="card car-card">
+        <button type="button" class="bookmark-btn" onclick="toggleWish('${car.id}')">
+          <img src="${bookmarkSrc}" alt="${bookmarkAlt}" class="bookmark-icon">
+        </button>
         <img class="car-thumb" src="${car.heroImage}" alt="${car.name}">
         <div class="car-body">
           <span class="car-category">${car.category}</span>
           <h3>${car.name}</h3>
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
-            <button type="button" class="btn" onclick="goDetail('${car.id}')">상세보기</button>
-            <button type="button" class="btn-outline ${wishClass}" onclick="toggleWish('${car.id}')">${wishText}</button>
+            <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
+            <button type="button" class="btn-outline">CUSTOMIZE</button>
           </div>
         </div>
       </article>
