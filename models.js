@@ -49,6 +49,11 @@ function goDetail(carId) {
   location.href = "detail.html";
 }
 
+function goCustomize(carId) {
+  localStorage.setItem("selectedCar", carId);
+  location.href = "configure.html";
+}
+
 function toggleWish(carId) {
   let wishList = getWishList();
   let newWishList = [];
@@ -164,7 +169,7 @@ function renderCars() {
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
-            <button type="button" class="btn-outline">CUSTOMIZE</button>
+            <button type="button" class="btn-outline" onclick="goCustomize('${car.id}')">CUSTOMIZE</button>
           </div>
         </div>
       </article>
