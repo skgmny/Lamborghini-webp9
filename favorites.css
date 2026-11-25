@@ -7,8 +7,8 @@
   padding: 24px;
   background: var(--bg-sub);
   border: 1px solid var(--line);
-  margin-top: 24px;
-  margin-bottom: 40px;
+  margin-top: 48px;
+  margin-bottom: 96px;
 }
 
 .summary-group {
@@ -35,14 +35,26 @@
 }
 
 .section-block {
+  margin-bottom: 150px;
+}
+
+.section-block:last-child {
   margin-bottom: 60px;
+}
+
+.section-block h2 {
+  margin-bottom: 32px;
 }
 
 .section-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+.section-head h2 {
+  margin-bottom: 0;
 }
 
 .car-grid {
