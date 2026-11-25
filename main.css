@@ -526,10 +526,6 @@
     transition: transform 0.5s;
 }
 
-.curation-card:hover .curation-image img {
-    transform: scale(1.08);
-}
-
 .curation-info {
     padding: 25px;
 }

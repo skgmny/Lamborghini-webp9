@@ -155,14 +155,11 @@ window.addEventListener("resize", updateIntroAnimation);
 ===================================== */
 
 // 주요 차종 및 세부 시리즈 데이터
-// 실제 차량 이미지와 내용이 확정되면 수정하면 됨
-
 const models = [
 
     {
         name: "TEMERARIO",
-        slogan: "UNFILTED PERFORMANCE",
-        description: "새로운 시대를 여는 강렬한 퍼포먼스",
+        slogan: "YOU CAN'T HIDE WHO YOU ARE",
 
         series: [
 
@@ -170,12 +167,6 @@ const models = [
                 id: "temerario-spyder",
                 name: "TEMERARIO SPYDER",
                 image: "images/temerario/9_temerario1.png"
-            },
-
-            {
-                id: "temerario",
-                name: "TEMERARIO TETTONERO CAPSULE",
-                image: "images/temerario/9_temerario2.png"
             },
 
             {
@@ -191,7 +182,6 @@ const models = [
     {
         name: "REVUELTO",
         slogan: "THE QUANTUM OF DRIVING",
-        description: "강렬한 성능과 혁신적인 디자인",
 
         series: [
 
@@ -199,12 +189,6 @@ const models = [
                 id: "revuelto-sv",
                 name: "REVUELTO SV",
                 image: "images/revuelto/9_revuelto2.png"
-            },
-
-            {
-                id: "revuelto",
-                name: "REVUELTO MIURA 60° HOMAGE",
-                image: "images/revuelto/9_revuelto3.png"
             },
 
             {
@@ -220,7 +204,6 @@ const models = [
     {
         name: "URUS",
         slogan: "URUS AT ITS PEAK",
-        description: "일상과 퍼포먼스의 새로운 조화",
 
         series: [
 
