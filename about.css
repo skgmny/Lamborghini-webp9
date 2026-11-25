@@ -5,13 +5,22 @@
 }
 
 .about-lead {
-  max-width: 640px;
-  color: #9a9a9a;
-  margin-top: 14px;
-  line-height: 1.7;
+  max-width: 680px;
+  color: #cccccc;
+  font-size: 1.15rem;
+  margin-top: 16px;
+  line-height: 1.75;
 }
 
-/* 왼쪽 제목 + 오른쪽 본문 2단 스토리 레이아웃 */
+main h2 {
+  font-size: 2.8rem;
+  line-height: 1.15;
+}
+
+main h2::after {
+  display: none;
+}
+
 .story-row {
   display: flex;
   align-items: flex-start;
@@ -21,7 +30,7 @@
 }
 
 .story-row.last {
-  margin: 200px 0 140px;
+  margin: 200px 0 180px;
 }
 
 .story-title-box {
@@ -30,29 +39,27 @@
 
 .story-text-box {
   width: 62%;
-  max-width: 640px;
+  max-width: 680px;
 }
 
 .story-text-box p {
-  color: #9a9a9a;
-  font-size: 1.05rem;
-  line-height: 1.95;
-  margin-bottom: 24px;
+  color: #cccccc;
+  font-size: 1.2rem;
+  line-height: 1.9;
+  margin-bottom: 32px;
 }
 
-.story-text-box p.story-lead {
-  color: #ffffff;
-  font-size: 1.2rem;
-  line-height: 1.75;
-  margin-bottom: 32px;
+.story-text-box p.highlight {
+  color: #ffc000;
+  font-weight: 700;
+  font-size: 1.35rem;
 }
 
 .vision-btn-box {
   text-align: center;
-  margin: 120px 0 180px;
+  margin: 280px 0 220px;
 }
 
-/* 로고 소개 배치 */
 .split-row {
   display: flex;
   align-items: center;
@@ -87,17 +94,16 @@
 }
 
 .split-text-box h2 {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .split-text-box p {
-  color: #9a9a9a;
-  font-size: 1.05rem;
+  color: #cccccc;
+  font-size: 1.2rem;
   line-height: 1.9;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-/* 주요 모델 연대기 */
 .masterpieces-section {
   background: transparent;
   padding: 260px 0;
@@ -111,7 +117,7 @@
 }
 
 .scroll-guide {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: #ffc000;
 }
 
@@ -132,6 +138,10 @@
     padding: 90px 0;
   }
 
+  main h2 {
+    font-size: 2.1rem;
+  }
+
   .story-row {
     flex-direction: column;
     gap: 28px;
@@ -139,16 +149,25 @@
   }
 
   .story-row.last {
-    margin: 120px 0 80px;
+    margin: 120px 0 100px;
   }
 
   .vision-btn-box {
-    margin: 80px 0 120px;
+    margin: 160px 0 140px;
   }
 
   .story-title-box,
   .story-text-box {
     width: 100%;
+  }
+
+  .story-text-box p,
+  .split-text-box p {
+    font-size: 1.05rem;
+  }
+
+  .story-text-box p.highlight {
+    font-size: 1.15rem;
   }
 
   .split-row,
