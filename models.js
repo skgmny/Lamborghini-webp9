@@ -9,7 +9,20 @@ const paginationEl = document.getElementById("pagination");
 const sortSelect = document.getElementById("sortSelect");
 const categoryButtons = document.querySelectorAll("#categoryGroup .select-item");
 
-const popularOrder = ["revuelto", "temerario", "urus-se", "huracan-sterrato", "aventador", "countach"];
+const popularOrder = [
+  "revuelto",
+  "temerario",
+  "urus-se",
+  "revuelto-sv",
+  "temerario-spyder",
+  "urus-se-performante",
+  "fenomeno",
+  "fenomeno-roadster",
+  "countach-lpi-800-4",
+  "sian-fkp-37",
+  "sian-roadster",
+  "sesto-elemento"
+];
 
 function applyCategoryFromUrl() {
   const query = location.search;
@@ -65,7 +78,21 @@ function getWishList() {
   return JSON.parse(localStorage.getItem("favorites")) || [];
 }
 
+function addRecentCar(carId) {
+  let recentIds = JSON.parse(localStorage.getItem("recentCars")) || [];
+  const idx = recentIds.indexOf(carId);
+  if (idx !== -1) {
+    recentIds.splice(idx, 1);
+  }
+  recentIds.unshift(carId);
+  if (recentIds.length > 6) {
+    recentIds = recentIds.slice(0, 6);
+  }
+  localStorage.setItem("recentCars", JSON.stringify(recentIds));
+}
+
 function goDetail(carId) {
+  addRecentCar(carId);
   localStorage.setItem("selectedCar", carId);
   location.href = "detail.html";
 }
@@ -177,6 +204,9 @@ function renderCars() {
 
     const bookmarkSrc = isWished ? "images/9_bookmark_filled.png" : "images/9_bookmark.png";
     const bookmarkAlt = isWished ? "관심차량 해제" : "관심차량 추가";
+    const customizeBtnHtml = (car.category !== "LIMITED")
+      ? `<button type="button" class="btn-outline" onclick="goCustomize('${car.id}')">CUSTOMIZE</button>`
+      : "";
 
     return `
       <article class="card car-card">
@@ -190,7 +220,7 @@ function renderCars() {
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
-            <button type="button" class="btn-outline" onclick="goCustomize('${car.id}')">CUSTOMIZE</button>
+            ${customizeBtnHtml}
           </div>
         </div>
       </article>
