@@ -126,7 +126,7 @@
           {
             "src": "images/temerario/9_performance_1.png",
             "title": "POWERTRAIN",
-            "desc": "신형 4.0리터 V8 트윈 터보 엔진과 세 개의 전기 모터가 결합해 최고 출력 920 CV를 발휘합니다. 정지 상태에서 100km/h까지 2.7초 만에 도달하며 최고 속도는 343km/h입니다."
+            "desc": "신형 4.0리터 V8 트윈 터보 엔진과 세 개의 전기 모터가 결합해 최고 출력 920 CV를 발휘합니다. 정지 상태에서 100km/h까지 2.8초 만에 도달하며 최고 속도는 343km/h입니다."
           },
           {
             "src": "images/temerario/9_performance_2.png",
@@ -180,7 +180,7 @@
     "series": "revuelto",
     "category": "SPORTS CAR",   
     "slogan": "FROM NOW ON",
-    "intro": "Lamborghini 60주년을 앞두고 공개된 Revuelto는 최초의 HPEV 하이브리드 슈퍼 스포츠카입니다. 1,015CV을 발휘하는 파워트레인은 새로운 V12 엔진과 세 개의 전기 모터, 그리고 듀얼 클러치 e-기어박스를 결합해 이전에 보지 못했던 새로운 수준의 성능, 기술, 그리고 주행 감성을 완성했습니다.",
+    "intro": "Lamborghini 60주년을 앞두고 공개된 Revuelto는 최초의 HPEV 하이브리드 슈퍼 스포츠카입니다. 1,015CVfmf 발휘하는 파워트레인은 새로운 V12 엔진과 세 개의 전기 모터, 그리고 듀얼 클러치 e-기어박스를 결합해 이전에 보지 못했던 새로운 수준의 성능, 기술, 그리고 주행 감성을 완성했습니다.",
     "heroImage": "images/revuelto/9_hero.png",
     "customization": {
       "exterior": [
@@ -297,7 +297,7 @@
     "series": "urus",
     "category": "SUV",
     "slogan": "DARE TO LIVE MORE",
-    "intro": "Urus SE는 Lamborghini의 완전 하이브리드화를 향한 새로운 발걸음입니다. 브랜드 최초의 PHEV 슈퍼 SUV로서, 800CV을 발휘하며 뛰어난 안락함과 성능, 효율성을 제공합니다. 또한 배출가스를 최대 80%까지 줄이며 럭셔리 SSUV의 주행 경험을 선사합니다.",
+    "intro": "Urus SE는 Lamborghini의 완전 하이브리드화를 향한 새로운 발걸음입니다. 브랜드 최초의 PHEV 슈퍼 SUV로서, 800CV를 발휘하며 뛰어난 안락함과 성능, 효율성을 제공합니다. 또한 배출가스를 최대 80%까지 줄이며 럭셔리 SSUV의 주행 경험을 선사합니다.",
     "heroImage": "images/urus/9_hero.png",
     "customization": {
       "exterior": [
@@ -411,7 +411,7 @@
     "name": "Fenomeno",
     "series": "fenomeno",
     "category": "LIMITED",
-    "slogan": "",
+    "slogan": "LIMITED TO 29 UNITS",
     "intro": "Lamborghini 역사상 가장 강력한 V12 엔진에 세 개의 전기 모터를 결합해 1,080 CV를 발휘하는 Few-Off 모델로, 단 29대만 생산되었습니다.",
     "heroImage": "images/limited/9_fenomeno_hero.png",
     "stats": [
@@ -479,7 +479,7 @@
     "name": "Fenomeno Roadster",
     "series": "fenomeno",
     "category": "LIMITED",
-    "slogan": "",
+    "slogan": "LIMITED TO 15 UNITS",
     "intro": "Fenomeno의 1,080 CV V12 하이브리드 파워트레인을 그대로 담은 오픈톱 모델로, 단 15대만 생산된 가장 강력한 오픈톱 Lamborghini입니다.",
     "heroImage": "images/limited/9_fenomeno-roadster_hero.png",
     "stats": [
@@ -631,7 +631,7 @@
       },
       {
         "label": "0-100km/h",
-        "value": "<2.8",
+        "value": "2.8",
         "unit": "초"
       }
     ],
@@ -699,7 +699,7 @@
       },
       {
         "label": "0-100km/h",
-        "value": "<2.9",
+        "value": "2.9",
         "unit": "초"
       }
     ],
@@ -751,7 +751,7 @@
     "name": "Sesto Elemento",
     "series": "sesto-elemento",
     "category": "LIMITED",
-    "slogan": "",
+    "slogan": "LIMITED TO 20 UNITS",
     "intro": "'여섯 번째 원소', 즉 탄소에서 이름을 딴 모델로, 탄소 섬유를 적극적으로 사용해 무게를 999kg까지 줄였습니다. 20대 한정 생산되었습니다.",
     "heroImage": "images/limited/9_sesto-elemento_hero.png",
     "stats": [

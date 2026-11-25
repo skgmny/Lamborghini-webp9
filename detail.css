@@ -1,7 +1,6 @@
 .detail-back {
-  position: absolute;
-  top: 120px;                  /* 북마크 아이콘과 같은 높이로 맞추기 */
-  left: 10%;                    /* 헤더 로고와 같은 줄 */
+  position: absolute;                
+  left: 10%;                    
   z-index: 10;
   font-size: 17px;
   letter-spacing: 1px;
@@ -30,8 +29,6 @@
 }
 
 .detail-hero-text {
-  position: static;
-  margin-top: 40px;
   display: flex;
   justify-content: space-between;   /* 이름은 왼쪽, 버튼은 오른쪽 */
   align-items: flex-end;            /* 버튼을 트림 버튼 줄에 맞춤 */
@@ -89,7 +86,6 @@
 
 .detail-intro {
   max-width: 1000px;
-  margin: 60px auto 120px;
   text-align: center;
   font-size: 1.3rem;
   line-height: 1.8;
@@ -147,10 +143,6 @@
 
 .detail-slider {
   position: relative;
-}
-
-.detail-slide-img {
-  width: 100%;
 }
 
 .detail-prev,
@@ -251,13 +243,9 @@
   font-size: 1.2rem;     /* 항목 이름: 엔진, 배기량 등 */
 }
 
-.detail-spec-item dd {
-  font-size: 1.5rem;     /* 값: V12 + 전기 모터 3개 등 */
-}
-
 .detail-specs dd {
   font-family: "Oswald", "Pretendard", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   text-align: right;
 }
 
