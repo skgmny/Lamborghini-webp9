@@ -190,9 +190,9 @@ function driveIn() {
 }
 
 function showCar(car) {
-  document.querySelector(".detail-hero-img").src = car.heroImage;
-  document.querySelector(".detail-hero-img").src = car.heroImage;
   driveIn();
+  document.querySelector(".detail-hero-img").src = car.heroImage;
+  document.querySelector(".detail-hero-img").alt = car.name;
   document.querySelector(".detail-slogan").innerHTML = car.slogan;
   document.querySelector(".detail-name").innerHTML = car.name;
   document.querySelector(".detail-intro").innerHTML = car.intro;

@@ -206,22 +206,19 @@
       {
         "tab": "성능",
         "images": [
-          { "src": "images/revuelto/9_performance_1.png", "title": "V12", "desc": "새로운 6.5리터 V12 엔진과 세 개의 전기 모터가 결합해 최고 출력 1,015 CV를 발휘합니다. 정지 상태에서 100km/h까지 2.5초 만에 도달하며 최고 속도는 350km/h 이상입니다." },
-          { "src": "images/revuelto/9_performance_2.png", "title": "LDVI 2.0", "desc": "LDVI 2.0 설명" }
+          { "src": "images/temerario/9_performance_1.png", "title": "POWERTRAIN", "desc": "정교하게 설계된 고성능 파워트레인이 압도적인 출력과 즉각적인 가속 응답성을 만들어 냅니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          { "src": "images/revuelto/9_exterior_1.png", "title": "전면 라이트", "desc": "Revuelto는 Lamborghini의 유산을 대담한 새로운 디자인 언어로 재해석했습니다." },
-          { "src": "images/revuelto/9_exterior_2.png", "title": "개방형 엔진 베이", "desc": "정교한 디자인 라인, 날카로운 표면, 아이코닉한 중앙 라인이 미래지향적인 실루엣을 정의하며, 노출형 V12 엔진은 고유한 레이싱 DNA를 실현합니다." }
+          { "src": "images/revuelto/9_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          { "src": "images/revuelto/9_interior_1.png", "title": "가상 콕핏", "desc": "가상 콕핏 설명" },
-          { "src": "images/revuelto/9_interior_2.png", "title": "주행 모드", "desc": "주행 모드 설명" }
+          { "src": "images/temerario/9_interior_1.png", "title": "실내 공간", "desc": "운전자를 중심으로 설계된 실내 공간이 몰입감 있는 주행 환경과 직관적인 조작을 제공합니다." }
         ]
       }
     ],
@@ -269,22 +266,19 @@
       {
         "tab": "성능",
         "images": [
-          { "src": "images/revuelto/9_performance_1.png", "title": "V12", "desc": "성능 설명" },
-          { "src": "images/revuelto/9_performance_2.png", "title": "LDVI 2.0", "desc": "LDVI 2.0 설명" }
+          { "src": "images/temerario/9_performance_2.png", "title": "주행 제어", "desc": "노면 상황에 맞춰 토크와 제동을 정밀하게 조절해 어떤 조건에서도 안정적이고 정확한 주행을 돕습니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          { "src": "images/revuelto/9_exterior_1.png", "title": "전면 라이트", "desc": "외관 설명" },
-          { "src": "images/revuelto/9_exterior_2.png", "title": "개방형 엔진 베이", "desc": "외관 설명" }
+          { "src": "images/revuelto/9_hero_sv.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          { "src": "images/revuelto/9_interior_1.png", "title": "가상 콕핏", "desc": "실내 설명" },
-          { "src": "images/revuelto/9_interior_2.png", "title": "주행 모드", "desc": "실내 설명" }
+          { "src": "images/temerario/9_interior_2.png", "title": "주행 모드", "desc": "주행 상황과 취향에 맞춰 다양한 드라이빙 모드를 선택하고 차량의 성격을 바꿀 수 있습니다." }
         ]
       }
     ],
@@ -329,22 +323,19 @@
       {
         "tab": "성능",
         "images": [
-          { "src": "images/urus/9_performance_1.png", "title": "성능 1", "desc": "성능 설명" },
-          { "src": "images/urus/9_performance_2.png", "title": "성능 2", "desc": "성능 설명" }
+          { "src": "images/temerario/9_performance_1.png", "title": "POWERTRAIN", "desc": "정교하게 설계된 고성능 파워트레인이 압도적인 출력과 즉각적인 가속 응답성을 만들어 냅니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          { "src": "images/urus/9_exterior_1.png", "title": "외관 1", "desc": "외관 설명" },
-          { "src": "images/urus/9_exterior_2.png", "title": "외관 2", "desc": "외관 설명" }
+          { "src": "images/urus/9_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          { "src": "images/urus/9_interior_1.png", "title": "실내 1", "desc": "실내 설명" },
-          { "src": "images/urus/9_interior_2.png", "title": "실내 2", "desc": "실내 설명" }
+          { "src": "images/temerario/9_interior_1.png", "title": "실내 공간", "desc": "운전자를 중심으로 설계된 실내 공간이 몰입감 있는 주행 환경과 직관적인 조작을 제공합니다." }
         ]
       }
     ],
@@ -390,22 +381,19 @@
       {
         "tab": "성능",
         "images": [
-          { "src": "images/urus/9_performance_1.png", "title": "성능 1", "desc": "성능 설명" },
-          { "src": "images/urus/9_performance_2.png", "title": "성능 2", "desc": "성능 설명" }
+          { "src": "images/temerario/9_performance_2.png", "title": "주행 제어", "desc": "노면 상황에 맞춰 토크와 제동을 정밀하게 조절해 어떤 조건에서도 안정적이고 정확한 주행을 돕습니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          { "src": "images/urus/9_exterior_1.png", "title": "외관 1", "desc": "외관 설명" },
-          { "src": "images/urus/9_exterior_2.png", "title": "외관 2", "desc": "외관 설명" }
+          { "src": "images/urus/9_hero_performante.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          { "src": "images/urus/9_interior_1.png", "title": "실내 1", "desc": "실내 설명" },
-          { "src": "images/urus/9_interior_2.png", "title": "실내 2", "desc": "실내 설명" }
+          { "src": "images/temerario/9_interior_2.png", "title": "주행 모드", "desc": "주행 상황과 취향에 맞춰 다양한 드라이빙 모드를 선택하고 차량의 성격을 바꿀 수 있습니다." }
         ]
       }
     ],
@@ -447,31 +435,19 @@
       {
         "tab": "성능",
         "images": [
-          {
-            "src": "images/limited/9_fenomeno_hero.png",
-            "title": "Fenomeno",
-            "desc": "성능 설명"
-          }
+          { "src": "images/temerario/9_performance_1.png", "title": "POWERTRAIN", "desc": "정교하게 설계된 고성능 파워트레인이 압도적인 출력과 즉각적인 가속 응답성을 만들어 냅니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          {
-            "src": "images/limited/9_fenomeno_hero.png",
-            "title": "Fenomeno",
-            "desc": "외관 설명"
-          }
+          { "src": "images/limited/9_fenomeno_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          {
-            "src": "images/limited/9_fenomeno_hero.png",
-            "title": "Fenomeno",
-            "desc": "실내 설명"
-          }
+          { "src": "images/temerario/9_interior_1.png", "title": "실내 공간", "desc": "운전자를 중심으로 설계된 실내 공간이 몰입감 있는 주행 환경과 직관적인 조작을 제공합니다." }
         ]
       }
     ],
@@ -527,31 +503,19 @@
       {
         "tab": "성능",
         "images": [
-          {
-            "src": "images/limited/9_fenomeno-roadster_hero.png",
-            "title": "Fenomeno Roadster",
-            "desc": "성능 설명"
-          }
+          { "src": "images/temerario/9_performance_2.png", "title": "주행 제어", "desc": "노면 상황에 맞춰 토크와 제동을 정밀하게 조절해 어떤 조건에서도 안정적이고 정확한 주행을 돕습니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          {
-            "src": "images/limited/9_fenomeno-roadster_hero.png",
-            "title": "Fenomeno Roadster",
-            "desc": "외관 설명"
-          }
+          { "src": "images/limited/9_fenomeno-roadster_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          {
-            "src": "images/limited/9_fenomeno-roadster_hero.png",
-            "title": "Fenomeno Roadster",
-            "desc": "실내 설명"
-          }
+          { "src": "images/temerario/9_interior_2.png", "title": "주행 모드", "desc": "주행 상황과 취향에 맞춰 다양한 드라이빙 모드를 선택하고 차량의 성격을 바꿀 수 있습니다." }
         ]
       }
     ],
@@ -607,31 +571,19 @@
       {
         "tab": "성능",
         "images": [
-          {
-            "src": "images/limited/9_countach-lpi-800-4_hero.png",
-            "title": "Countach LPI 800-4",
-            "desc": "성능 설명"
-          }
+          { "src": "images/temerario/9_performance_1.png", "title": "POWERTRAIN", "desc": "정교하게 설계된 고성능 파워트레인이 압도적인 출력과 즉각적인 가속 응답성을 만들어 냅니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          {
-            "src": "images/limited/9_countach-lpi-800-4_hero.png",
-            "title": "Countach LPI 800-4",
-            "desc": "외관 설명"
-          }
+          { "src": "images/limited/9_countach-lpi-800-4_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          {
-            "src": "images/limited/9_countach-lpi-800-4_hero.png",
-            "title": "Countach LPI 800-4",
-            "desc": "실내 설명"
-          }
+          { "src": "images/temerario/9_interior_1.png", "title": "실내 공간", "desc": "운전자를 중심으로 설계된 실내 공간이 몰입감 있는 주행 환경과 직관적인 조작을 제공합니다." }
         ]
       }
     ],
@@ -687,31 +639,19 @@
       {
         "tab": "성능",
         "images": [
-          {
-            "src": "images/limited/9_sian-fkp-37_hero.png",
-            "title": "Sián FKP 37",
-            "desc": "성능 설명"
-          }
+          { "src": "images/temerario/9_performance_2.png", "title": "주행 제어", "desc": "노면 상황에 맞춰 토크와 제동을 정밀하게 조절해 어떤 조건에서도 안정적이고 정확한 주행을 돕습니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          {
-            "src": "images/limited/9_sian-fkp-37_hero.png",
-            "title": "Sián FKP 37",
-            "desc": "외관 설명"
-          }
+          { "src": "images/limited/9_sian-fkp-37_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          {
-            "src": "images/limited/9_sian-fkp-37_hero.png",
-            "title": "Sián FKP 37",
-            "desc": "실내 설명"
-          }
+          { "src": "images/temerario/9_interior_2.png", "title": "주행 모드", "desc": "주행 상황과 취향에 맞춰 다양한 드라이빙 모드를 선택하고 차량의 성격을 바꿀 수 있습니다." }
         ]
       }
     ],
@@ -767,31 +707,19 @@
       {
         "tab": "성능",
         "images": [
-          {
-            "src": "images/limited/9_sian-roadster_hero.png",
-            "title": "Sián Roadster",
-            "desc": "성능 설명"
-          }
+          { "src": "images/temerario/9_performance_1.png", "title": "POWERTRAIN", "desc": "정교하게 설계된 고성능 파워트레인이 압도적인 출력과 즉각적인 가속 응답성을 만들어 냅니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          {
-            "src": "images/limited/9_sian-roadster_hero.png",
-            "title": "Sián Roadster",
-            "desc": "외관 설명"
-          }
+          { "src": "images/limited/9_sian-roadster_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          {
-            "src": "images/limited/9_sian-roadster_hero.png",
-            "title": "Sián Roadster",
-            "desc": "실내 설명"
-          }
+          { "src": "images/temerario/9_interior_1.png", "title": "실내 공간", "desc": "운전자를 중심으로 설계된 실내 공간이 몰입감 있는 주행 환경과 직관적인 조작을 제공합니다." }
         ]
       }
     ],
@@ -847,31 +775,19 @@
       {
         "tab": "성능",
         "images": [
-          {
-            "src": "images/limited/9_sesto-elemento_hero.png",
-            "title": "Sesto Elemento",
-            "desc": "성능 설명"
-          }
+          { "src": "images/temerario/9_performance_2.png", "title": "주행 제어", "desc": "노면 상황에 맞춰 토크와 제동을 정밀하게 조절해 어떤 조건에서도 안정적이고 정확한 주행을 돕습니다." }
         ]
       },
       {
         "tab": "외관",
         "images": [
-          {
-            "src": "images/limited/9_sesto-elemento_hero.png",
-            "title": "Sesto Elemento",
-            "desc": "외관 설명"
-          }
+          { "src": "images/limited/9_sesto-elemento_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
         "tab": "실내",
         "images": [
-          {
-            "src": "images/limited/9_sesto-elemento_hero.png",
-            "title": "Sesto Elemento",
-            "desc": "실내 설명"
-          }
+          { "src": "images/temerario/9_interior_2.png", "title": "주행 모드", "desc": "주행 상황과 취향에 맞춰 다양한 드라이빙 모드를 선택하고 차량의 성격을 바꿀 수 있습니다." }
         ]
       }
     ],
