@@ -13,25 +13,25 @@
 .detail-hero {
   position: relative;
   overflow: hidden;
-  padding-top: 100px;          /* 추가: 사진 위 여백 */
-  min-height: 85vh;              /* 추가: 화면 높이의 85% 이상 */
-  display: flex;                 /* 추가 */
-  flex-direction: column;        /* 추가: 사진 → 글자 세로로 */
+  padding-top: 100px;       
+  min-height: 85vh;        
+  display: flex;             
+  flex-direction: column;       
   justify-content: center; 
 }
 
 .detail-hero-img {
-  display: block;              /* 추가 */
-  width: 80%;                  /* 100% → 80% */
-  margin: 0 auto;              /* 추가: 가운데 정렬 */
+  display: block;        
+  width: 80%;               
+  margin: 0 auto;              
   opacity: 0.8;
   transition: transform 0.7s ease-out, opacity 0.7s ease-out;
 }
 
 .detail-hero-text {
   display: flex;
-  justify-content: space-between;   /* 이름은 왼쪽, 버튼은 오른쪽 */
-  align-items: flex-end;            /* 버튼을 트림 버튼 줄에 맞춤 */
+  justify-content: space-between;
+  align-items: flex-end;      
   margin: -60px 10% 0; 
   position: relative;
   width: auto;
@@ -40,7 +40,7 @@
 
 .detail-back,
 .detail-favorite {
-  top: 20px;                   /* 120px, 110px → 20px */
+  top: 20px;                
 }
 
 .detail-slogan {
@@ -240,19 +240,13 @@
 }
 
 .detail-spec-item dt {
-  font-size: 1.2rem;     /* 항목 이름: 엔진, 배기량 등 */
+  font-size: 1.2rem; 
 }
 
 .detail-specs dd {
   font-family: "Oswald", "Pretendard", sans-serif;
   font-size: 1.5rem;
   text-align: right;
-}
-
-.detail-bottom-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
 }
 
 .detail-modal {
@@ -320,9 +314,7 @@
 }
 
 .detail-hero-buttons a,
-.detail-hero-buttons button,
-.detail-bottom-buttons a,
-.detail-bottom-buttons button {
+.detail-hero-buttons button {
   padding: 18px 36px;
   font-size: 1.1rem;
 }

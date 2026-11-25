@@ -7,10 +7,6 @@
     "slogan": "YOU CAN'T HIDE WHO YOU ARE",
     "intro": "Lamborghini의 Temerario는 V8 트윈 터보 엔진과 세 개의 전기 모터를 장착한 브랜드 최초 슈퍼 스포츠카로서 920CV의 출력을 발휘합니다. HPEV 라인업의 두 번째 차량으로서 뛰어난 성능과 편안함을 동시에 자랑하며 새로운 디자인 컨셉과 독창적인 커스터마이제이션 옵션을 선보였습니다.",
     "heroImage": "images/temerario/9_hero.png",
-    "previewImages": {
-      "exterior": "images/temerario/9_exterior_2.png",
-      "interior": "images/temerario/9_interior_1.png"
-    },
     "configureStats": [
       { "label": "최고 출력", "value": "920", "unit": "CV" },
       { "label": "최고 속도", "value": "343", "unit": "km/h" },
@@ -97,10 +93,6 @@
     "slogan": "UNFILTERED PERFORMANCE",
     "intro": "Temerario Spyder는 드라이버와 차량, 주변 환경 사이의 교감을 한층 깊게 하도록 설계되었습니다. 920 CV HPEV 아키텍처에 브랜드 역사상 최초의 리트랙터블 하드톱을 결합해 Lamborghini의 오픈 에어 경험을 새로운 차원으로 끌어올립니다.",
     "heroImage": "images/temerario/9_hero_spyder.png",
-    "previewImages": {
-      "exterior": "images/temerario/9_hero_spyder.png",
-      "interior": "images/temerario/9_interior_1.png"
-    },
     "customization": {
       "exterior": [
         {"id":"red","name":"빨강","color":"#e8503c","image":"images/temerario/configure-spyder-red.png"},
@@ -188,14 +180,6 @@
         {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/configure-revuelto-white.png"}
       ]
     },
-    "exteriorPaint": {
-      "channel": "red",
-      "light": 133,
-      "paths": [
-        [[130,88],[135,66],[158,54],[174,44],[199,40],[266,38],[297,43],[315,54],[322,70],[320,101],[287,111],[251,117],[174,118],[130,107]]
-      ]
-    },
-
     "stats": [
       { "label": "최대 출력", "value": "747", "unit": "kW" },
       { "label": "최고 속도", "value": ">350", "unit": "km/h" },
@@ -246,16 +230,6 @@
         {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/configure-revuelto-sv-white.png"}
       ]
     },
-    "exteriorPaint": {
-      "light": 130,
-      "paths": [
-        [[131,81],[142,64],[153,60],[147,70],[155,69],[150,88],[134,92]],
-        [[194,87],[216,79],[239,67],[264,63],[252,76],[236,84],[226,99],[250,103],[253,109],[231,107],[213,100]],
-        [[258,57],[251,59],[253,51],[266,43],[276,44],[283,49],[277,53]],
-        [[278,57],[290,53],[301,48],[313,51],[321,60],[319,70],[312,65],[310,73],[309,90],[277,106],[275,96],[293,88],[296,65],[282,68]]
-      ]
-    },
-
     "stats": [
       { "label": "최대 출력", "value": "783", "unit": "kW" },
       { "label": "최고 속도", "value": "348", "unit": "km/h" },
@@ -305,14 +279,6 @@
         {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/configure-urus-se-white.png"}
       ]
     },
-    "exteriorPaint": {
-      "channel": "red",
-      "light": 131,
-      "paths": [
-        [[126,56],[139,45],[174,38],[197,23],[219,15],[263,13],[290,22],[306,39],[314,57],[310,89],[265,92],[226,96],[186,99],[124,91]]
-      ]
-    },
-
     "stats": [
       { "label": "최대 출력", "value": "588", "unit": "kW" },
       { "label": "최고 속도", "value": "312", "unit": "km/h" },
@@ -363,14 +329,6 @@
         {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/configure-urus-se-performante-white.png"}
       ]
     },
-    "exteriorPaint": {
-      "channel": "yellow",
-      "light": 154,
-      "paths": [
-        [[124,84],[124,53],[134,44],[170,36],[195,23],[222,15],[260,12],[286,22],[305,43],[314,60],[312,84],[261,94],[212,100],[157,98]]
-      ]
-    },
-
     "stats": [
       { "label": "최대 출력", "value": "597", "unit": "kW" },
       { "label": "최고 속도", "value": "312", "unit": "km/h" },
