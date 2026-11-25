@@ -4,6 +4,9 @@ const wishListContainer = document.getElementById("wishListContainer");
 const wishCountEl = document.getElementById("wishCount");
 const clearAllBtn = document.getElementById("clearAllBtn");
 
+const recentListContainer = document.getElementById("recentListContainer");
+const clearRecentBtn = document.getElementById("clearRecentBtn");
+
 const requestListContainer = document.getElementById("requestListContainer");
 const requestCountEl = document.getElementById("requestCount");
 const clearRequestsBtn = document.getElementById("clearRequestsBtn");
@@ -13,6 +16,7 @@ fetch("cars.json")
   .then(data => {
     allCars = data;
     renderWishList();
+    renderRecentList();
     renderRequestList();
   })
   .catch(error => {
@@ -23,11 +27,44 @@ function getWishIds() {
   return JSON.parse(localStorage.getItem("favorites")) || [];
 }
 
+function getRecentKey() {
+  if (localStorage.getItem("recentCars") !== null) {
+    return "recentCars";
+  }
+  if (localStorage.getItem("recentlyViewed") !== null) {
+    return "recentlyViewed";
+  }
+  if (localStorage.getItem("recent") !== null) {
+    return "recent";
+  }
+  return "recentCars";
+}
+
+function getRecentIds() {
+  const key = getRecentKey();
+  return JSON.parse(localStorage.getItem(key)) || [];
+}
+
 function getRequests() {
   return JSON.parse(localStorage.getItem("requests")) || [];
 }
 
+function addRecentCar(carId) {
+  const key = getRecentKey();
+  let recentIds = getRecentIds();
+  const idx = recentIds.indexOf(carId);
+  if (idx !== -1) {
+    recentIds.splice(idx, 1);
+  }
+  recentIds.unshift(carId);
+  if (recentIds.length > 6) {
+    recentIds = recentIds.slice(0, 6);
+  }
+  localStorage.setItem(key, JSON.stringify(recentIds));
+}
+
 function goDetail(carId) {
+  addRecentCar(carId);
   localStorage.setItem("selectedCar", carId);
   location.href = "detail.html";
 }
@@ -41,6 +78,18 @@ function removeWish(carId) {
     localStorage.setItem("favorites", JSON.stringify(wishIds));
     alert("관심차량에서 삭제되었습니다.");
     renderWishList();
+  }
+}
+
+function removeRecent(carId) {
+  const key = getRecentKey();
+  let recentIds = getRecentIds();
+  const idx = recentIds.indexOf(carId);
+
+  if (idx !== -1) {
+    recentIds.splice(idx, 1);
+    localStorage.setItem(key, JSON.stringify(recentIds));
+    renderRecentList();
   }
 }
 
@@ -62,6 +111,19 @@ clearAllBtn.addEventListener("click", () => {
   if (confirm("관심차량 목록을 모두 삭제하시겠습니까?")) {
     localStorage.removeItem("favorites");
     renderWishList();
+  }
+});
+
+clearRecentBtn.addEventListener("click", () => {
+  const recentIds = getRecentIds();
+  if (recentIds.length === 0) {
+    alert("삭제할 최근 본 차량이 없습니다.");
+    return;
+  }
+
+  if (confirm("최근 본 차량 목록을 모두 삭제하시겠습니까?")) {
+    localStorage.removeItem(getRecentKey());
+    renderRecentList();
   }
 });
 
@@ -108,6 +170,47 @@ function renderWishList() {
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">상세보기</button>
             <button type="button" class="btn-outline btn-remove" onclick="removeWish('${car.id}')">삭제</button>
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderRecentList() {
+  const recentIds = getRecentIds();
+  const recentCars = [];
+
+  for (let i = 0; i < recentIds.length; i++) {
+    for (let j = 0; j < allCars.length; j++) {
+      if (allCars[j].id === recentIds[i]) {
+        recentCars.push(allCars[j]);
+        break;
+      }
+    }
+  }
+
+  if (recentCars.length === 0) {
+    recentListContainer.innerHTML = `
+      <div class="empty-box">
+        <p>최근 본 차량이 없습니다.</p>
+        <a href="models.html" class="btn">차량 둘러보러 가기</a>
+      </div>
+    `;
+    return;
+  }
+
+  recentListContainer.innerHTML = recentCars.map(car => {
+    return `
+      <article class="card car-card">
+        <img class="car-thumb" src="${car.heroImage}" alt="${car.name}">
+        <div class="car-body">
+          <span class="car-category">${car.category}</span>
+          <h3>${car.name}</h3>
+          <p class="car-slogan">${car.slogan}</p>
+          <div class="car-actions">
+            <button type="button" class="btn" onclick="goDetail('${car.id}')">상세보기</button>
+            <button type="button" class="btn-outline btn-remove" onclick="removeRecent('${car.id}')">삭제</button>
           </div>
         </div>
       </article>
