@@ -30,7 +30,7 @@ main h2::after {
 }
 
 .story-row.last {
-  margin: 200px 0 180px;
+  margin: 200px 0 240px;
 }
 
 .story-title-box {
@@ -55,11 +55,6 @@ main h2::after {
   font-size: 1.35rem;
 }
 
-.vision-btn-box {
-  text-align: center;
-  margin: 280px 0 220px;
-}
-
 .split-row {
   display: flex;
   align-items: center;
@@ -82,11 +77,6 @@ main h2::after {
   background: #000000;
   padding: 24px;
   border: none;
-  transition: transform 0.3s;
-}
-
-.split-img-box img.logo-img:hover {
-  transform: scale(1.06);
 }
 
 .split-text-box {
@@ -149,11 +139,7 @@ main h2::after {
   }
 
   .story-row.last {
-    margin: 120px 0 100px;
-  }
-
-  .vision-btn-box {
-    margin: 160px 0 140px;
+    margin: 120px 0 140px;
   }
 
   .story-title-box,
