@@ -168,8 +168,8 @@ function renderWishList() {
           <h3>${car.name}</h3>
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
-            <button type="button" class="btn" onclick="goDetail('${car.id}')">상세보기</button>
-            <button type="button" class="btn-outline btn-remove" onclick="removeWish('${car.id}')">삭제</button>
+            <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
+            <button type="button" class="btn-outline btn-remove" onclick="removeWish('${car.id}')">DELETE</button>
           </div>
         </div>
       </article>
@@ -209,8 +209,8 @@ function renderRecentList() {
           <h3>${car.name}</h3>
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
-            <button type="button" class="btn" onclick="goDetail('${car.id}')">상세보기</button>
-            <button type="button" class="btn-outline btn-remove" onclick="removeRecent('${car.id}')">삭제</button>
+            <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
+            <button type="button" class="btn-outline btn-remove" onclick="removeRecent('${car.id}')">DELETE</button>
           </div>
         </div>
       </article>
