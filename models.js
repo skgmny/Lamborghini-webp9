@@ -85,8 +85,8 @@ function addRecentCar(carId) {
     recentIds.splice(idx, 1);
   }
   recentIds.unshift(carId);
-  if (recentIds.length > 6) {
-    recentIds = recentIds.slice(0, 6);
+  if (recentIds.length > 3) {
+    recentIds = recentIds.slice(0, 3);
   }
   localStorage.setItem("recentCars", JSON.stringify(recentIds));
 }

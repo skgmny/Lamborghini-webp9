@@ -62,6 +62,27 @@
   width: calc(33.333% - 16px);
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.bookmark-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.bookmark-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.bookmark-btn:hover .bookmark-icon {
+  transform: scale(1.15);
 }
 
 .car-thumb {
@@ -88,37 +109,7 @@
 .car-slogan {
   font-size: 0.9rem;
   color: var(--text-sub);
-  margin-bottom: 16px;
-}
-
-.car-stats {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 16px;
-}
-
-.car-stat-item {
-  text-align: center;
-}
-
-.car-stat-value {
-  font-family: "Oswald", sans-serif;
-  font-size: 1.3rem;
-  color: var(--text);
-}
-
-.car-stat-label {
-  font-size: 0.75rem;
-  color: var(--text-sub);
-}
-
-.car-price {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .car-actions {
@@ -133,6 +124,10 @@
   justify-content: center;
   padding: 12px 14px;
   font-size: 0.9rem;
+}
+
+.car-actions .btn:hover {
+  transform: translateX(2px);
 }
 
 .btn-remove:hover {

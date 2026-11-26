@@ -69,6 +69,11 @@ function goDetail(carId) {
   location.href = "detail.html";
 }
 
+function goCustomize(carId) {
+  localStorage.setItem("selectedCar", carId);
+  location.href = "configure.html";
+}
+
 function removeWish(carId) {
   let wishIds = getWishIds();
   const idx = wishIds.indexOf(carId);
@@ -76,21 +81,27 @@ function removeWish(carId) {
   if (idx !== -1) {
     wishIds.splice(idx, 1);
     localStorage.setItem("favorites", JSON.stringify(wishIds));
-    alert("관심차량에서 삭제되었습니다.");
+    alert("관심차량에서 해제되었습니다.");
     renderWishList();
+    renderRecentList();
   }
 }
 
-function removeRecent(carId) {
-  const key = getRecentKey();
-  let recentIds = getRecentIds();
-  const idx = recentIds.indexOf(carId);
+function toggleWish(carId) {
+  let wishIds = getWishIds();
+  const idx = wishIds.indexOf(carId);
 
   if (idx !== -1) {
-    recentIds.splice(idx, 1);
-    localStorage.setItem(key, JSON.stringify(recentIds));
-    renderRecentList();
+    wishIds.splice(idx, 1);
+    alert("관심차량에서 해제되었습니다.");
+  } else {
+    wishIds.push(carId);
+    alert("관심차량에 추가되었습니다.");
   }
+
+  localStorage.setItem("favorites", JSON.stringify(wishIds));
+  renderWishList();
+  renderRecentList();
 }
 
 function removeRequest(index) {
@@ -111,6 +122,7 @@ clearAllBtn.addEventListener("click", () => {
   if (confirm("관심차량 목록을 모두 삭제하시겠습니까?")) {
     localStorage.removeItem("favorites");
     renderWishList();
+    renderRecentList();
   }
 });
 
@@ -160,8 +172,15 @@ function renderWishList() {
   }
 
   wishListContainer.innerHTML = wishedCars.map(car => {
+    const customizeBtnHtml = (car.category !== "LIMITED")
+      ? `<button type="button" class="btn-outline" onclick="goCustomize('${car.id}')">CUSTOMIZE</button>`
+      : "";
+
     return `
       <article class="card car-card">
+        <button type="button" class="bookmark-btn" onclick="removeWish('${car.id}')">
+          <img src="images/9_bookmark_filled.png" alt="관심차량 해제" class="bookmark-icon">
+        </button>
         <img class="car-thumb" src="${car.heroImage}" alt="${car.name}">
         <div class="car-body">
           <span class="car-category">${car.category}</span>
@@ -169,7 +188,7 @@ function renderWishList() {
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
-            <button type="button" class="btn-outline btn-remove" onclick="removeWish('${car.id}')">DELETE</button>
+            ${customizeBtnHtml}
           </div>
         </div>
       </article>
@@ -179,6 +198,7 @@ function renderWishList() {
 
 function renderRecentList() {
   const recentIds = getRecentIds().slice(0, 3);
+  const wishIds = getWishIds();
   const recentCars = [];
 
   for (let i = 0; i < recentIds.length; i++) {
@@ -201,8 +221,18 @@ function renderRecentList() {
   }
 
   recentListContainer.innerHTML = recentCars.map(car => {
+    const isWished = wishIds.indexOf(car.id) !== -1;
+    const bookmarkSrc = isWished ? "images/9_bookmark_filled.png" : "images/9_bookmark.png";
+    const bookmarkAlt = isWished ? "관심차량 해제" : "관심차량 추가";
+    const customizeBtnHtml = (car.category !== "LIMITED")
+      ? `<button type="button" class="btn-outline" onclick="goCustomize('${car.id}')">CUSTOMIZE</button>`
+      : "";
+
     return `
       <article class="card car-card">
+        <button type="button" class="bookmark-btn" onclick="toggleWish('${car.id}')">
+          <img src="${bookmarkSrc}" alt="${bookmarkAlt}" class="bookmark-icon">
+        </button>
         <img class="car-thumb" src="${car.heroImage}" alt="${car.name}">
         <div class="car-body">
           <span class="car-category">${car.category}</span>
@@ -210,7 +240,7 @@ function renderRecentList() {
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
-            <button type="button" class="btn-outline btn-remove" onclick="removeRecent('${car.id}')">DELETE</button>
+            ${customizeBtnHtml}
           </div>
         </div>
       </article>
