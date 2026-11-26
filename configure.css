@@ -1,249 +1,34 @@
 .config-page {
-background: var(--bg, #000);
-color: var(--text, #fff);
---config-line: var(--line, #333);
---config-accent: var(--point, #ffc000);
+  color: var(--text, #fff);
+  --config-accent: var(--point, #ffc000);
 }
 
-.config-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1rem clamp(1rem, 5vw, 4rem);
-border-bottom: 1px solid var(--config-line);
-}
+.config-page [hidden] { display: none; }
 
-.config-brand {
-font-weight: 800;
-letter-spacing: .16em;
-}
-
-.config-main {
-max-width: 1440px;
-margin-inline: auto;
-padding: clamp(1.25rem, 5vw, 4rem);
-}
-
-.config-title {
-margin-bottom: 1.5rem;
-}
-
-.config-title p {
-color: var(--config-accent);
-}
-
-.config-title h1 {
-font-size: clamp(2.5rem, 7vw, 5rem);
-line-height: 1.04;
-letter-spacing: -.05em;
-}
-
-.config-layout {
-display: grid;
-grid-template-columns: minmax(0, 2fr) minmax(18rem, 1fr);
-gap: clamp(1rem, 3vw, 2.5rem);
-align-items: start;
-}
-
-.config-preview figure {
-position: relative;
-overflow: hidden;
-background: #151515;
-}
-
-.config-preview img {
-display: block;
-width: 100%;
-aspect-ratio: 16 / 10;
-object-fit: cover;
-}
-
-.config-preview figcaption {
-position: absolute;
-bottom: .75rem;
-left: .75rem;
-padding: .25rem .65rem;
-background: #000d;
-font-size: .85rem;
-}
-
-.config-views {
-display: flex;
-gap: .5rem;
-margin-top: .75rem;
-}
-
-.config-page button {
-font: inherit;
-color: inherit;
-background: transparent;
-border: 1px solid var(--config-line);
-padding: .45rem .85rem;
-cursor: pointer;
-}
-
-.config-views [aria-pressed="true"] {
-border-color: var(--config-accent);
-color: var(--config-accent);
-}
-
-.config-note {
-color: #b8b8b8;
-font-size: .85rem;
-margin-top: .75rem;
-}
-
-.config-controls {
-display: grid;
-gap: 1.35rem;
-padding: clamp(1rem, 2.5vw, 1.75rem);
-background: var(--bg-sub, #111);
-border: 1px solid var(--config-line);
-}
-
-.config-controls fieldset {
-border: 0;
-min-width: 0;
-}
-
-.config-controls legend,
-.config-summary h2 {
-font-size: 1rem;
-font-weight: 700;
-margin-bottom: .65rem;
-}
-
-.config-swatches {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: .45rem;
+.config-controls legend {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: .65rem;
 }
 
 .config-swatch {
-position: relative;
+  position: relative;
 }
 
 .config-swatch input {
-position: absolute;
-opacity: 0;
-}
-
-.config-swatch span {
-display: grid;
-justify-items: center;
-gap: .35rem;
-border: 1px solid var(--config-line);
-padding: .6rem .25rem;
-font-size: .84rem;
-cursor: pointer;
-}
-
-.config-swatch span::before {
-content: "";
-width: 1.55rem;
-aspect-ratio: 1;
-border-radius: 50%;
-border: 1px solid #ffffff55;
-background: var(--swatch);
-}
-
-.config-swatch input:checked + span {
-border-color: var(--config-accent);
-color: var(--config-accent);
-}
-
-.config-swatch input:focus-visible + span,
-.config-page :is(button, a):focus-visible {
-outline: 2px solid var(--config-accent);
-outline-offset: 3px;
-}
-
-.config-summary {
-border-top: 1px solid var(--config-line);
-padding-top: 1rem;
-}
-
-.config-summary dl > div {
-display: flex;
-justify-content: space-between;
-gap: .5rem;
-}
-
-.config-summary dt {
-color: #b8b8b8;
-}
-
-.config-page button:disabled {
-opacity: .5;
-cursor: default;
-}
-
-#config-status {
-color: #ff9f9f;
-font-size: .9rem;
-}
-
-#config-status:empty {
-display: none;
-}
-
-@media (max-width: 780px) {
-.config-layout {
-grid-template-columns: 1fr;
-}
-}
-
-.config-preview figure {
-  background: #000;
-  border: 1px solid var(--config-line);
-}
-
-.config-preview img {
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-}
-
-.config-swatch span {
-  min-height: 4.4rem;
-  align-content: center;
+  position: absolute;
+  opacity: 0;
 }
 
 .config-swatch:hover span {
   background: var(--bg-card, #1a1a1a);
 }
 
-.config-swatch input:checked + span {
-  background: #ffc00012;
+.config-swatch input:focus-visible + span,
+.config-page a:focus-visible {
+  outline: 2px solid var(--config-accent);
+  outline-offset: 3px;
 }
-
-.config-summary dd {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-
-.config-summary dd::before {
-  content: "";
-  width: .75rem;
-  aspect-ratio: 1;
-  border: 1px solid #ffffff55;
-  border-radius: 50%;
-  background: var(--swatch, transparent);
-}
-.config-views a { padding: .45rem .85rem; border: 1px solid var(--config-line); }
-.config-views [aria-current="page"] { border-color: var(--config-accent); color: var(--config-accent); }
-
-.config-views a {
-  padding: .45rem .85rem;
-  border: 1px solid var(--config-line);
-}
-
-.config-views [aria-current="page"] {
-  border-color: var(--config-accent);
-  color: var(--config-accent);
-}
-.config-page [hidden] { display: none; }
-
 
 .config-exterior-stage {
   height: 100dvh;
@@ -256,17 +41,10 @@ grid-template-columns: 1fr;
   background-color: transparent;
 }
 
-.config-exterior-stage .config-title > p,
-.config-exterior-stage .config-title > nav,
-.config-exterior-stage .config-note,
-.config-exterior-stage .config-summary,
-.config-exterior-stage .config-reset {
-  display: none;
-}
-
 .config-exterior-stage .config-main {
   width: min(100% - 2rem, 1400px);
   min-height: 0;
+  max-width: 1440px;
   margin-inline: auto;
   padding: clamp(.65rem, 2.5vh, 2rem) 0 .65rem;
   display: grid;
@@ -352,12 +130,11 @@ grid-template-columns: 1fr;
 }
 
 .config-exterior-stage .config-preview figure {
+  position: relative;
   display: grid;
   place-items: center;
   height: 100%;
   overflow: clip visible;
-  border: 0;
-  background: transparent;
   margin: 0;
 }
 
@@ -369,14 +146,22 @@ grid-template-columns: 1fr;
 }
 
 .config-exterior-stage .config-image-frame > img {
+  display: block;
+  aspect-ratio: 16 / 9;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: scale(1.65);
+  transform: scale(1.85);
   transform-origin: center 70%;
 }
 
 .config-exterior-stage .config-preview figcaption {
+  position: absolute;
+  bottom: .75rem;
+  left: .75rem;
+  padding: .25rem .65rem;
+  background: #000d;
+  font-size: .85rem;
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -384,6 +169,7 @@ grid-template-columns: 1fr;
 }
 
 .config-exterior-stage .config-controls {
+  display: grid;
   justify-self: end;
   z-index: 1;
   gap: .4rem;
@@ -392,12 +178,13 @@ grid-template-columns: 1fr;
   min-width: 0;
   padding: .65rem .85rem;
   background: #101010;
-  border-color: #282828;
+  border: 1px solid #282828;
 }
 
 .config-exterior-stage .config-controls fieldset {
   padding: 0;
-  background: transparent;
+  border: 0;
+  min-width: 0;
 }
 
 .config-exterior-stage .config-swatches {
@@ -407,19 +194,26 @@ grid-template-columns: 1fr;
 }
 
 .config-exterior-stage .config-swatch span {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  font-size: .84rem;
+  cursor: pointer;
   min-width: 3.25rem;
   min-height: 0;
   gap: .4rem;
   padding: .35rem;
-  border-color: transparent;
+  border: 1px solid transparent;
   border-radius: .35rem;
   color: #bfbfbf;
 }
 
 .config-exterior-stage .config-swatch span::before {
+  content: "";
+  border: 1px solid #ffffff55;
+  background: var(--swatch);
   width: 100%;
   height: .75rem;
-  aspect-ratio: auto;
   border-radius: .18rem;
 }
 
@@ -427,23 +221,4 @@ grid-template-columns: 1fr;
   border-color: var(--config-accent);
   background: #1c180b;
   color: #fff;
-}
-
-.config-controls #config-status {
-  margin: 0;
-}
-
-.config-controls #config-status:empty {
-  display: none;
-}
-
-@media (max-width: 640px) {
-  .config-exterior-stage .config-main {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
-  }
-
-  .config-exterior-stage .config-image-frame > img {
-    transform: scale(1.25);
-  }
 }

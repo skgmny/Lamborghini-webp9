@@ -2,7 +2,10 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="김사랑, 김윤하, 조민체, 최석인">
+  <meta name="description" content="람보르기니 스포츠카와 SUV 모델을 둘러보고, 커스터마이징할 차량을 선택할 수 있습니다.">
+  <meta name="keywords" content="람보르기니, 커스터마이징, 모델 선택, 스포츠카, SUV">
+  <meta name="team" content="Team 9">
   <title>Customize | Lambor Guinea</title>
   <link rel="stylesheet" href="common.css">
   <style>
@@ -31,6 +34,8 @@
   display: block;
   padding: 10px 12px;
   font-weight: 700;
+  /* background-color: #181818; */
+
 }
 
     .customize-model {
@@ -42,6 +47,7 @@
       width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: contain;
+      /* background-color: #181818; */
       /* object-position: center bottom; */
     }
 
@@ -49,12 +55,6 @@
     .customize-empty { color: var(--text-sub); }
     .header-nav [aria-current="page"] { color: var(--point); }
 
-@media (max-width: 700px) {
-  .customize-page { padding-block: 40px 56px; }
-  .customize-models {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
   </style>
 </head>
 <body>
@@ -87,7 +87,6 @@
         <ul id="suv" class="customize-models"></ul>
       </section>
     </div>
-    <p id="customize-status" role="status">차량 목록을 불러오는 중이에요.</p>
   </main>
       <footer class="site-footer">
 
@@ -150,48 +149,30 @@
       ["suv", "suv"],
     ]);
 
-    const statusMessage = document.querySelector("#customize-status");
-
     async function loadModels() {
-      try {
-        const response = await fetch("cars.json");
-        if (!response.ok) throw new Error("차량 데이터 요청 실패");
+      const response = await fetch("cars.json");
+      if (!response.ok) return;
 
-        const cars = await response.json();
-        for (const car of cars) {
-          const category = categories.get(car.category.trim().toLowerCase());
-          if (!category) continue;
+      const cars = await response.json();
+      for (const car of cars) {
+        const category = categories.get(car.category.trim().toLowerCase());
+        if (!category) continue;
 
-          const item = document.createElement("li");
-          const link = document.createElement("a");
-          const image = document.createElement("img");
-          const name = document.createElement("span");
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        const image = document.createElement("img");
+        const name = document.createElement("span");
 
-          link.className = "card customize-model";
-          link.href = "configure.html?id=" + encodeURIComponent(car.id);
-          image.src = car.heroImage;
-          image.alt = "";
-          image.loading = "lazy";
-          name.textContent = car.name;
+        link.className = "card customize-model";
+        link.href = "configure.html?id=" + encodeURIComponent(car.id);
+        image.src = car.heroImage;
+        image.alt = "";
+        image.loading = "lazy";
+        name.textContent = car.name;
 
-          link.append(image, name);
-          item.append(link);
-          document.getElementById(category).append(item);
-        }
-
-        for (const list of document.querySelectorAll(".customize-models")) {
-          if (list.childElementCount) continue;
-
-          const empty = document.createElement("li");
-          empty.className = "customize-empty";
-          empty.textContent = "등록된 모델이 없어요.";
-          list.append(empty);
-        }
-
-        statusMessage.textContent = "";
-      } catch (error) {
-        statusMessage.textContent = "차량 목록을 불러오지 못했어요. 로컬 웹 서버에서 다시 열어 주세요.";
-        console.error(error);
+        link.append(image, name);
+        item.append(link);
+        document.getElementById(category).append(item);
       }
     }
 

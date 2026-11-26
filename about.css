@@ -88,6 +88,7 @@
 .story-media .history-img {
   aspect-ratio: 9 / 10;
   object-position: right center;
+  filter: brightness(0.9);
 }
 
 .masterpieces-head {
