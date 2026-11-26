@@ -217,3 +217,7 @@
     flex-direction: column;
   }
 }
+
+body {
+  background-color: #181818;
+}
