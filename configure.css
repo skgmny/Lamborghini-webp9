@@ -245,16 +245,10 @@ grid-template-columns: 1fr;
 .config-page [hidden] { display: none; }
 
 
-.config-preview img.config-capture {
-  object-view-box: inset(25% 17% 23%);
-  object-fit: contain;
-}
-
 .config-exterior-stage {
   background: #101112 url("images/configure-studio-background.png") center / cover no-repeat;
 }
 
-.config-exterior-stage .header,
 .config-exterior-stage .config-title > p,
 .config-exterior-stage .config-title > nav,
 .config-exterior-stage .config-note,
@@ -346,29 +340,6 @@ grid-template-columns: 1fr;
   object-fit: contain;
 }
 
-.config-exterior-stage .config-image-frame img.config-capture {
-  height: auto;
-  position: absolute;
-  width: 155%;
-  max-width: none;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -52%);
-  aspect-ratio: auto;
-  object-view-box: none;
-  clip-path: polygon(
-    23.3% 62.6%, 23.8% 60.8%, 24% 56.3%, 24.1% 54%, 25.1% 52%,
-    26% 49.4%, 28.1% 46.6%, 31.6% 44.9%, 34% 44.1%, 36.7% 41.1%,
-    40.5% 38.1%, 44% 36.2%, 48% 35.6%, 53% 35.7%, 56.8% 35.3%,
-    60% 35.9%, 63.5% 37.4%, 67.8% 39.6%, 71% 40.6%, 74.1% 42%,
-    75.1% 43.1%, 75.9% 45.2%, 76.4% 48.6%, 76.4% 54.7%, 76% 55.8%,
-    75.6% 59%, 75% 61%, 74% 62.5%, 72.3% 63.4%, 69.5% 63.6%,
-    68.6% 62.5%, 55.9% 64.3%, 55.1% 66%, 53.7% 67.1%, 51.7% 67.6%,
-    49.7% 67.1%, 48.4% 65.7%, 43.5% 65.8%, 37% 65.7%, 32.4% 65.4%,
-    29.4% 64.9%, 28.8% 64.3%, 24.5% 63.6%
-  );
-}
-
 .config-exterior-stage .config-preview figcaption {
   width: 1px;
   height: 1px;
@@ -391,11 +362,13 @@ grid-template-columns: 1fr;
 }
 
 .config-exterior-stage .config-swatches {
-  grid-template-columns: repeat(4, minmax(3.25rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: .4rem;
 }
 
 .config-exterior-stage .config-swatch span {
+  min-width: 3.25rem;
   min-height: 0;
   gap: .4rem;
   padding: .35rem;
@@ -415,132 +388,4 @@ grid-template-columns: 1fr;
   border-color: var(--config-accent);
   background: #1c180b;
   color: #fff;
-}
-
-.config-exterior-stage .config-image-frame img[data-model="temerario-spyder"] {
-  clip-path: polygon(
-    22.54% calc(63.28% * var(--spyder-y-scale, 1)), 23.03% calc(62.22% * var(--spyder-y-scale, 1)), 23.33% calc(58.52% * var(--spyder-y-scale, 1)),
-    23.51% calc(55.77% * var(--spyder-y-scale, 1)), 23.33% calc(54.81% * var(--spyder-y-scale, 1)), 24.71% calc(51.64% * var(--spyder-y-scale, 1)),
-    25.62% calc(49.74% * var(--spyder-y-scale, 1)), 27.31% calc(47.72% * var(--spyder-y-scale, 1)), 29.54% calc(46.03% * var(--spyder-y-scale, 1)),
-    32.43% calc(44.66% * var(--spyder-y-scale, 1)), 33.57% calc(44.23% * var(--spyder-y-scale, 1)), 34.84% calc(43.07% * var(--spyder-y-scale, 1)),
-    37.37% calc(40.63% * var(--spyder-y-scale, 1)), 40.20% calc(38.52% * var(--spyder-y-scale, 1)), 42.68% calc(37.14% * var(--spyder-y-scale, 1)),
-    45.39% calc(36.51% * var(--spyder-y-scale, 1)), 49.67% calc(36.19% * var(--spyder-y-scale, 1)), 54.67% calc(36.30% * var(--spyder-y-scale, 1)),
-    56.96% calc(36.72% * var(--spyder-y-scale, 1)), 57.63% calc(37.57% * var(--spyder-y-scale, 1)), 58.77% calc(37.25% * var(--spyder-y-scale, 1)),
-    59.31% calc(36.51% * var(--spyder-y-scale, 1)), 60.28% calc(36.19% * var(--spyder-y-scale, 1)), 62.33% calc(36.51% * var(--spyder-y-scale, 1)),
-    64.56% calc(37.57% * var(--spyder-y-scale, 1)), 67.15% calc(39.05% * var(--spyder-y-scale, 1)), 69.32% calc(40.32% * var(--spyder-y-scale, 1)),
-    72.39% calc(41.27% * var(--spyder-y-scale, 1)), 74.98% calc(42.22% * var(--spyder-y-scale, 1)), 75.83% calc(43.17% * var(--spyder-y-scale, 1)),
-    76.37% calc(44.97% * var(--spyder-y-scale, 1)), 76.79% calc(47.51% * var(--spyder-y-scale, 1)), 76.97% calc(50.26% * var(--spyder-y-scale, 1)),
-    76.97% calc(54.29% * var(--spyder-y-scale, 1)), 76.67% calc(55.24% * var(--spyder-y-scale, 1)), 76.49% calc(58.20% * var(--spyder-y-scale, 1)),
-    76.01% calc(61.16% * var(--spyder-y-scale, 1)), 75.41% calc(62.75% * var(--spyder-y-scale, 1)), 74.62% calc(63.70% * var(--spyder-y-scale, 1)),
-    73.36% calc(64.23% * var(--spyder-y-scale, 1)), 71.49% calc(64.23% * var(--spyder-y-scale, 1)), 69.92% calc(63.70% * var(--spyder-y-scale, 1)),
-    69.02% calc(61.90% * var(--spyder-y-scale, 1)), 56.42% calc(64.02% * var(--spyder-y-scale, 1)), 56.00% calc(65.61% * var(--spyder-y-scale, 1)),
-    55.33% calc(67.09% * var(--spyder-y-scale, 1)), 54.37% calc(68.04% * var(--spyder-y-scale, 1)), 52.92% calc(68.47% * var(--spyder-y-scale, 1)),
-    51.60% calc(68.36% * var(--spyder-y-scale, 1)), 50.39% calc(67.83% * var(--spyder-y-scale, 1)), 49.07% calc(65.71% * var(--spyder-y-scale, 1)),
-    45.81% calc(66.14% * var(--spyder-y-scale, 1)), 40.99% calc(66.24% * var(--spyder-y-scale, 1)), 36.17% calc(66.14% * var(--spyder-y-scale, 1)),
-    31.95% calc(66.35% * var(--spyder-y-scale, 1)), 29.96% calc(65.93% * var(--spyder-y-scale, 1)), 28.15% calc(64.87% * var(--spyder-y-scale, 1)),
-    25.62% calc(64.55% * var(--spyder-y-scale, 1)), 23.51% calc(63.92% * var(--spyder-y-scale, 1))
-  );
-}
-
-.config-exterior-stage .config-image-frame img[data-model="temerario-spyder"][data-color="red"] {
-  --spyder-y-scale: calc(945 / 894);
-  transform: translate(-50%, -55%);
-}
-
-.config-exterior-stage .config-image-frame img[data-model="revuelto"] {
-  clip-path: polygon(
-    21.91% 63.67%, 22.63% 62.71%, 22.93% 60.81%, 22.81% 58.37%, 22.63% 56.46%,
-    22.57% 54.87%, 23.36% 52.44%, 24.44% 50.32%, 25.59% 48.31%, 27.04% 46.61%,
-    28.49% 45.44%, 29.69% 44.92%, 31.20% 45.02%, 32.41% 44.28%, 33.31% 43.01%,
-    34.46% 42.06%, 35.85% 41.21%, 37.60% 39.94%, 39.47% 38.56%, 41.46% 37.61%,
-    44.00% 36.65%, 46.65% 36.02%, 49.12% 35.91%, 51.42% 36.23%, 52.75% 36.33%,
-    54.38% 35.91%, 56.19% 35.81%, 58.60% 36.12%, 60.65% 36.55%, 63.01% 37.50%,
-    65.12% 38.24%, 67.11% 38.77%, 70.01% 39.94%, 72.54% 41.00%, 74.59% 41.74%,
-    75.74% 42.37%, 76.46% 43.54%, 77.07% 45.02%, 77.43% 46.08%, 77.25% 48.20%,
-    77.37% 50.42%, 77.31% 51.48%, 76.95% 52.44%, 76.89% 56.14%, 76.64% 58.69%,
-    76.28% 60.81%, 75.68% 62.50%, 74.95% 63.24%, 73.87% 63.67%, 72.72% 63.56%,
-    72.00% 63.03%, 71.45% 61.65%, 55.22% 63.67%, 54.86% 65.04%, 53.95% 66.74%,
-    52.87% 67.80%, 51.96% 68.22%, 50.69% 68.11%, 49.55% 67.80%, 48.64% 66.00%,
-    46.59% 66.10%, 34.46% 66.10%, 32.59% 65.78%, 30.24% 65.68%, 28.24% 65.47%,
-    27.22% 65.04%, 25.05% 65.04%, 23.36% 64.72%, 22.45% 64.30%
-  );
-}
-
-.config-exterior-stage:has(img[data-model="revuelto"]) .config-swatches,
-.config-exterior-stage:has(img[data-model="urus-se"]) .config-swatches {
-  grid-template-columns: repeat(2, minmax(3.25rem, 1fr));
-}
-
-.config-exterior-stage .config-image-frame img[data-model="revuelto-sv"] {
-  clip-path: polygon(
-    21.73% 63.41%, 22.03% 62.14%, 22.87% 59.28%, 22.57% 57.16%, 22.51% 55.04%,
-    23.17% 52.92%, 24.38% 50.27%, 25.59% 48.25%, 27.04% 46.45%, 28.55% 45.17%,
-    29.75% 44.75%, 31.20% 44.96%, 32.53% 44.11%, 33.61% 42.63%, 35.00% 41.68%,
-    37.54% 39.77%, 39.65% 38.39%, 41.64% 37.33%, 44.36% 36.37%, 46.83% 35.84%,
-    49.73% 35.84%, 52.14% 36.27%, 54.50% 35.74%, 56.67% 35.74%, 59.08% 36.06%,
-    61.38% 36.80%, 63.73% 37.65%, 65.78% 38.28%, 66.99% 38.49%, 70.91% 38.49%,
-    72.96% 38.39%, 73.87% 37.75%, 75.32% 37.96%, 76.40% 38.39%, 76.64% 39.24%,
-    76.70% 40.40%, 75.44% 39.98%, 74.59% 39.66%, 73.14% 39.66%, 72.84% 41.04%,
-    74.89% 41.68%, 75.86% 42.31%, 76.64% 43.58%, 77.31% 45.81%, 77.31% 47.61%,
-    77.13% 49.31%, 77.43% 50.80%, 77.01% 52.49%, 77.01% 55.89%, 76.77% 58.43%,
-    76.28% 61.08%, 75.68% 62.46%, 74.83% 63.41%, 73.81% 63.73%, 72.12% 63.52%,
-    71.45% 61.93%, 55.28% 63.73%, 54.68% 65.64%, 53.71% 67.23%, 52.69% 67.97%,
-    51.54% 68.40%, 50.39% 68.08%, 49.37% 67.55%, 48.58% 65.64%, 46.05% 66.07%,
-    40.13% 65.96%, 34.16% 66.07%, 32.41% 65.64%, 28.67% 65.54%, 27.28% 65.11%,
-    25.17% 65.01%, 23.23% 64.69%, 22.33% 64.26%
-  );
-}
-
-.config-exterior-stage:has(img[data-model="revuelto-sv"]) .config-swatches {
-  grid-template-columns: repeat(3, minmax(3.25rem, 1fr));
-}
-
-.config-exterior-stage .config-image-frame img[data-model="urus-se-performante"] {
-  clip-path: polygon(
-    22.09% 59.89%, 22.33% 59.05%, 22.09% 57.78%, 22.45% 56.51%, 22.09% 50.79%,
-    22.03% 48.89%, 22.39% 47.94%, 23.05% 47.20%, 23.66% 45.50%, 24.56% 43.28%,
-    25.89% 41.80%, 28.12% 40.53%, 30.60% 39.26%, 32.95% 38.62%, 35.12% 37.88%,
-    35.61% 36.40%, 36.21% 35.34%, 37.42% 34.50%, 39.35% 32.17%, 42.00% 29.63%,
-    43.51% 28.78%, 45.68% 28.15%, 48.64% 27.83%, 52.81% 27.51%, 56.91% 27.51%,
-    58.96% 27.72%, 61.26% 28.36%, 63.37% 29.10%, 65.72% 30.05%, 68.14% 31.32%,
-    69.22% 31.32%, 69.76% 32.38%, 69.64% 32.80%, 71.09% 34.50%, 72.90% 37.04%,
-    74.05% 38.10%, 74.23% 39.47%, 74.47% 40.85%, 74.95% 42.22%, 75.14% 44.76%,
-    75.20% 46.46%, 75.62% 47.83%, 75.50% 49.84%, 75.68% 51.64%, 75.74% 53.02%,
-    75.44% 54.92%, 74.89% 56.61%, 74.65% 58.41%, 74.29% 60.85%, 73.69% 62.54%,
-    72.90% 63.70%, 71.82% 64.34%, 69.40% 64.44%, 68.44% 63.81%, 67.59% 62.65%,
-    66.99% 60.11%, 56.31% 61.06%, 55.52% 62.12%, 52.81% 63.17%, 52.20% 65.08%,
-    51.42% 67.09%, 50.27% 68.36%, 49.12% 68.99%, 46.65% 68.89%, 45.20% 68.25%,
-    44.18% 66.77%, 42.85% 64.23%, 33.86% 63.60%, 33.07% 64.97%, 32.05% 66.14%,
-    30.66% 66.98%, 28.12% 66.88%, 26.55% 66.14%, 25.59% 64.66%, 24.56% 62.01%,
-    23.48% 61.59%, 23.05% 60.74%
-  );
-}
-
-.config-exterior-stage:has(img[data-model="urus-se-performante"]) .config-swatches {
-  grid-template-columns: repeat(3, minmax(3.25rem, 1fr));
-}
-
-.config-exterior-stage .config-image-frame img:is([data-model="urus-se"], [data-model="urus-se-performante"]) {
-  /* The taller SUV silhouette needs less upward offset to fit inside the frame. */
-  transform: translate(-50%, -48%);
-}
-
-.config-exterior-stage .config-image-frame img[data-model="urus-se"] {
-  clip-path: polygon(
-    22.09% 57.63%, 22.45% 56.78%, 22.69% 53.81%, 22.51% 50.53%, 22.33% 49.79%,
-    22.63% 49.15%, 22.51% 48.09%, 23.48% 46.08%, 24.56% 43.43%, 25.47% 42.48%,
-    26.61% 41.42%, 28.12% 40.78%, 30.60% 39.41%, 33.07% 38.67%, 35.06% 38.03%,
-    35.61% 36.55%, 36.33% 35.28%, 37.36% 34.64%, 39.35% 32.20%, 42.00% 29.45%,
-    43.57% 28.71%, 45.81% 28.07%, 48.46% 27.65%, 52.81% 27.33%, 56.73% 27.44%,
-    58.78% 27.65%, 61.19% 28.18%, 63.49% 29.03%, 65.78% 29.98%, 68.01% 31.14%,
-    69.34% 32.52%, 71.03% 34.53%, 72.90% 36.97%, 73.99% 37.82%, 74.23% 38.88%,
-    74.47% 39.94%, 74.53% 41.00%, 75.02% 42.48%, 75.14% 45.55%, 75.38% 47.67%,
-    75.20% 49.47%, 75.44% 51.06%, 75.50% 53.60%, 75.26% 55.30%, 74.83% 56.36%,
-    74.59% 58.69%, 74.23% 60.59%, 73.69% 62.61%, 72.90% 63.77%, 71.64% 64.30%,
-    69.58% 64.41%, 68.62% 63.88%, 67.83% 62.61%, 66.99% 60.28%, 56.43% 61.12%,
-    55.46% 62.29%, 53.05% 63.14%, 52.38% 65.04%, 51.60% 66.95%, 50.63% 68.22%,
-    49.43% 68.86%, 46.89% 68.86%, 45.32% 68.33%, 44.30% 66.95%, 42.85% 63.24%,
-    33.92% 63.24%, 33.19% 64.62%, 32.17% 66.10%, 30.72% 66.95%, 28.18% 66.84%,
-    26.74% 66.21%, 25.65% 64.72%, 24.38% 60.91%, 23.05% 60.17%, 22.51% 59.00%
-  );
 }
