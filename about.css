@@ -1,18 +1,9 @@
-@font-face {
-  font-family: "Noto Sans KR";
-  src: url("fonts/NotoSansKR-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-.about-page,
-.about-page h1,
-.about-page h2 {
-  font-family: "Noto Sans KR", "Pretendard", sans-serif;
+.about-page :is(h1, h2, h3) {
+  font-family: "Anton", Arial, "Noto Sans KR", sans-serif;
 }
 
 .about-page {
+  font-family: Arial, "Noto Sans KR", sans-serif;
   background: #181818;
   color: #f5f5f5;
 }
@@ -76,11 +67,11 @@
   margin-bottom: 32px;
 }
 
-.story-text-box p.highlight {
+/* .story-text-box p.highlight {
   color: white;
   font-weight: 700;
   font-size: 1.35rem;
-}
+} */
 
 .split-row {
   display: flex;

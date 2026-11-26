@@ -28,7 +28,6 @@ async function initialize() {
       return;
     }
 
-    document.body.classList.add("config-exterior-stage");
     const stats = document.querySelector("#config-model-stats");
     for (const { label, value, unit } of car.configureStats ?? car.stats) {
       const item = document.createElement("div");
