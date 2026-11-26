@@ -13,25 +13,11 @@ Lamborguinea는 **Team 9**이 대학 캡스톤디자인 프로젝트로 만든 �
 | Customize · Configure | 커스터마이징할 스포츠카 또는 SUV를 선택하고, 외장 색상별 차량 이미지를 미리 봅니다. |
 | My Garage | 관심 차량, 최근 본 차량, 시승·구매 상담 문의 내역을 확인합니다. |
 
-차량 정보는 `cars.json`에서 불러옵니다. 관심 차량, 최근 본 차량, 문의 내역은 브라우저의 `localStorage`에 저장됩니다. 문의 양식은 시연용이며, 입력한 내용은 해당 브라우저에서 확인할 수 있습니다.
-
 ## 기술 스택
 
 - HTML, CSS, Vanilla JavaScript
 - JSON 차량 데이터, Web Storage API
-
-## 로컬 실행
-
-Python 3가 설치된 환경에서 저장소를 내려받고 로컬 서버를 실행합니다.
-
-```bash
-git clone https://github.com/skgmny/Lamborghini-webp9.git
-cd Lamborghini-webp9
-python -m http.server 8000
-```
-
-브라우저에서 [http://localhost:8000/main.html](http://localhost:8000/main.html)을 열면 됩니다. VS Code를 사용하는 경우 Live Server로 `main.html`을 열어도 됩니다.
-
+- 
 ## 팀원
 
 **Team 9** · 김사랑, 김윤하, 조민체, 최석인
