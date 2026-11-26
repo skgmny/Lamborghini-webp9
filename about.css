@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("fonts/NotoSansKR-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.about-page,
+.about-page h1,
+.about-page h2 {
+  font-family: "Noto Sans KR", "Pretendard", sans-serif;
+}
+
 .about-page {
   background: #181818;
   color: #f5f5f5;
@@ -86,7 +100,6 @@
   width: 75%;
   height: auto;
   margin: 0 auto;
-  background: #000000;
   padding: 24px;
   border: none;
 }
