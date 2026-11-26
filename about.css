@@ -9,7 +9,7 @@
 }
 
 .about-hero {
-  min-height: clamp(340px, 38.5vw, 640px);
+  min-height: max(340px, calc(100svh - 180px));
   padding: clamp(40px, 5vw, 80px) 0 24px;
   background: #111111 url("images/automobile-dark.webp") center / cover no-repeat;
   color: #ffffff;
@@ -23,20 +23,16 @@
   padding: clamp(48px, 6vw, 96px) 0;
 }
 
-.about-page > .section + .section {
-  border-top: 1px solid #bcbcbc;
-}
-
 .about-lead {
   max-width: 680px;
   color: #e0e0e0;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   margin-top: 16px;
   line-height: 1.75;
 }
 
 .about-page h2 {
-  font-size: 2.8rem;
+  font-size: 2.45rem;
   line-height: 1.15;
 }
 
@@ -45,136 +41,129 @@
 }
 
 .story-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  gap: clamp(2rem, 7vw, 6rem);
 }
 
-.story-title-box {
-  width: 34%;
+.story-media {
+  min-width: 0;
 }
 
-.story-text-box {
-  width: 62%;
-  max-width: 680px;
+.story-media-placeholder {
+  aspect-ratio: 7 / 8;
+  border: 1px dashed #5c5c5c;
+  background: #202020;
 }
 
-.story-text-box p {
-  color: #d6d6d6;
-  font-size: 1.2rem;
-  line-height: 1.9;
-  margin-bottom: 32px;
+.story-media img {
+  width: 100%;
+  height: auto;
 }
-
-/* .story-text-box p.highlight {
-  color: white;
-  font-weight: 700;
-  font-size: 1.35rem;
-} */
 
 .split-row {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 64px;
-}
-
-.split-row.reverse {
-  flex-direction: row-reverse;
 }
 
 .split-img-box {
   width: 48%;
 }
 
-.split-img-box img.logo-img {
-  width: 75%;
-  height: auto;
-  margin: 0 auto;
-  padding: 24px;
-  border: none;
-}
-
-.split-text-box {
+.split-row .story-text-box {
   width: 52%;
 }
 
-.split-text-box h2 {
-  margin-bottom: 28px;
+.split-img-box .logo-img {
+  width: 75%;
+  margin-inline: auto;
+  padding: 24px;
 }
 
-.split-text-box p {
+.timeline-navigation {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(.35rem, 1.5vw, 1rem);
+}
+
+.timeline-arrow {
+  width: clamp(2rem, 5vw, 2.75rem);
+  height: 2.75rem;
+  border: 1px solid #666;
+  background: #181818;
+  color: #f5f5f5;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.25rem;
+}
+
+.timeline-arrow:not(:disabled):hover,
+.timeline-arrow:focus-visible {
+  border-color: var(--point);
+  color: var(--point);
+}
+
+.timeline-arrow:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.story-text-box p {
   color: #d6d6d6;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   line-height: 1.9;
   margin-bottom: 24px;
 }
 
-.masterpieces-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 32px;
-}
-
-.scroll-guide {
-  font-size: 0.9rem;
-  color: #d6d6d6;
+.story-text-box p:last-child {
+  margin-bottom: 0;
 }
 
 .timeline-scroll {
+  isolation: isolate;
+  background: #181818;
   overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.timeline-full-img {
+.timeline-scroll .timeline-full-img {
+  mix-blend-mode: screen;
+  width: auto;
   height: 460px;
   max-width: none;
 }
 
 @media (max-width: 900px) {
-  .about-page h2 {
-    font-size: 2.1rem;
-  }
-
-  .story-row {
-    flex-direction: column;
-    gap: 28px;
-  }
-
-  .story-title-box,
-  .story-text-box {
-    width: 100%;
-  }
-
-  .story-text-box p,
-  .split-text-box p {
-    font-size: 1.05rem;
-  }
-
-  .story-text-box p.highlight {
-    font-size: 1.15rem;
-  }
-
-  .split-row,
-  .split-row.reverse {
+  .split-row {
     flex-direction: column;
     gap: 28px;
   }
 
   .split-img-box,
-  .split-text-box {
+  .split-row .story-text-box {
     width: 100%;
   }
 
-  .timeline-full-img {
+  .timeline-scroll .timeline-full-img {
     height: 340px;
+  }
+
+  .about-page h2 {
+    font-size: 1.9rem;
+  }
+
+  .story-text-box p {
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 600px) {
-  .masterpieces-head {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+@media (max-width: 720px) {
+  .story-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
   }
 }

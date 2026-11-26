@@ -30,16 +30,24 @@
 </header>
 
 <main class="config-main">
-    <a id="config-detail-link" href="customize.html">← 차량 상세</a>
-    
+    <nav class="config-links" aria-label="차량 이동">
+        <a id="config-detail-link" href="customize.html">← 차량 상세</a>
+        <a href="models.html">← Models</a>
+    </nav>
+
     <div class="config-title">
-        <p>내 차량 만들기</p>
         <h1 id="config-model-name"></h1>
         <dl class="config-model-stats" id="config-model-stats" hidden></dl>
-
     </div>
 
-<div class="config-layout">
+    <form class="config-controls">
+        <fieldset>
+            <legend>외장 색상</legend>
+            <div class="config-swatches" id="exterior-options"></div>
+        </fieldset>
+        <p id="config-status" role="status">차량 정보를 불러오는 중이에요.</p>
+    </form>
+
     <section class="config-preview" aria-label="차량 미리보기">
         <figure>
             <div class="config-image-frame">
@@ -47,18 +55,9 @@
             </div>
             <figcaption id="config-caption" aria-live="polite"></figcaption>
         </figure>
-
     </section>
 
-    <form class="config-controls">
-    <fieldset>
-        <legend>외장 색상</legend>
-        <div class="config-swatches" id="exterior-options"></div>
-    </fieldset>
-
-    <p id="config-status" role="status">차량 정보를 불러오는 중이에요.</p>
-    </form>
-</div>
+    <p class="config-copyright">Copyright © 2026 Automobili Lamborghini S.p.A.</p>
 </main>
 </body>
 </html>

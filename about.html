@@ -45,10 +45,11 @@
       <div class="container">
 
         <article class="story-row">
-          <div class="story-title-box">
-            <h2>OUR HISTORY</h2>
+          <div class="story-media">
+            <img src="images/careers.webp" alt="람보르기니 공장">
           </div>
           <div class="story-text-box">
+            <h2>OUR HISTORY</h2>
             <p>
               1963년에 설립된 페루치오 람보르기니의 회사는 오늘날 세계에서 가장
               널리 알려지고 선망받는 하이퍼·슈퍼카 브랜드 중 하나로 성장했습니다.
@@ -75,19 +76,21 @@
 
     <section class="section">
       <div class="container">
-        <article class="split-row reverse">
+        <article class="split-row">
           <div class="split-img-box">
             <img src="images/guinea.png" alt="LAMBORGUINEA 로고 엠블럼" class="logo-img">
           </div>
-          <div class="split-text-box">
+          <div class="story-text-box">
             <h2>THE EMBLEM</h2>
             <p>
-              황금빛 방패 문양 속에 자리한 <strong>기니피그</strong>는 작지만 지치지 않는 에너지와
-              날렵한 민첩성을 지닌 LAMBORGUINEA만의 독창적인 상징입니다.
+              황금빛 방패 한가운데에는 <strong>기니피그</strong>가 자리하고 있습니다.
+              작은 몸으로도 재빠르게 움직이는 기니피그의 모습에서 지치지 않는 에너지와
+              날렵한 민첩성을 떠올렸습니다.
             </p>
             <p>
-              강렬한 금빛 엠블럼은 기존의 틀을 깨는 대담한 시도와 정교한 스피드를 추구하는
-              브랜드 철학을 담아내고 있습니다.
+              금빛 방패는 브랜드의 자신감을, 기니피그의 날렵한 모습은 민첩한 움직임을 상징합니다.
+              두 요소를 하나의 엠블럼에 담아 대담한 디자인과 정교한 주행 감각을 추구하는
+              LAMBORGUINEA의 정체성을 표현했습니다.
             </p>
           </div>
         </article>
@@ -97,13 +100,13 @@
 
     <section class="section">
       <div class="container">
-        <div class="masterpieces-head">
-          <h2>MASTERPIECES</h2>
-          <span class="scroll-guide">← 좌우로 스크롤하여 연대기 보기 →</span>
-        </div>
-
-        <div class="timeline-scroll">
-          <img src="images/masterpieces.png" alt="주요 모델 연대기" class="timeline-full-img">
+        <h2>MASTERPIECES</h2>
+        <div class="timeline-navigation">
+          <button class="timeline-arrow" type="button" aria-label="이전 연대기 보기" aria-controls="masterpieces-timeline" disabled>&lt;</button>
+          <div class="timeline-scroll" id="masterpieces-timeline" tabindex="0" role="region" aria-label="주요 모델 연대기">
+            <img src="images/masterpieces.png" alt="주요 모델 연대기" class="timeline-full-img">
+          </div>
+          <button class="timeline-arrow" type="button" aria-label="다음 연대기 보기" aria-controls="masterpieces-timeline">&gt;</button>
         </div>
       </div>
     </section>
@@ -111,10 +114,11 @@
     <section class="section">
       <div class="container">
         <article class="story-row">
-          <div class="story-title-box">
-            <h2>FUTURE VISION</h2>
+          <div class="story-media">
+            <img src="images/future.webp" alt="람보르기니 미래 비전">
           </div>
           <div class="story-text-box">
+            <h2>FUTURE VISION</h2>
             <p>
               LAMBORGUINEA는 내연기관의 순수한 감성을 계승하는 동시에,
               차세대 하이브리드 전동화(HPEV) 기술로 새로운 퍼포먼스의 시대를 열고 있습니다.
@@ -185,7 +189,57 @@
             </dl>
 
         </div>
-
+      <p class="footer-copy">모든 이미지 및 차량 정보의 출처는 Automobili Lamborghini (lamborghini.com)에 있습니다.</p>
     </footer>
+<script>
+  const timeline = document.querySelector("#masterpieces-timeline");
+  const [previous, next] = timeline.parentElement.querySelectorAll(".timeline-arrow");
+
+  function updateTimelineButtons() {
+    previous.disabled = timeline.scrollLeft <= 1;
+    next.disabled = timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth - 1;
+  }
+
+  let timelineFrame;
+
+  function stopTimelineAnimation() {
+    cancelAnimationFrame(timelineFrame);
+  }
+
+  function moveTimeline(direction) {
+    stopTimelineAnimation();
+    const start = timeline.scrollLeft;
+    const end = Math.max(0, Math.min(
+      start + direction * timeline.clientWidth,
+      timeline.scrollWidth - timeline.clientWidth
+    ));
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      timeline.scrollLeft = end;
+      return;
+    }
+
+    const startedAt = performance.now();
+    function animate(now) {
+      const progress = Math.min(1, (now - startedAt) / 650);
+      const eased = progress * progress * (3 - 2 * progress);
+      timeline.scrollLeft = start + (end - start) * eased;
+      if (progress < 1) timelineFrame = requestAnimationFrame(animate);
+    }
+
+    timelineFrame = requestAnimationFrame(animate);
+  }
+
+  timeline.addEventListener("pointerdown", stopTimelineAnimation);
+  timeline.addEventListener("wheel", stopTimelineAnimation, { passive: true });
+  timeline.addEventListener("keydown", stopTimelineAnimation);
+
+  previous.addEventListener("click", () => moveTimeline(-1));
+  next.addEventListener("click", () => moveTimeline(1));
+  timeline.addEventListener("scroll", updateTimelineButtons, { passive: true });
+  const timelineResize = new ResizeObserver(updateTimelineButtons);
+  timelineResize.observe(timeline);
+  timelineResize.observe(timeline.querySelector("img"));
+  updateTimelineButtons();
+</script>
 </body>
 </html>

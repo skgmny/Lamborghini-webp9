@@ -246,7 +246,14 @@ grid-template-columns: 1fr;
 
 
 .config-exterior-stage {
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
   background: #101112 url("images/configure-studio-background.png") center / cover no-repeat;
+}
+
+.config-exterior-stage > .header {
+  background-color: transparent;
 }
 
 .config-exterior-stage .config-title > p,
@@ -259,17 +266,46 @@ grid-template-columns: 1fr;
 
 .config-exterior-stage .config-main {
   width: min(100% - 2rem, 1400px);
-  min-height: 100svh;
+  min-height: 0;
   margin-inline: auto;
-  padding-block: clamp(1.5rem, 3vw, 2.5rem);
-  display: flex;
-  flex-direction: column;
+  padding: clamp(.65rem, 2.5vh, 2rem) 0 .65rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: clamp(.35rem, 1.5vh, 1rem) 1rem;
 }
 
-.config-exterior-stage #config-detail-link {
-  align-self: flex-start;
-  margin-bottom: 1rem;
+.config-links {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.config-links a {
+  padding: .35rem .75rem;
+  border: 1px solid #ffffff55;
   color: #ddd;
+  font-size: .9rem;
+}
+
+.config-links a:hover,
+.config-links a:focus-visible {
+  border-color: var(--config-accent);
+  color: var(--config-accent);
+}
+
+.config-exterior-stage .config-title {
+  min-width: 0;
+  margin: 0;
+}
+
+.config-copyright {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #aaa;
+  text-align: right;
+  font-size: .75rem;
 }
 
 .config-exterior-stage .config-title h1 {
@@ -309,19 +345,16 @@ grid-template-columns: 1fr;
   font-weight: 700;
 }
 
-.config-exterior-stage .config-layout {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: .5rem;
-}
-
 .config-exterior-stage .config-preview {
+  grid-column: 1 / -1;
   align-self: stretch;
+  min-height: 0;
 }
 
 .config-exterior-stage .config-preview figure {
+  display: grid;
+  place-items: center;
+  height: 100%;
   overflow: clip visible;
   border: 0;
   background: transparent;
@@ -331,7 +364,7 @@ grid-template-columns: 1fr;
 .config-exterior-stage .config-image-frame {
   position: relative;
   width: min(100%, 1050px);
-  aspect-ratio: 2.65;
+  height: min(100%, 396px);
   margin-inline: auto;
 }
 
@@ -351,7 +384,10 @@ grid-template-columns: 1fr;
 }
 
 .config-exterior-stage .config-controls {
-  align-self: flex-start;
+  justify-self: end;
+  z-index: 1;
+  gap: .4rem;
+  align-self: start;
   width: fit-content;
   min-width: 0;
   padding: .65rem .85rem;
@@ -391,4 +427,23 @@ grid-template-columns: 1fr;
   border-color: var(--config-accent);
   background: #1c180b;
   color: #fff;
+}
+
+.config-controls #config-status {
+  margin: 0;
+}
+
+.config-controls #config-status:empty {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .config-exterior-stage .config-main {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  }
+
+  .config-exterior-stage .config-image-frame > img {
+    transform: scale(1.25);
+  }
 }
