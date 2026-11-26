@@ -104,7 +104,7 @@ function saveRecent() {
   recent = recent.filter(id => id !== currentCar.id);
   recent = [currentCar.id].concat(recent);
 
-  recent = recent.slice(0, 5);
+  recent = recent.slice(0, 3);
 
   saveList("recentCars", recent);
 }
