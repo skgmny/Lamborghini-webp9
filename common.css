@@ -305,27 +305,6 @@ button.btn-outline:hover {
   padding-bottom: 7px;
 }
 
-@media (max-width: 600px) {
-  .header {
-    flex-wrap: wrap;
-    padding-inline: 20px;
-  }
-
-  .brand img {
-    height: 40px;
-  }
-
-  .header-nav {
-    order: 1;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .header-nav a,
-  .header-favorite {
-    font-size: 11px;
-  }
-}
 
 /* ===== 푸터 ===== */
 .site-footer {
@@ -415,18 +394,4 @@ button.btn-outline:hover {
   text-align: right;
   font-size: 15px;
   color: var(--text-sub);
-}
-
-@media (max-width: 900px) {
-  h1 { font-size: 2.2rem; }
-
-  .footer-inner {
-    grid-template-columns: 1fr;
-    padding: 0 24px;
-  }
-
-  .footer-copy {
-    text-align: left;
-    padding: 0 24px;
-  }
 }
