@@ -45,8 +45,6 @@ async function initialize() {
     const options = car.customization?.exterior.filter(option => option.image) ?? [];
     if (!options.length) return;
 
-    image.classList.toggle("config-capture", car.series === "temerario" || car.series === "revuelto" || car.series === "urus");
-    image.dataset.model = car.id;
     image.addEventListener("error", () => {
       image.hidden = true;
       statusMessage.textContent = "미리보기 이미지를 불러오지 못했어요.";
@@ -56,7 +54,6 @@ async function initialize() {
       statusMessage.textContent = "";
       const label = "외장 · " + option.name;
       image.alt = car.name + " " + label;
-      image.dataset.color = option.id;
       image.src = option.image;
       image.hidden = false;
       caption.textContent = label;

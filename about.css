@@ -1,23 +1,41 @@
+.about-page {
+  background: #181818;
+  color: #f5f5f5;
+}
+
 .about-hero {
-  background: #111111;
-  border-bottom: 1px solid #333333;
-  padding: 140px 0;
+  min-height: clamp(340px, 38.5vw, 640px);
+  padding: clamp(40px, 5vw, 80px) 0 24px;
+  background: #111111 url("images/automobile-dark.webp") center / cover no-repeat;
+  color: #ffffff;
+}
+
+.about-hero .container {
+  width: 100%;
+}
+
+.about-page > .section {
+  padding: clamp(48px, 6vw, 96px) 0;
+}
+
+.about-page > .section + .section {
+  border-top: 1px solid #bcbcbc;
 }
 
 .about-lead {
   max-width: 680px;
-  color: #cccccc;
+  color: #e0e0e0;
   font-size: 1.15rem;
   margin-top: 16px;
   line-height: 1.75;
 }
 
-main h2 {
+.about-page h2 {
   font-size: 2.8rem;
   line-height: 1.15;
 }
 
-main h2::after {
+.about-page h2::after {
   display: none;
 }
 
@@ -26,11 +44,6 @@ main h2::after {
   align-items: flex-start;
   justify-content: space-between;
   gap: 64px;
-  margin: 180px 0 380px;
-}
-
-.story-row.last {
-  margin: 200px 0 240px;
 }
 
 .story-title-box {
@@ -43,14 +56,14 @@ main h2::after {
 }
 
 .story-text-box p {
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 1.2rem;
   line-height: 1.9;
   margin-bottom: 32px;
 }
 
 .story-text-box p.highlight {
-  color: #ffc000;
+  color: white;
   font-weight: 700;
   font-size: 1.35rem;
 }
@@ -59,7 +72,6 @@ main h2::after {
   display: flex;
   align-items: center;
   gap: 64px;
-  margin-bottom: 220px;
 }
 
 .split-row.reverse {
@@ -88,15 +100,10 @@ main h2::after {
 }
 
 .split-text-box p {
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 1.2rem;
   line-height: 1.9;
   margin-bottom: 24px;
-}
-
-.masterpieces-section {
-  background: transparent;
-  padding: 260px 0;
 }
 
 .masterpieces-head {
@@ -108,38 +115,26 @@ main h2::after {
 
 .scroll-guide {
   font-size: 0.9rem;
-  color: #ffc000;
+  color: #d6d6d6;
 }
 
 .timeline-scroll {
   overflow-x: auto;
-  background: transparent;
-  border: none;
 }
 
 .timeline-full-img {
   height: 460px;
   max-width: none;
-  display: block;
 }
 
 @media (max-width: 900px) {
-  .about-hero {
-    padding: 90px 0;
-  }
-
-  main h2 {
+  .about-page h2 {
     font-size: 2.1rem;
   }
 
   .story-row {
     flex-direction: column;
     gap: 28px;
-    margin: 100px 0 220px;
-  }
-
-  .story-row.last {
-    margin: 120px 0 140px;
   }
 
   .story-title-box,
@@ -160,16 +155,11 @@ main h2::after {
   .split-row.reverse {
     flex-direction: column;
     gap: 28px;
-    margin-bottom: 120px;
   }
 
   .split-img-box,
   .split-text-box {
     width: 100%;
-  }
-
-  .masterpieces-section {
-    padding: 150px 0;
   }
 
   .timeline-full-img {

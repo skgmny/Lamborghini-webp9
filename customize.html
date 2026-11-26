@@ -6,9 +6,13 @@
   <title>Customize | Lambor Guinea</title>
   <link rel="stylesheet" href="common.css">
   <style>
-    .customize-page {
-      padding-block: 64px 80px;
-    }
+
+    body {
+  background-color: #181818;
+}
+  .customize-page {
+    padding-block: 64px 80px;
+  }
 
 .customize-grid {
   display: grid;
@@ -31,12 +35,14 @@
 
     .customize-model {
       display: block;
+      border: 0;
     }
 
     .customize-model img {
       width: 100%;
       aspect-ratio: 16 / 9;
-      object-fit: cover;
+      object-fit: contain;
+      /* object-position: center bottom; */
     }
 
 
