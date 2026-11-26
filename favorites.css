@@ -29,11 +29,6 @@
   color: var(--point);
 }
 
-.top-actions {
-  display: flex;
-  gap: 12px;
-}
-
 .section-block {
   margin-bottom: 150px;
 }
@@ -204,11 +199,6 @@
 }
 
 @media (max-width: 600px) {
-  .top-actions {
-    width: 100%;
-    flex-direction: column;
-  }
-
   .car-card {
     width: 100%;
   }
