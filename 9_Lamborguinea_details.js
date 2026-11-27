@@ -14,7 +14,7 @@ document.querySelector(".detail-back").addEventListener("click", () => {
   if (document.referrer.indexOf("models") !== -1) {
     history.back();                  // 목록에서 왔으면 → 뒤로 가기 (스크롤 위치 유지)
   } else {
-    location.href = "models.html";   // 다른 데서 왔으면 → 목록 페이지 새로 열기
+    location.href = "9_Lamborguinea_models.html";   // 다른 데서 왔으면 → 목록 페이지 새로 열기
   }
 });
 
@@ -212,8 +212,8 @@ function showCar(car) {
   document.querySelector(".detail-specs").innerHTML = specsHTML;
 
   currentCar = car;
-  for (const link of document.querySelectorAll('a[href^="configure.html"]')) {
-    link.href = "configure.html?id=" + encodeURIComponent(car.id);
+  for (const link of document.querySelectorAll('a[href^="9_Lamborguinea_configure.html"]')) {
+    link.href = "9_Lamborguinea_configure.html?id=" + encodeURIComponent(car.id);
     link.style.display = car.customization ? "" : "none";
   }
   currentTab = 0;
@@ -339,7 +339,7 @@ nextButton.addEventListener("click", () => {
 
 const carId = new URLSearchParams(location.search).get("id") || localStorage.getItem("selectedCar");
 
-fetch("cars.json")
+fetch("9_Lamborguinea_cars.json")
   .then(response => response.json())
   .then(cars => {
     allCars = cars;

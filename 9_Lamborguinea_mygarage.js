@@ -11,7 +11,7 @@ const requestListContainer = document.getElementById("requestListContainer");
 const requestCountEl = document.getElementById("requestCount");
 const clearRequestsBtn = document.getElementById("clearRequestsBtn");
 
-fetch("cars.json")
+fetch("9_Lamborguinea_cars.json")
   .then(response => response.json())
   .then(data => {
     allCars = data;
@@ -66,12 +66,12 @@ function addRecentCar(carId) {
 function goDetail(carId) {
   addRecentCar(carId);
   localStorage.setItem("selectedCar", carId);
-  location.href = "detail.html";
+  location.href = "9_Lamborguinea_details.html";
 }
 
 function goCustomize(carId) {
   localStorage.setItem("selectedCar", carId);
-  location.href = "configure.html";
+  location.href = "9_Lamborguinea_configure.html";
 }
 
 function removeWish(carId) {
@@ -162,7 +162,7 @@ function renderWishList() {
     wishListContainer.innerHTML = `
       <div class="empty-box">
         <p>저장된 관심차량이 없습니다.</p>
-        <a href="models.html" class="btn">차량 탐색하러 가기</a>
+        <a href="9_Lamborguinea_models.html" class="btn">차량 탐색하러 가기</a>
       </div>
     `;
     return;
@@ -211,7 +211,7 @@ function renderRecentList() {
     recentListContainer.innerHTML = `
       <div class="empty-box">
         <p>최근 본 차량이 없습니다.</p>
-        <a href="models.html" class="btn">차량 둘러보러 가기</a>
+        <a href="9_Lamborguinea_models.html" class="btn">차량 둘러보러 가기</a>
       </div>
     `;
     return;

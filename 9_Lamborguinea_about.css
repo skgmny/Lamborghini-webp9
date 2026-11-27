@@ -11,7 +11,7 @@
 .about-hero {
   min-height: max(340px, calc(100svh - 180px));
   padding: clamp(40px, 5vw, 80px) 0 24px;
-  background: #111111 url("images/automobile-dark.webp") center / cover no-repeat;
+  background: #111111 url("images/9_automobile-dark.webp") center / cover no-repeat;
   color: #ffffff;
 }
 

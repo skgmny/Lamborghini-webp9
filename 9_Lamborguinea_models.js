@@ -45,7 +45,7 @@ function applyCategoryFromUrl() {
 
 applyCategoryFromUrl();
 
-fetch("cars.json")
+fetch("9_Lamborguinea_cars.json")
   .then(response => {
     return response.json();
   })
@@ -94,12 +94,12 @@ function addRecentCar(carId) {
 function goDetail(carId) {
   addRecentCar(carId);
   localStorage.setItem("selectedCar", carId);
-  location.href = "detail.html";
+  location.href = "9_Lamborguinea_details.html";
 }
 
 function goCustomize(carId) {
   localStorage.setItem("selectedCar", carId);
-  location.href = "configure.html";
+  location.href = "9_Lamborguinea_configure.html";
 }
 
 function toggleWish(carId) {

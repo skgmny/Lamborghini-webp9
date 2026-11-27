@@ -34,7 +34,7 @@
   height: 100dvh;
   min-height: 0;
   overflow: hidden;
-  background: #101112 url("images/configure-studio-background.png") center / cover no-repeat;
+  background: #101112 url("images/9_configure-studio-background.png") center / cover no-repeat;
 }
 
 .config-exterior-stage > .header {

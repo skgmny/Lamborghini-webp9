@@ -270,13 +270,13 @@ function updateModelActionLinks() {
 
     if (modelDetailButton) {
 
-        modelDetailButton.href = `detail.html?id=${carId}`;
+        modelDetailButton.href = `9_Lamborguinea_details.html?id=${carId}`;
 
     }
 
     if (modelConfigureButton) {
 
-        modelConfigureButton.href = `configure.html?id=${carId}`;
+        modelConfigureButton.href = `9_Lamborguinea_configure.html?id=${carId}`;
 
     }
 
@@ -514,7 +514,7 @@ async function loadCarData() {
 
     try {
 
-        const response = await fetch("cars.json");
+        const response = await fetch("9_Lamborguinea_cars.json");
 
         if (!response.ok) {
 
@@ -724,7 +724,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-// 문의 내역 저장: detail.js와 동일한 requests 키 및 데이터 구조 사용
+// 문의 내역 저장: 9_Lamborguinea_details.js와 동일한 requests 키 및 데이터 구조 사용
 if (mainRequestForm) {
 
     mainRequestForm.addEventListener("submit", (event) => {

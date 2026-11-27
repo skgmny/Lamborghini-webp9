@@ -4,7 +4,7 @@ const swatches = document.querySelector("#exterior-options");
 const selectedCarId = localStorage.getItem("selectedCar");
 
 async function initialize() {
-  const response = await fetch("cars.json");
+  const response = await fetch("9_Lamborguinea_cars.json");
   if (!response.ok) return;
 
   const cars = await response.json();
@@ -17,7 +17,7 @@ async function initialize() {
 
   document.title = "내 차량 만들기 | " + car.name;
   document.querySelector("#config-model-name").textContent = car.name;
-  document.querySelector("#config-detail-link").href = "detail.html?id=" + encodeURIComponent(car.id);
+  document.querySelector("#config-detail-link").href = "9_Lamborguinea_details.html?id=" + encodeURIComponent(car.id);
 
   const category = car.category.trim().toUpperCase();
   if (category !== "SPORTS CAR" && category !== "SUV") {

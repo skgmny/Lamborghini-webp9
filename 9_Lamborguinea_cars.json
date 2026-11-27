@@ -14,10 +14,10 @@
     ],
     "customization": {
       "exterior": [
-        {"id":"yellow","name":"노랑","color":"#f5b91e","image":"images/temerario/configure-spyder-yellow.png"},
-        {"id":"red","name":"빨강","color":"#e84327","image":"images/temerario/configure-red.png"},
-        {"id":"green","name":"초록","color":"#66a234","image":"images/temerario/configure-green.png"},
-        {"id":"white","name":"하양","color":"#eeeeee","image":"images/temerario/configure-spyder-white.png"}
+        {"id":"yellow","name":"노랑","color":"#f5b91e","image":"images/temerario/9_configure-spyder-yellow.png"},
+        {"id":"red","name":"빨강","color":"#e84327","image":"images/temerario/9_configure-red.png"},
+        {"id":"green","name":"초록","color":"#66a234","image":"images/temerario/9_configure-green.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/temerario/9_configure-spyder-white.png"}
       ],
       "interior": [
         { "id": "black", "name": "블랙", "color": "#242528" },
@@ -95,10 +95,10 @@
     "heroImage": "images/temerario/9_hero_spyder.png",
     "customization": {
       "exterior": [
-        {"id":"red","name":"빨강","color":"#e8503c","image":"images/temerario/configure-spyder-red.png"},
-        {"id":"blue","name":"파랑","color":"#57aedb","image":"images/temerario/configure-spyder-blue.png"},
-        {"id":"yellow","name":"노랑","color":"#f6bf32","image":"images/temerario/configure-spyder-yellow.png"},
-        {"id":"white","name":"하양","color":"#eee","image":"images/temerario/configure-spyder-white.png"}
+        {"id":"red","name":"빨강","color":"#e8503c","image":"images/temerario/9_configure-spyder-red.png"},
+        {"id":"blue","name":"파랑","color":"#57aedb","image":"images/temerario/9_configure-spyder-blue.png"},
+        {"id":"yellow","name":"노랑","color":"#f6bf32","image":"images/temerario/9_configure-spyder-yellow.png"},
+        {"id":"white","name":"하양","color":"#eee","image":"images/temerario/9_configure-spyder-white.png"}
       ],
       "interior": [
         { "id": "black", "name": "블랙", "color": "#242528" },
@@ -176,8 +176,8 @@
     "heroImage": "images/revuelto/9_hero.png",
     "customization": {
       "exterior": [
-        {"id":"orange","name":"주황","color":"#fc612e","image":"images/revuelto/configure-revuelto-orange.png"},
-        {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/configure-revuelto-sv-white.png"}
+        {"id":"orange","name":"주황","color":"#fc612e","image":"images/revuelto/9_configure-revuelto-orange.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/9_configure-revuelto-sv-white.png"}
       ]
     },
     "stats": [
@@ -225,9 +225,9 @@
     "heroImage": "images/revuelto/9_hero_sv.png",
     "customization": {
       "exterior": [
-        {"id":"gray","name":"회색","color":"#aabdc8","image":"images/revuelto/configure-revuelto-sv-gray.png"},
-        {"id":"red","name":"빨강","color":"#b51f31","image":"images/revuelto/configure-revuelto-sv-red.png"},
-        {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/configure-revuelto-sv-white.png"}
+        {"id":"gray","name":"회색","color":"#aabdc8","image":"images/revuelto/9_configure-revuelto-sv-gray.png"},
+        {"id":"red","name":"빨강","color":"#b51f31","image":"images/revuelto/9_configure-revuelto-sv-red.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/revuelto/9_configure-revuelto-sv-white.png"}
       ]
     },
     "stats": [
@@ -275,8 +275,8 @@
     "heroImage": "images/urus/9_hero.png",
     "customization": {
       "exterior": [
-        {"id":"orange","name":"주황","color":"#ee593e","image":"images/urus/configure-urus-se-orange.png"},
-        {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/configure-urus-se-performante-white.png"}
+        {"id":"orange","name":"주황","color":"#ee593e","image":"images/urus/9_configure-urus-se-orange.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/9_configure-urus-se-performante-white.png"}
       ]
     },
     "stats": [
@@ -324,9 +324,9 @@
     "heroImage": "images/urus/9_hero_performante.png",
     "customization": {
       "exterior": [
-        {"id":"yellow","name":"노랑","color":"#e2e645","image":"images/urus/configure-urus-se-performante-yellow.png"},
-        {"id":"green","name":"초록","color":"#254439","image":"images/urus/configure-urus-se-performante-green.png"},
-        {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/configure-urus-se-performante-white.png"}
+        {"id":"yellow","name":"노랑","color":"#e2e645","image":"images/urus/9_configure-urus-se-performante-yellow.png"},
+        {"id":"green","name":"초록","color":"#254439","image":"images/urus/9_configure-urus-se-performante-green.png"},
+        {"id":"white","name":"하양","color":"#eeeeee","image":"images/urus/9_configure-urus-se-performante-white.png"}
       ]
     },
     "stats": [

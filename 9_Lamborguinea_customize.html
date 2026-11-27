@@ -7,7 +7,7 @@
   <meta name="keywords" content="람보르기니, 커스터마이징, 모델 선택, 스포츠카, SUV">
   <meta name="team" content="Team 9">
   <title>Customize | Lambor Guinea</title>
-  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="9_Lamborguinea_common.css">
   <style>
 
     body {
@@ -59,18 +59,18 @@
 </head>
 <body>
   <header class="header">
-    <a class="brand" href="main.html">
-      <img src="images/guinea.png" alt="Lambor Guinea 홈">
+    <a class="brand" href="9_Lamborguinea_main.html">
+      <img src="images/9_guinea.png" alt="Lambor Guinea 홈">
     </a>
 
     <nav class="header-nav">
-      <a href="main.html">HOME</a>
-      <a href="about.html">ABOUT</a>
-      <a href="models.html">MODELS</a>
-      <a href="customize.html" aria-current="page">CUSTOMIZE</a>
+      <a href="9_Lamborguinea_main.html">HOME</a>
+      <a href="9_Lamborguinea_about.html">ABOUT</a>
+      <a href="9_Lamborguinea_models.html">MODELS</a>
+      <a href="9_Lamborguinea_customize.html" aria-current="page">CUSTOMIZE</a>
     </nav>
 
-    <a href="favorites.html" class="header-favorite">MY GARAGE +</a>
+    <a href="9_Lamborguinea_mygarage.html" class="header-favorite">MY GARAGE +</a>
   </header>
 
   <main class="container customize-page">
@@ -105,11 +105,11 @@
 
             <nav class="footer-menu" aria-label="푸터 메뉴">
 
-                <a href="main.html">Home</a>
-                <a href="about.html">ABOUT</a>
-                <a href="models.html">MODELS</a>
-                <a href="customize.html">CUSTOMIZE</a>
-                <a href="favorites.html">MY GARAGE +</a>
+                <a href="9_Lamborguinea_main.html">Home</a>
+                <a href="9_Lamborguinea_about.html">ABOUT</a>
+                <a href="9_Lamborguinea_models.html">MODELS</a>
+                <a href="9_Lamborguinea_customize.html">CUSTOMIZE</a>
+                <a href="9_Lamborguinea_mygarage.html">MY GARAGE +</a>
             </nav>
 
 
@@ -150,7 +150,7 @@
     ]);
 
     async function loadModels() {
-      const response = await fetch("cars.json");
+      const response = await fetch("9_Lamborguinea_cars.json");
       if (!response.ok) return;
 
       const cars = await response.json();
@@ -164,7 +164,7 @@
         const name = document.createElement("span");
 
         link.className = "card customize-model";
-        link.href = "configure.html?id=" + encodeURIComponent(car.id);
+        link.href = "9_Lamborguinea_configure.html?id=" + encodeURIComponent(car.id);
         image.src = car.heroImage;
         image.alt = "";
         image.loading = "lazy";
