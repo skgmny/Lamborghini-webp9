@@ -184,22 +184,6 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 900px) {
-  .car-card {
-    width: calc(50% - 12px);
-  }
-}
-
-@media (max-width: 600px) {
-  .car-card {
-    width: 100%;
-  }
-
-  .request-card {
-    flex-direction: column;
-  }
-}
-
 body {
   background-color: #181818;
 }

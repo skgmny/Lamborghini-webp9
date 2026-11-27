@@ -124,22 +124,6 @@
   border-color: #ffc000;
 }
 
-@media screen and (max-width: 900px) {
-  .car-card {
-    width: 48%;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .sort-group {
-    width: 100%;
-  }
-
-  .car-card {
-    width: 100%;
-  }
-}
-
 body {
   background-color: #181818;
 }
