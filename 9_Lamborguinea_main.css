@@ -22,18 +22,6 @@
     color: white;
 }
 
-.intro-top {
-    position: absolute;
-    top: 115px;
-    left: 6%;
-    right: 6%;
-    display: flex;
-    justify-content: space-between;
-    color: #777777;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
 .intro-title {
     position: absolute;
     top: 38%;
@@ -194,14 +182,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 65px;
-}
-
-.section-label {
-    display: block;
-    color: #777777;
-    font-size: 11px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
 }
 
 .models-heading h2,
@@ -430,12 +410,6 @@
     color: white;
 }
 
-.curation-heading p {
-    color: #999999;
-    font-size: 14px;
-    margin-top: 20px;
-}
-
 .curation-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -467,7 +441,6 @@
     width: 95%;
     height: 100%;
     object-fit: contain;
-    transition: transform 0.5s;
 }
 
 .curation-info {
@@ -485,12 +458,6 @@
     font-family: "Anton", sans-serif;
     font-size: 27px;
     margin: 15px 0;
-}
-
-.curation-info p {
-    color: #999999;
-    font-size: 13px;
-    min-height: 45px;
 }
 
 .curation-link {
@@ -525,12 +492,6 @@
 
 .service-heading h2 {
     color: white;
-}
-
-.service-heading p {
-    color: #999999;
-    margin-top: 18px;
-    font-size: 14px;
 }
 
 .service-grid {
