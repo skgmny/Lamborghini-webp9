@@ -115,11 +115,8 @@ function toggleWish(carId) {
     }
   }
 
-  if (found) {
-    alert("관심차량에서 해제되었습니다.");
-  } else {
+  if (!found) {
     newWishList.push(carId);
-    alert("관심차량에 추가되었습니다.");
   }
 
   localStorage.setItem("favorites", JSON.stringify(newWishList));

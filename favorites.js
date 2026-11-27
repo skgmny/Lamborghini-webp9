@@ -81,7 +81,6 @@ function removeWish(carId) {
   if (idx !== -1) {
     wishIds.splice(idx, 1);
     localStorage.setItem("favorites", JSON.stringify(wishIds));
-    alert("관심차량에서 해제되었습니다.");
     renderWishList();
     renderRecentList();
   }
@@ -93,10 +92,8 @@ function toggleWish(carId) {
 
   if (idx !== -1) {
     wishIds.splice(idx, 1);
-    alert("관심차량에서 해제되었습니다.");
   } else {
     wishIds.push(carId);
-    alert("관심차량에 추가되었습니다.");
   }
 
   localStorage.setItem("favorites", JSON.stringify(wishIds));
