@@ -713,20 +713,3 @@
     background: #e5ad00;
     border: 0;
 }
-
-@media (max-width: 600px) {
-
-    .main-request-modal {
-        padding: 12px;
-    }
-
-    .main-request-modal-box {
-        padding: 36px 22px 24px;
-    }
-
-    #mainRequestForm .main-request-type {
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-
-}
