@@ -205,7 +205,7 @@ function renderCars() {
     const bookmarkSrc = isWished ? "images/9_bookmark_filled.png" : "images/9_bookmark.png";
     const bookmarkAlt = isWished ? "관심차량 해제" : "관심차량 추가";
     const customizeBtnHtml = (car.category !== "LIMITED")
-      ? `<button type="button" class="btn-outline" onclick="goCustomize('${car.id}')">CUSTOMIZE</button>`
+      ? `<button type="button" class="btn-outline" onclick="goCustomize('${car.id}')">내 차량 만들기</button>`
       : "";
 
     return `
@@ -219,7 +219,7 @@ function renderCars() {
           <h3>${car.name}</h3>
           <p class="car-slogan">${car.slogan}</p>
           <div class="car-actions">
-            <button type="button" class="btn" onclick="goDetail('${car.id}')">DETAILS</button>
+            <button type="button" class="btn" onclick="goDetail('${car.id}')">모델 알아보기</button>
             ${customizeBtnHtml}
           </div>
         </div>
