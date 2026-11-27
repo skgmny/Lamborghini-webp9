@@ -52,7 +52,13 @@ async function initialize() {
     caption.textContent = label;
   }
 
-  for (const [index, option] of options.entries()) {
+  const saveButton = document.querySelector(".config-save");
+  const saveStatus = document.querySelector(".config-save-status");
+  const storageKey = "configureExterior:" + car.id;
+  const savedOptionId = localStorage.getItem(storageKey);
+  let selectedOption = options.find(option => option.id === savedOptionId) ?? options[0];
+
+  for (const option of options) {
     const label = document.createElement("label");
     const input = document.createElement("input");
     const text = document.createElement("span");
@@ -62,14 +68,27 @@ async function initialize() {
     input.type = "radio";
     input.name = "exterior";
     input.value = option.id;
-    input.checked = index === 0;
-    input.title = option.id;
-    input.addEventListener("change", () => showPhoto(option));
+    input.checked = option === selectedOption;
+    input.title = option.name;
+    input.addEventListener("change", () => {
+      selectedOption = option;
+      saveStatus.textContent = "";
+      showPhoto(option);
+    });
     label.append(input, text);
     swatches.append(label);
   }
 
-  showPhoto(options[0]);
+  saveButton.addEventListener("click", () => {
+    try {
+      localStorage.setItem(storageKey, selectedOption.id);
+      saveStatus.textContent = "저장완료.";
+    } catch (error) {
+      console.error(error);
+    }
+  });
+  saveButton.hidden = false;
+  showPhoto(selectedOption);
 }
 
 initialize().catch(console.error);
