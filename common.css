@@ -250,7 +250,7 @@ button.btn {
 button.btn:hover {
   background: var(--point-light);
   color: var(--point-text);
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 .btn-outline,
 button.btn-outline {
