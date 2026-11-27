@@ -88,10 +88,8 @@ favoriteButton.addEventListener("click", () => {
 
   if (found.length > 0) {
     favorites = favorites.filter(id => id !== currentCar.id);
-    alert("관심차량에서 해제되었습니다.");
   } else {
     favorites.push(currentCar.id);
-    alert("관심차량에 추가되었습니다.");
   }
 
   saveList("favorites", favorites);
