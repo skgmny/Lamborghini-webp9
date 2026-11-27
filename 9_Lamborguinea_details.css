@@ -1,6 +1,7 @@
 .detail-back {
-  position: absolute;                
-  left: 10%;                    
+  position: absolute;
+  top: 20px;
+  left: 10%;
   z-index: 10;
   font-size: 17px;
   letter-spacing: 1px;
@@ -13,17 +14,17 @@
 .detail-hero {
   position: relative;
   overflow: hidden;
-  padding-top: 100px;       
-  min-height: 85vh;        
-  display: flex;             
-  flex-direction: column;       
-  justify-content: center; 
+  padding-top: 100px;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .detail-hero-img {
-  display: block;        
-  width: 80%;               
-  margin: 0 auto;              
+  display: block;
+  width: 80%;
+  margin: 0 auto;
   opacity: 0.8;
   transition: transform 0.7s ease-out, opacity 0.7s ease-out;
 }
@@ -31,16 +32,10 @@
 .detail-hero-text {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;      
-  margin: -60px 10% 0; 
+  align-items: flex-end;
+  margin: -60px 10% 0;
   position: relative;
-  width: auto;
   top: 40px;
-}
-
-.detail-back,
-.detail-favorite {
-  top: 20px;                
 }
 
 .detail-slogan {
@@ -89,13 +84,11 @@
   text-align: center;
   font-size: 1.3rem;
   line-height: 1.8;
-  color: var(--text);
-  margin: 80px auto 160px; 
+  margin: 80px auto 160px;
 }
 
 .detail-stats {
   display: flex;
-
 }
 
 .detail-stats li {
@@ -103,6 +96,7 @@
   text-align: center;
   font-size: 5rem;
 }
+
 .detail-stat-unit {
   margin-left: 8px;
   font-size: 1.5rem;
@@ -177,6 +171,7 @@
   font-size: 0.85rem;
   color: var(--text-sub);
 }
+
 .detail-slide-img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -239,10 +234,7 @@
 
 .detail-specs dt {
   color: var(--text-sub);
-}
-
-.detail-spec-item dt {
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
 }
 
 .detail-specs dd {

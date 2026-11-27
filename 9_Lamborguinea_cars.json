@@ -5,7 +5,7 @@
     "series": "temerario",
     "category": "SPORTS CAR",   
     "slogan": "YOU CAN'T HIDE WHO YOU ARE",
-    "intro": "Lamborghini의 Temerario는 V8 트윈 터보 엔진과 세 개의 전기 모터를 장착한 브랜드 최초 슈퍼 스포츠카로서 920CV의 출력을 발휘합니다. HPEV 라인업의 두 번째 차량으로서 뛰어난 성능과 편안함을 동시에 자랑하며 새로운 디자인 컨셉과 독창적인 커스터마이제이션 옵션을 선보였습니다.",
+    "intro": "Lamborguinea의 Temerario는 V8 트윈 터보 엔진과 세 개의 전기 모터를 장착한 브랜드 최초 슈퍼 스포츠카로서 920CV의 출력을 발휘합니다. HPEV 라인업의 두 번째 차량으로서 뛰어난 성능과 편안함을 동시에 자랑하며 새로운 디자인 컨셉과 독창적인 커스터마이제이션 옵션을 선보였습니다.",
     "heroImage": "images/temerario/9_hero.png",
     "configureStats": [
       { "label": "최고 출력", "value": "920", "unit": "CV" },
@@ -18,11 +18,6 @@
         {"id":"red","name":"빨강","color":"#e84327","image":"images/temerario/9_configure-red.png"},
         {"id":"green","name":"초록","color":"#66a234","image":"images/temerario/9_configure-green.png"},
         {"id":"white","name":"하양","color":"#eeeeee","image":"images/temerario/9_configure-spyder-white.png"}
-      ],
-      "interior": [
-        { "id": "black", "name": "블랙", "color": "#242528" },
-        { "id": "tan", "name": "탄", "color": "#ad764b" },
-        { "id": "red", "name": "레드", "color": "#982c34" }
       ]
     },
     "stats": [
@@ -52,7 +47,7 @@
           {
             "src": "images/temerario/9_exterior_1.png",
             "title": "전방",
-            "desc": "날카로운 차체 라인과 미래지향적인 육각형 주간주행등이 Lamborghini 특유의 강렬한 전면 디자인을 완성합니다."
+            "desc": "날카로운 차체 라인과 미래지향적인 육각형 주간주행등이 Lamborguinea 특유의 강렬한 전면 디자인을 완성합니다."
           },
           {
             "src": "images/temerario/9_exterior_2.png",
@@ -91,7 +86,7 @@
     "series": "temerario",
     "category": "SPORTS CAR",    
     "slogan": "UNFILTERED PERFORMANCE",
-    "intro": "Temerario Spyder는 드라이버와 차량, 주변 환경 사이의 교감을 한층 깊게 하도록 설계되었습니다. 920 CV HPEV 아키텍처에 브랜드 역사상 최초의 리트랙터블 하드톱을 결합해 Lamborghini의 오픈 에어 경험을 새로운 차원으로 끌어올립니다.",
+    "intro": "Temerario Spyder는 드라이버와 차량, 주변 환경 사이의 교감을 한층 깊게 하도록 설계되었습니다. 920 CV HPEV 아키텍처에 브랜드 역사상 최초의 리트랙터블 하드톱을 결합해 Lamborguinea의 오픈 에어 경험을 새로운 차원으로 끌어올립니다.",
     "heroImage": "images/temerario/9_hero_spyder.png",
     "customization": {
       "exterior": [
@@ -99,11 +94,6 @@
         {"id":"blue","name":"파랑","color":"#57aedb","image":"images/temerario/9_configure-spyder-blue.png"},
         {"id":"yellow","name":"노랑","color":"#f6bf32","image":"images/temerario/9_configure-spyder-yellow.png"},
         {"id":"white","name":"하양","color":"#eee","image":"images/temerario/9_configure-spyder-white.png"}
-      ],
-      "interior": [
-        { "id": "black", "name": "블랙", "color": "#242528" },
-        { "id": "tan", "name": "탄", "color": "#ad764b" },
-        { "id": "red", "name": "레드", "color": "#982c34" }
       ]
     },
     "stats": [
@@ -138,7 +128,7 @@
           {
             "src": "images/temerario/9_exterior_1.png",
             "title": "전방",
-            "desc": "날카로운 차체 라인과 미래지향적인 육각형 주간주행등이 Lamborghini 특유의 강렬한 전면 디자인을 완성합니다."
+            "desc": "날카로운 차체 라인과 미래지향적인 육각형 주간주행등이 Lamborguinea 특유의 강렬한 전면 디자인을 완성합니다."
           }
         ]
       },
@@ -172,7 +162,7 @@
     "series": "revuelto",
     "category": "SPORTS CAR",   
     "slogan": "FROM NOW ON",
-    "intro": "Lamborghini 60주년을 앞두고 공개된 Revuelto는 최초의 HPEV 하이브리드 슈퍼 스포츠카입니다. 1,015CVfmf 발휘하는 파워트레인은 새로운 V12 엔진과 세 개의 전기 모터, 그리고 듀얼 클러치 e-기어박스를 결합해 이전에 보지 못했던 새로운 수준의 성능, 기술, 그리고 주행 감성을 완성했습니다.",
+    "intro": "Lamborguinea 60주년을 앞두고 공개된 Revuelto는 최초의 HPEV 하이브리드 슈퍼 스포츠카입니다. 1,015CV를 발휘하는 파워트레인은 새로운 V12 엔진과 세 개의 전기 모터, 그리고 듀얼 클러치 e-기어박스를 결합해 이전에 보지 못했던 새로운 수준의 성능, 기술, 그리고 주행 감성을 완성했습니다.",
     "heroImage": "images/revuelto/9_hero.png",
     "customization": {
       "exterior": [
@@ -196,7 +186,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/revuelto/9_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/revuelto/9_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -221,7 +211,7 @@
     "series": "revuelto",
     "category": "SPORTS CAR",
     "slogan": "THE QUANTUM OF DRIVING",
-    "intro": "Revuelto SV는 Lamborghini의 'Super Veloce' 철학을 새로운 차원으로 끌어올립니다. 자연 흡기 V12 엔진, 하이브리드 성능 그리고 모터스포츠에서 파생된 기술을 결합하여, 한정된 운전자들에게 1,065 CV에 달하는 순수한 주행의 감동을 선사합니다.",
+    "intro": "Revuelto SV는 Lamborguinea의 'Super Veloce' 철학을 새로운 차원으로 끌어올립니다. 자연 흡기 V12 엔진, 하이브리드 성능 그리고 모터스포츠에서 파생된 기술을 결합하여, 한정된 운전자들에게 1,065 CV에 달하는 순수한 주행의 감동을 선사합니다.",
     "heroImage": "images/revuelto/9_hero_sv.png",
     "customization": {
       "exterior": [
@@ -246,7 +236,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/revuelto/9_hero_sv.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/revuelto/9_hero_sv.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -271,7 +261,7 @@
     "series": "urus",
     "category": "SUV",
     "slogan": "DARE TO LIVE MORE",
-    "intro": "Urus SE는 Lamborghini의 완전 하이브리드화를 향한 새로운 발걸음입니다. 브랜드 최초의 PHEV 슈퍼 SUV로서, 800CV를 발휘하며 뛰어난 안락함과 성능, 효율성을 제공합니다. 또한 배출가스를 최대 80%까지 줄이며 럭셔리 SSUV의 주행 경험을 선사합니다.",
+    "intro": "Urus SE는 Lamborguinea의 완전 하이브리드화를 향한 새로운 발걸음입니다. 브랜드 최초의 PHEV 슈퍼 SUV로서, 800CV를 발휘하며 뛰어난 안락함과 성능, 효율성을 제공합니다. 또한 배출가스를 최대 80%까지 줄이며 럭셔리 SSUV의 주행 경험을 선사합니다.",
     "heroImage": "images/urus/9_hero.png",
     "customization": {
       "exterior": [
@@ -295,7 +285,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/urus/9_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/urus/9_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -345,7 +335,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/urus/9_hero_performante.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/urus/9_hero_performante.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -370,7 +360,7 @@
     "series": "fenomeno",
     "category": "LIMITED",
     "slogan": "LIMITED TO 29 UNITS",
-    "intro": "Lamborghini 역사상 가장 강력한 V12 엔진에 세 개의 전기 모터를 결합해 1,080 CV를 발휘하는 Few-Off 모델로, 단 29대만 생산되었습니다.",
+    "intro": "Lamborguinea 역사상 가장 강력한 V12 엔진에 세 개의 전기 모터를 결합해 1,080 CV를 발휘하는 Few-Off 모델로, 단 29대만 생산되었습니다.",
     "heroImage": "images/limited/9_fenomeno_hero.png",
     "stats": [
       {
@@ -399,7 +389,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/limited/9_fenomeno_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/limited/9_fenomeno_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -438,7 +428,7 @@
     "series": "fenomeno",
     "category": "LIMITED",
     "slogan": "LIMITED TO 15 UNITS",
-    "intro": "Fenomeno의 1,080 CV V12 하이브리드 파워트레인을 그대로 담은 오픈톱 모델로, 단 15대만 생산된 가장 강력한 오픈톱 Lamborghini입니다.",
+    "intro": "Fenomeno의 1,080 CV V12 하이브리드 파워트레인을 그대로 담은 오픈톱 모델로, 단 15대만 생산된 가장 강력한 오픈톱 Lamborguinea입니다.",
     "heroImage": "images/limited/9_fenomeno-roadster_hero.png",
     "stats": [
       {
@@ -467,7 +457,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/limited/9_fenomeno-roadster_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/limited/9_fenomeno-roadster_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -535,7 +525,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/limited/9_countach-lpi-800-4_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/limited/9_countach-lpi-800-4_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -603,7 +593,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/limited/9_sian-fkp-37_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/limited/9_sian-fkp-37_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -642,7 +632,7 @@
     "series": "sian",
     "category": "LIMITED",
     "slogan": "AHEAD OF ITS TIME",
-    "intro": "슈퍼커패시터를 적용한 최초의 오픈톱 하이브리드 Lamborghini로, Sián의 V12 하이브리드 파워트레인을 오픈 에어로 경험할 수 있습니다. 19대 한정 생산되었습니다.",
+    "intro": "슈퍼커패시터를 적용한 최초의 오픈톱 하이브리드 Lamborguinea로, Sián의 V12 하이브리드 파워트레인을 오픈 에어로 경험할 수 있습니다. 19대 한정 생산되었습니다.",
     "heroImage": "images/limited/9_sian-roadster_hero.png",
     "stats": [
       {
@@ -671,7 +661,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/limited/9_sian-roadster_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/limited/9_sian-roadster_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
@@ -739,7 +729,7 @@
       {
         "tab": "외관",
         "images": [
-          { "src": "images/limited/9_sesto-elemento_hero.png", "title": "디자인", "desc": "Lamborghini 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
+          { "src": "images/limited/9_sesto-elemento_hero.png", "title": "디자인", "desc": "Lamborguinea 특유의 날카로운 차체 라인과 공기역학적 설계가 강렬한 존재감을 완성합니다." }
         ]
       },
       {
