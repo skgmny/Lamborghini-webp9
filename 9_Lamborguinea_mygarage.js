@@ -270,6 +270,7 @@ function renderCustomList() {
           <h3>${car.name}</h3>
           <p class="custom-option">외장 색상: ${option.name}</p>
           <div class="car-actions">
+            <a class="btn-outline" href="9_Lamborguinea_configure.html?id=${encodeURIComponent(car.id)}">색상 변경</a>
             <button type="button" class="btn-outline btn-remove" onclick="removeCustom('${car.id}')">삭제</button>
           </div>
         </div>

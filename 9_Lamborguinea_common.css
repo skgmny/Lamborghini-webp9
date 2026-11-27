@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&display=swap');
 
-/* ===== 변수 ===== */
 :root {
   --bg: #000000;
   --bg-sub: #111111;
@@ -12,18 +11,12 @@
   --point-light: #ffd84d;
   --point-text: #000000;
   --danger: #e05555;
-  --light-bg: #ffffff;
-  --light-text: #000000;
-  --shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
   --shadow-hover: 0 8px 22px rgba(255, 192, 0, 0.25);
-  --radius-sm: 0;
   --radius-md: 4px;
   --max-width: 1200px;
-  --gap: 24px;
   --speed: 0.25s;
 }
 
-/* ===== 기본 초기화 ===== */
 * {
   margin: 0;
   padding: 0;
@@ -54,13 +47,7 @@ img {
   max-width: 100%;
   display: block;
 }
-hr {
-  border: none;
-  border-top: 1px solid var(--line);
-  margin: 40px 0;
-}
 
-/* ===== 글씨 ===== */
 h1, h2, h3 {
   font-family: "Anton", "Pretendard", sans-serif;
   text-transform: uppercase;
@@ -92,24 +79,17 @@ p {
   margin-bottom: 12px;
   line-height: 1.8;
 }
-mark {
-  background: none;
-  color: var(--point);
-  font-weight: 700;
-}
 strong, em {
   color: var(--point);
   font-style: normal;
   font-weight: 500;
 }
-figure { margin: 0; }
 figcaption {
   margin-top: 10px;
   font-size: 0.85rem;
   color: var(--text-sub);
 }
 
-/* ===== 공통 부품 ===== */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -169,10 +149,8 @@ textarea:focus-visible {
   outline-offset: 3px;
 }
 
-/* ===== 폼 ===== */
 button,
-input[type="submit"],
-input[type="reset"] {
+input[type="submit"] {
   padding: 12px 28px;
   font: 700 0.95rem "Pretendard", "Noto Sans KR", sans-serif;
   cursor: pointer;
@@ -181,8 +159,7 @@ input[type="reset"] {
   border: 1px solid var(--line);
   transition: background var(--speed), color var(--speed), border-color var(--speed);
 }
-button:hover,
-input[type="reset"]:hover {
+button:hover {
   border-color: var(--point);
   color: var(--point);
 }
@@ -212,9 +189,7 @@ legend {
 input[type="text"],
 input[type="tel"],
 input[type="email"],
-input[type="number"],
 input[type="date"],
-input[type="search"],
 select,
 textarea {
   padding: 10px 12px;
@@ -229,7 +204,6 @@ select:focus,
 textarea:focus { border-color: var(--point); }
 textarea { resize: vertical; }
 
-/* ===== 주요 및 보조 버튼 ===== */
 .btn, button.btn,
 .btn-outline, button.btn-outline {
   display: inline-flex;
@@ -265,7 +239,6 @@ button.btn-outline:hover {
   color: var(--point);
 }
 
-/* ===== 공통 헤더 ===== */
 .header {
   min-height: 85px;
   padding: 12px 6%;
@@ -305,8 +278,6 @@ button.btn-outline:hover {
   padding-bottom: 7px;
 }
 
-
-/* ===== 푸터 ===== */
 .site-footer {
   background: linear-gradient(180deg, #151515 0%, #080808 60%, #000000 100%);
   padding: 100px 0 40px;
@@ -354,11 +325,15 @@ button.btn-outline:hover {
   color: var(--text);
 }
 
-.footer-menu {
+.footer-menu,
+.footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 22px;
   padding-top: 8px;
+}
+
+.footer-menu {
+  gap: 22px;
 }
 
 .footer-menu a {
@@ -370,10 +345,7 @@ button.btn-outline:hover {
 }
 
 .footer-contact {
-  display: flex;
-  flex-direction: column;
   gap: 24px;
-  padding-top: 8px;
 }
 
 .footer-contact dt {

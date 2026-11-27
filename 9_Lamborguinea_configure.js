@@ -82,7 +82,7 @@ async function initialize() {
   saveButton.addEventListener("click", () => {
     try {
       localStorage.setItem(storageKey, selectedOption.id);
-      saveStatus.textContent = "저장완료.";
+      saveStatus.textContent = "My Garage에 저장했습니다.";
     } catch (error) {
       console.error(error);
     }
