@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="조민체">
-  <meta name="team" content="팀번호_팀명">
+  <meta name="team" content="Team 9">
   <title>My Garage | Lamborguinea</title>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="9_Lamborguinea_common.css">
@@ -12,29 +12,27 @@
 </head>
 <body>
   <header class="header">
+    <a class="brand" href="9_Lamborguinea_main.html">
+      <img src="images/9_guinea.png" alt="Lambor Guinea 홈">
+    </a>
 
-        <a class="brand" href="9_Lamborguinea_main.html">
-        <img src="images/9_guinea.png" alt="Lambor Guinea 홈">
-        </a>
+    <nav class="header-nav">
+      <a href="9_Lamborguinea_main.html">HOME</a>
+      <a href="9_Lamborguinea_about.html">ABOUT</a>
+      <a href="9_Lamborguinea_models.html">MODELS</a>
+      <a href="9_Lamborguinea_customize.html">CUSTOMIZE</a>
+    </nav>
 
-        <nav class="header-nav">
-            <a href="9_Lamborguinea_main.html">HOME</a>
-            <a href="9_Lamborguinea_about.html">ABOUT</a>
-            <a href="9_Lamborguinea_models.html">MODELS</a>
-            <a href="9_Lamborguinea_customize.html">CUSTOMIZE</a>
-        </nav>
-
-        <a href="9_Lamborguinea_mygarage.html" class="header-favorite">
-            MY GARAGE +
-        </a>
-
-    </header>
+    <a href="9_Lamborguinea_mygarage.html" class="header-favorite">
+      MY GARAGE +
+    </a>
+  </header>
 
   <main>
     <section class="section">
       <div class="container">
         <h1>MY GARAGE +</h1>
-        <p>관심차량으로 등록한 모델과 최근 본 차량, 시승 및 구매 상담 문의 내역을 확인할 수 있습니다.</p>
+        <p>관심차량으로 등록한 모델과 나만의 커스터마이징 차량, 시승 및 구매 상담 문의 내역, 최근 본 차량을 확인할 수 있습니다.</p>
 
         <div class="mypage-top">
           <div class="summary-group">
@@ -61,10 +59,10 @@
 
         <div class="section-block">
           <div class="section-head">
-            <h2>최근 본 차량</h2>
-            <button type="button" id="clearRecentBtn" class="btn-outline btn-remove">전체 삭제</button>
+            <h2>내 차량 만들기 저장 내역</h2>
+            <button type="button" id="clearCustomBtn" class="btn-outline btn-remove">전체 삭제</button>
           </div>
-          <div id="recentListContainer" class="car-grid"></div>
+          <div id="customListContainer" class="car-grid"></div>
         </div>
 
         <div class="section-block">
@@ -74,63 +72,57 @@
           </div>
           <div id="requestListContainer" class="request-list"></div>
         </div>
+
+        <div class="section-block">
+          <div class="section-head">
+            <h2>최근 본 차량</h2>
+            <button type="button" id="clearRecentBtn" class="btn-outline btn-remove">전체 삭제</button>
+          </div>
+          <div id="recentListContainer" class="car-grid"></div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h2 class="footer-slogan">
+          We're<br>
+          driving<br>
+          the <span>GUINEA.</span>
+        </h2>
+      </div>
 
-        <div class="footer-inner">
+      <nav class="footer-menu" aria-label="푸터 메뉴">
+        <a href="9_Lamborguinea_main.html">Home</a>
+        <a href="9_Lamborguinea_about.html">ABOUT</a>
+        <a href="9_Lamborguinea_models.html">MODELS</a>
+        <a href="9_Lamborguinea_customize.html">CUSTOMIZE</a>
+        <a href="9_Lamborguinea_mygarage.html">MY GARAGE +</a>
+      </nav>
 
-            <div>
-
-                <h2 class="footer-slogan">
-                    We're<br>
-                    driving<br>
-                    the <span>GUINEA.</span>
-                </h2>
-
-            </div>
-
-
-            <nav class="footer-menu" aria-label="푸터 메뉴">
-
-                <a href="9_Lamborguinea_main.html">Home</a>
-                <a href="9_Lamborguinea_about.html">ABOUT</a>
-                <a href="9_Lamborguinea_models.html">MODELS</a>
-                <a href="9_Lamborguinea_customize.html">CUSTOMIZE</a>
-                <a href="9_Lamborguinea_mygarage.html">MY GARAGE +</a>
-            </nav>
-
-
-            <dl class="footer-contact">
-
-                <div>
-                    <dt>Contact</dt>
-                    <dd>02-0000-0000</dd>
-                </div>
-
-                <div>
-                    <dt>시승 문의</dt>
-                    <dd>drive@lamborguinea.co.kr</dd>
-                </div>
-
-                <div>
-                    <dt>제휴 문의</dt>
-                    <dd>info@lamborguinea.co.kr</dd>
-                </div>
-
-                <div>
-                    <dt>주소</dt>
-                    <dd>서울 용산구 청파동 1층</dd>
-                </div>
-
-            </dl>
-
+      <dl class="footer-contact">
+        <div>
+          <dt>Contact</dt>
+          <dd>02-0000-0000</dd>
         </div>
-        <p class="footer-copy">모든 이미지 및 차량 정보의 출처는 Automobili Lamborghini (lamborghini.com)에 있습니다.</p>
-
-    </footer>
+        <div>
+          <dt>시승 문의</dt>
+          <dd>drive@lamborguinea.co.kr</dd>
+        </div>
+        <div>
+          <dt>제휴 문의</dt>
+          <dd>info@lamborguinea.co.kr</dd>
+        </div>
+        <div>
+          <dt>주소</dt>
+          <dd>서울 용산구 청파동 1층</dd>
+        </div>
+      </dl>
+    </div>
+    <p class="footer-copy">모든 이미지 및 차량 정보의 출처는 Automobili Lamborghini (lamborghini.com)에 있습니다.</p>
+  </footer>
 
   <script src="9_Lamborguinea_mygarage.js"></script>
 </body>

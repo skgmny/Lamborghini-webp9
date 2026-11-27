@@ -106,7 +106,8 @@
   margin-bottom: 6px;
 }
 
-.car-slogan {
+.car-slogan,
+.custom-option {
   font-size: 0.9rem;
   color: var(--text-sub);
   margin-bottom: 20px;

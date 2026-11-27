@@ -4,6 +4,9 @@ const wishListContainer = document.getElementById("wishListContainer");
 const wishCountEl = document.getElementById("wishCount");
 const clearAllBtn = document.getElementById("clearAllBtn");
 
+const customListContainer = document.getElementById("customListContainer");
+const clearCustomBtn = document.getElementById("clearCustomBtn");
+
 const recentListContainer = document.getElementById("recentListContainer");
 const clearRecentBtn = document.getElementById("clearRecentBtn");
 
@@ -16,6 +19,7 @@ fetch("9_Lamborguinea_cars.json")
   .then(data => {
     allCars = data;
     renderWishList();
+    renderCustomList();
     renderRecentList();
     renderRequestList();
   })
@@ -66,12 +70,12 @@ function addRecentCar(carId) {
 function goDetail(carId) {
   addRecentCar(carId);
   localStorage.setItem("selectedCar", carId);
-  location.href = "9_Lamborguinea_details.html";
+  location.href = "9_Lamborguinea_details.html?id=" + carId;
 }
 
 function goCustomize(carId) {
   localStorage.setItem("selectedCar", carId);
-  location.href = "9_Lamborguinea_configure.html";
+  location.href = "9_Lamborguinea_configure.html?id=" + carId;
 }
 
 function removeWish(carId) {
@@ -101,6 +105,13 @@ function toggleWish(carId) {
   renderRecentList();
 }
 
+function removeCustom(carId) {
+  if (confirm("삭제하시겠습니까?")) {
+    localStorage.removeItem("configureExterior:" + carId);
+    renderCustomList();
+  }
+}
+
 function removeRequest(index) {
   let requests = getRequests();
   requests.splice(index, 1);
@@ -120,6 +131,28 @@ clearAllBtn.addEventListener("click", () => {
     localStorage.removeItem("favorites");
     renderWishList();
     renderRecentList();
+  }
+});
+
+clearCustomBtn.addEventListener("click", () => {
+  let hasCustom = false;
+  for (let i = 0; i < allCars.length; i++) {
+    if (localStorage.getItem("configureExterior:" + allCars[i].id) !== null) {
+      hasCustom = true;
+      break;
+    }
+  }
+
+  if (!hasCustom) {
+    alert("삭제할 커스터마이징 내역이 없습니다.");
+    return;
+  }
+
+  if (confirm("내 차량 만들기 저장 내역을 모두 삭제하시겠습니까?")) {
+    for (let i = 0; i < allCars.length; i++) {
+      localStorage.removeItem("configureExterior:" + allCars[i].id);
+    }
+    renderCustomList();
   }
 });
 
@@ -186,6 +219,58 @@ function renderWishList() {
           <div class="car-actions">
             <button type="button" class="btn" onclick="goDetail('${car.id}')">모델 알아보기</button>
             ${customizeBtnHtml}
+          </div>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderCustomList() {
+  const customItems = [];
+
+  for (let i = 0; i < allCars.length; i++) {
+    const car = allCars[i];
+    const savedOptionId = localStorage.getItem("configureExterior:" + car.id);
+
+    if (savedOptionId !== null && car.customization && car.customization.exterior) {
+      const exteriorList = car.customization.exterior;
+      for (let j = 0; j < exteriorList.length; j++) {
+        if (exteriorList[j].id === savedOptionId) {
+          customItems.push({
+            car: car,
+            option: exteriorList[j]
+          });
+          break;
+        }
+      }
+    }
+  }
+
+  if (customItems.length === 0) {
+    customListContainer.innerHTML = `
+      <div class="empty-box">
+        <p>저장된 커스터마이징 차량이 없습니다.</p>
+        <a href="9_Lamborguinea_customize.html" class="btn">내 차량 만들러 가기</a>
+      </div>
+    `;
+    return;
+  }
+
+  customListContainer.innerHTML = customItems.map(item => {
+    const car = item.car;
+    const option = item.option;
+    const carImg = option.image ? option.image : car.heroImage;
+
+    return `
+      <article class="card car-card">
+        <img class="car-thumb" src="${carImg}" alt="${car.name} ${option.name}">
+        <div class="car-body">
+          <span class="car-category">${car.category}</span>
+          <h3>${car.name}</h3>
+          <p class="custom-option">외장 색상: ${option.name}</p>
+          <div class="car-actions">
+            <button type="button" class="btn-outline btn-remove" onclick="removeCustom('${car.id}')">삭제</button>
           </div>
         </div>
       </article>
